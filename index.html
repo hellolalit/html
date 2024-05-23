@@ -4,45 +4,63 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>HTML Course From Scratch</title>
-		<link rel="stylesheet" type="text/css" href="CSS/style.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script>
+			function redirect() {
+				let selectElement = document.getElementById("chapter");
+				let selectValue = selectElement.value;
+				if (
+					selectValue !== "Select Chapter" &&
+					selectValue !== "select chapter"
+				) {
+					let chapterName = selectValue.split("-")[1];
+					let path = selectValue + "/" + chapterName + ".html";
+					window.location.href = path;
+				} else {
+					alert("Please select a chapter.");
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<main class="main-scope">
-			<h1 class="root-head">Welcome to Html from Scratch Course!</h1>
+			<h1 class="main-Heading">Welcome to Html5 Course!</h1>
 
 			<p class="para">
-				In this course, Lalit will be learning HTML from Scratch. This course
-				<br />
-				is intended to teach Lalit HTML5 and let Potential Employers and Client
-				<br />
-				know that Lalit has learned HTML and I capable to do related work.
+				In this course, Lalit is learning HTML from Scratch. This course is
+				intended to teach Lalit HTML5 and let Potential Employers and Client
+				know that Lalit has learned HTML and is capable to do related work.
 			</p>
 
 			<p>
-				This course is not internded for you to Lean HTML5. Lalit will roll out
-				seperate dedicated
-				<br />
-				courses for you to learn HTML5.
+				This course is not intended for you to learn HTML5. Lalit will roll out
+				separate dedicated course for you to learn HTML5.
 			</p>
 
-			<select name="chapters" id="chap" class="chapter-selector">
+			<br />
+			<p>
+				Please Select the chapter you want to visit and see that chapter
+				knowledge Lalit has from the below chapter selector -
+			</p>
+
+			<select name="chapters" id="chapter" class="chapter-selector">
 				<option value="Select Chapter" class="select-ch">Select Chapter</option>
-				<option value="Select Chapter">Ch1 - Basics</option>
-				<option value="Select Chapter">Ch2 - Comments</option>
-				<option value="Select Chapter">Ch3 - Headings</option>
-				<option value="Select Chapter">Ch4 - Paragraph</option>
-				<option value="Select Chapter">Ch5 - Formatting</option>
-				<option value="Select Chapter">Ch6 - Basics</option>
-				<option value="Select Chapter">Ch7 - Basics</option>
-				<option value="Select Chapter">Ch8 - Basics</option>
-				<option value="Select Chapter">Ch9 - Basics</option>
-				<option value="Select Chapter">Ch10 - Basics</option>
-				<option value="Select Chapter">Ch11 - Basics</option>
-				<option value="Select Chapter">Ch12 - Basics</option>
-				<option value="Select Chapter">Ch13 - Basics</option>
-				<option value="Select Chapter">Ch14 - Basics</option>
+				<option value="ch1-basic">Ch1 - Basic</option>
+				<option value="ch2-comment">Ch2 - Comments</option>
+				<option value="ch3-heading">Ch3 - Heading</option>
+				<option value="ch4-paragraph">Ch4 - Paragraph</option>
+				<option value="ch5-formatting">Ch5 - Formatting</option>
+				<option value="ch6-basics">Ch6 - Basics</option>
+				<option value="ch7-basics">Ch7 - Basics</option>
+				<option value="ch8-links">Ch8 - Links</option>
+				<option value="ch9-emaillinks">Ch9 - Emmail Links</option>
+				<option value="ch10-basics">Ch10 - Basics</option>
+				<option value="ch11-basics">Ch11 - Basics</option>
+				<option value="ch12-basics">Ch12 - Basics</option>
+				<option value="ch13-basics">Ch13 - Basics</option>
+				<option value="ch14-basics">Ch14 - Basics</option>
 			</select>
-			<button class="go-btn">GO</button>
+			<button class="go-btn" onclick="redirect()">GO</button>
 		</main>
 	</body>
 </html>
