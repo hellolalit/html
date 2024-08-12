@@ -1,21 +1,72 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 * {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* background: rgba(241, 241, 241, 0.485); */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     margin: 0;
-    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(90deg,
+            rgba(37, 138, 252, 0.1) 27.64%,
+            rgba(136, 91, 255, 0.1) 43.42%,
+            rgba(213, 23, 247, 0.1) 58.83%,
+            rgba(246, 173, 109, 0.1) 81.81%);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.main-scope {
+    min-height: 98vh;
+    padding: 1rem;
 }
 
 p,
 select,
 option {
     font-size: 16px;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.2px;
     margin-bottom: 0.5rem;
-}
-
-.main-scope {
-    min-height: 100vh;
-    padding: 1rem;
+    background-clip: content-box;
 }
 
 .main-Heading {
@@ -24,6 +75,7 @@ option {
     letter-spacing: 1px;
     color: rgb(47, 0, 255);
     margin-bottom: 0.5rem;
+    background-color: none !important;
 }
 
 .chapter-selector {
@@ -32,7 +84,7 @@ option {
     color: black;
     border: 1px solid grey;
     border-radius: 7px;
-    transition: 0.3s
+    transition: 0.3s;
 }
 
 .go-btn {
