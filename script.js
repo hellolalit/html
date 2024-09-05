@@ -1,5 +1,7 @@
 "use strict";
 
+alert("This Website is not mobile/tablet/Large Screen Ready. Please use it on Laptop/Dekstop for best experience !");
+
 function redirect() {
     let selectElement = document.getElementById("chapter");
     let selectValue = selectElement.value;
