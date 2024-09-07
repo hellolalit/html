@@ -28,11 +28,6 @@ p {
     font-size: 18px;
 }
 
-.main-scope {
-    min-height: 98vh;
-    padding: 1rem 3rem 1rem 1rem;
-}
-
 select,
 option {
     margin-top: 0.5rem;
@@ -40,6 +35,15 @@ option {
     letter-spacing: 0.2px;
     margin-bottom: 0.5rem;
     background-clip: content-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-scope {
+    min-height: 98vh;
+    padding: 1rem 3rem 1rem 1rem;
 }
 
 .main-Heading {
@@ -67,6 +71,30 @@ option {
     border: none;
     border-radius: 7px;
     background: rgb(1, 208, 1);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.prev-ch {
+    margin-left: 0.5rem;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 7px;
+    background: rgb(248, 228, 5);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.next-ch {
+    margin-left: 0.5rem;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 7px;
+    background: rgb(1, 108, 208);
     color: white;
     font-size: 18px;
     font-weight: 700;
