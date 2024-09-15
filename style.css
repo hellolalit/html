@@ -22,6 +22,8 @@ body {
             rgba(136, 91, 255, 0.1) 43.42%,
             rgba(213, 23, 247, 0.1) 58.83%,
             rgba(246, 173, 109, 0.1) 81.81%);
+    padding: 0.5rem;
+    letter-spacing: 0.2px;
 }
 
 p {
@@ -82,7 +84,7 @@ a {
     padding: 0.4rem 1rem;
     border: none;
     border-radius: 7px;
-    background: rgb(248, 228, 5);
+    background: rgb(230, 201, 9);
     color: white;
     font-size: 18px;
     font-weight: 700;
