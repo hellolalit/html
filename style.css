@@ -46,6 +46,9 @@ a {
 .main-scope {
     min-height: 98vh;
     padding: 1rem 3rem 1rem 1rem;
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* Allows items to wrap instead of overflowing */
 }
 
 .main-Heading {
@@ -101,4 +104,19 @@ a {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.2px;
+}
+
+.code {
+    border: 2px solid rgb(196, 193, 193);
+    border-radius: 0.4rem;
+    padding: 1.5rem;
+    background: #f2f2f2;
+}
+
+.max-w40 {
+    max-width: 40%;
+}
+
+.max-w60 {
+    max-width: 60%;
 }
