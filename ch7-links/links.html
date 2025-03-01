@@ -1,108 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ch-7 Links</title>
-		<link rel="stylesheet" href="../style.css" />
-	</head>
-	<body>
-		<main class="main-scope" id="#top">
-			<h1>Chapter 7 - Links in HTML5</h1>
-
-			<br />
-
-			<h2>What is Link?</h2>
-
-			<p>
-				Link is a reference to another document or resource. It is a way to
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ch-7 Links</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <main class="main-scope" id="#top">
+            <h1>Chapter 7 - Links in HTML5</h1>
+            <br>
+            <h2>What is Link?</h2>
+            <p>
+                Link is a reference to another document or resource. It is a way to
 				connect web pages together. Links are the most important part of HTML5.
 				Without it, the internet could not be created. Links in HTML5 are
 				generally created using the "a" tag and it's attribute "href". Here's an
 				example shown below -
-			</p>
-
-			<br />
-			<p class="code max-w40">
-				<code>
-					<strong> &lt;a href="https://google.com"&gt;</strong>
-					Google
-					<strong> &lt;/a&gt; </strong>
-				</code>
-			</p>
-
-			<br />
-
-			<p>
-				As we saw how you can create a Link in HTML5. Now let's understand what
-				does the <strong>attribute "href" does</strong> and inside the
-				<strong>a</strong> tag why <strong>"Google"</strong> is written?
-			</p>
-
-			<br />
-
-			<h3>The "href" attribute -</h3>
-			<p>
-				<em>"href"</em> stands for <strong>Hypertext Reference.</strong> It is
+            </p>
+            <br>
+            <p class="code max-w40">
+                <code>
+                    <strong> &lt;a href="https://google.com"&gt;</strong>
+                    Google
+                    <strong> &lt;/a&gt;</strong>
+                </code>
+            </p>
+            <br>
+            <p>
+                As we saw how you can create a Link in HTML5. Now let's understand what
+				does the
+                <strong>attribute "href" does</strong>
+                and inside the
+                <strong>a</strong> tag why
+                <strong>"Google"</strong>
+                is written?
+            </p>
+            <br>
+            <h3>The "href" attribute -</h3>
+            <p>
+                <em>"href"</em> stands for
+                <strong>Hypertext Reference.</strong>
+                It is
 				used to specify the link of a web page. The value of the "href"
 				attribute is the URL of the page you want to link to. The URL can be a
 				web page, an image, a video, a sound file, or any other file or link.
-			</p>
-
-			<br />
-
-			<h3>Why "Google" was written inside "a" tag? -</h3>
-			<p>
-				<em>"Google"</em> was written because we wanted to redirect to
-				<em>google.com website.</em> So, we have to write only those things
+            </p>
+            <br>
+            <h3>Why "Google" was written inside "a" tag? -</h3>
+            <p>
+                <em>"Google"</em>
+                was written because we wanted to redirect to
+                <em>google.com website.</em>
+                So, we have to write only those things
 				which indicates where the URL inside "href" will redirect the user. For
 				example, here google.com in this example above.
-				<br />
-				<br />
-			</p>
-
-			<h2>The "target" attrubute -</h2>
-			<p>
-				The <em>"target"</em> attribute specifies where to open the linked
+                <br>
+                <br>
+            </p>
+            <h3>The "target" attrubute -</h3>
+            <p>
+                The
+                <em>"target"</em>
+                attribute specifies where to open the linked
 				document. It controls whether to open the link in same tab, new tab or a
 				specific frame. The value of the "target" attribute can be one of the
 				following values:
-				<br />
-				<strong>
-					<ul>
-						<li>_blank,</li>
-						<li>_self,</li>
-						<li>_parent,</li>
-						<li>_top.</li>
-					</ul>
-				</strong>
-			</p>
-
-			<p>
-				For more details please visit
-				<a href="https://www.geeksforgeeks.org/html-links/" target="_blank"
-					>Geeksforgeeks HTML Links</a
+                <br>
+                <strong>
+                    <ul>
+                        <li>_blank,</li>
+                        <li>_self,</li>
+                        <li>_parent,</li>
+                        <li>_top.</li>
+                    </ul>
+                </strong>
+            </p>
+            <p>
+                For more details please visit
+                <a href="https://www.geeksforgeeks.org/html-links/" target="_blank">Geeksforgeeks HTML Links
+                </a
 				>
-			</p>
-
-			<br />
-			<br />
-			<a href="#top">Go to top</a>
-
-			<br />
-			<br />
-
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-
-			<a href="../ch6-quotation/quotation.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-
-			<a href="../ch8-emaillinks/emaillinks.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
-		</main>
-	</body>
+            </p>
+            <br>
+            <h3>The "title" attrubute -</h3>
+            <p>
+                The
+                <em>"title"</em>
+                attribute specifies extra information about the
+				linked document. The value of the "title" attribute can be any text.
+				When you move the mouse over the link, the title text will be displayed.
+				(When user hovers on the link, the title is shown.)
+            </p>
+            <h3>Example -</h3>
+            <p>
+                <a href="https://startpage.com" title="Startpage.com" target="_blank">
+                    Click here
+                </a>
+                to visit privacy focused search engine Startpage which is best
+				alternative of Google.com as it gives same result as Google but without
+				tracking you.
+            </p>
+            <br>
+            <h2>Linking to an Email Address -</h2>
+            <p>
+                To create a link that opens the user's email program (to let them send a
+				new email), use the "mailto:" prefix followed by the email address you
+				want to send the email to. Here's an example shown below -
+            </p>
+            <br>
+            <br>
+            <a href="#top">
+                <button class="topbtn">Go to top</button>
+            </a>
+            <br>
+            <br>
+            <a href="../index.html">
+                <button class="go-btn">Back to HOME PAGE</button>
+            </a>
+            <a href="../ch6-quotation/quotation.html">
+                <button class="prev-ch">Previous chapter</button>
+            </a>
+            <a href="../ch8-emaillinks/emaillinks.html">
+                <button class="next-ch">Next chapter</button>
+            </a>
+        </main>
+    </body>
 </html>
