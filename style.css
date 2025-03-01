@@ -12,6 +12,7 @@
     /* background: rgba(241, 241, 241, 0.485); */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -43,9 +44,22 @@ a {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+
+}
+
 .main-scope {
     min-height: 98vh;
     padding: 1rem 3rem 1rem 1rem;
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* Allows items to wrap instead of overflowing */
 }
 
 .main-Heading {
@@ -79,6 +93,19 @@ a {
     letter-spacing: 0.2px;
 }
 
+.topbtn {
+    margin-left: 0.5rem;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 7px;
+    background: rgb(111, 140, 111);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+
+}
+
 .prev-ch {
     margin-left: 0.5rem;
     padding: 0.4rem 1rem;
@@ -101,4 +128,19 @@ a {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.2px;
+}
+
+.code {
+    border: 2px solid rgb(196, 193, 193);
+    border-radius: 0.4rem;
+    padding: 1.5rem;
+    background: #f2f2f2;
+}
+
+.max-w40 {
+    max-width: 40%;
+}
+
+.max-w60 {
+    max-width: 60%;
 }
