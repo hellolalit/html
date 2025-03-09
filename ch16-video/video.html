@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-16 Video</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 16 - Video in HTML5</h1>
+			<br />
+			<h2>What is the Video Element?</h2>
+			<p>
+				The HTML5 video element is used to embed video content in web pages. It
+				provides a standard way to include videos on your website without
+				requiring third-party plugins like Flash. The video element supports
+				various video formats and offers controls for playback, volume
+				adjustment, fullscreen viewing, and more.
+			</p>
+			<br />
+			<h3>Basic Video Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					<strong
+						>&lt;video src="video-file.mp4" controls&gt;&lt;/video&gt;</strong
+					>
+				</code>
+			</div>
+			<br />
+			<h3>Video Attributes</h3>
+			<p>
+				The video element supports several attributes to control its behavior:
+			</p>
+			<ul>
+				<li><strong>src</strong> - Specifies the URL of the video file</li>
+				<li>
+					<strong>controls</strong> - Displays the default video controls
+					(play/pause, volume, etc.)
+				</li>
+				<li>
+					<strong>width</strong> - Specifies the width of the video player
+				</li>
+				<li>
+					<strong>height</strong> - Specifies the height of the video player
+				</li>
+				<li>
+					<strong>autoplay</strong> - Starts playing the video automatically
+					when the page loads
+				</li>
+				<li><strong>loop</strong> - Plays the video repeatedly</li>
+				<li><strong>muted</strong> - Mutes the audio output</li>
+				<li>
+					<strong>poster</strong> - Specifies an image to be shown while the
+					video is downloading or until the user plays the video
+				</li>
+				<li>
+					<strong>preload</strong> - Specifies if and how the video should be
+					loaded when the page loads
+				</li>
+				<li>
+					<strong>playsinline</strong> - Plays the video inline on iOS devices
+					(instead of fullscreen)
+				</li>
+			</ul>
+			<br />
+			<h3>Example with Controls and Poster</h3>
+			<p>
+				Here's an example of a video element with controls and a poster image:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;video
+					<br />
+					&nbsp;&nbsp;src="movie.mp4"
+					<br />
+					&nbsp;&nbsp;controls
+					<br />
+					&nbsp;&nbsp;width="640"
+					<br />
+					&nbsp;&nbsp;height="360"
+					<br />
+					&nbsp;&nbsp;poster="movie-poster.jpg"
+					<br />
+					&gt;
+					<br />
+					&nbsp;&nbsp;Your browser does not support the video element.
+					<br />
+					&lt;/video&gt;
+				</code>
+			</div>
+			<p>
+				Note: The text between the opening and closing video tags is displayed
+				only if the browser doesn't support the video element.
+			</p>
+			<br />
+			<h3>Supported Video Formats</h3>
+			<p>
+				Different browsers support different video formats. The main formats
+				used with the video element are:
+			</p>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Format</th>
+					<th style="padding: 10px">File Extension</th>
+					<th style="padding: 10px">MIME Type</th>
+					<th style="padding: 10px">Browser Support</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px">MP4 (H.264)</td>
+					<td style="padding: 10px">.mp4</td>
+					<td style="padding: 10px">video/mp4</td>
+					<td style="padding: 10px">All modern browsers</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">WebM</td>
+					<td style="padding: 10px">.webm</td>
+					<td style="padding: 10px">video/webm</td>
+					<td style="padding: 10px">Chrome, Firefox, Opera, Edge</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">Ogg</td>
+					<td style="padding: 10px">.ogg</td>
+					<td style="padding: 10px">video/ogg</td>
+					<td style="padding: 10px">Firefox, Chrome, Opera</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Multiple Source Formats</h3>
+			<p>
+				To ensure cross-browser compatibility, you can provide multiple video
+				sources using the source element:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;video controls width="640" height="360"
+					poster="movie-poster.jpg"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="movie.mp4" type="video/mp4"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="movie.webm" type="video/webm"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="movie.ogg" type="video/ogg"&gt;
+					<br />
+					&nbsp;&nbsp;Your browser does not support the video element.
+					<br />
+					&lt;/video&gt;
+				</code>
+			</div>
+			<p>The browser will use the first recognized format in the list.</p>
+			<br />
+			<h3>Autoplay Attribute</h3>
+			<p>
+				The autoplay attribute starts playing the video automatically when the
+				page loads:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;video src="background-video.mp4" autoplay&gt;&lt;/video&gt;
+				</code>
+			</div>
+			<p>
+				<strong>Note:</strong> Many modern browsers block autoplay with sound to
+				improve user experience. To autoplay video, you may need to also include
+				the muted attribute:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;video src="background-video.mp4" autoplay muted&gt;&lt;/video&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Loop Attribute</h3>
+			<p>The loop attribute makes the video play repeatedly:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;video src="background-video.mp4" autoplay muted
+					loop&gt;&lt;/video&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Preload Attribute</h3>
+			<p>
+				The preload attribute specifies if and how the video should be loaded
+				when the page loads:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- No preloading (saves bandwidth) --&gt;
+					<br />
+					&lt;video src="large-video.mp4" preload="none"
+					controls&gt;&lt;/video&gt;
+					<br /><br />
+					&lt;!-- Preload metadata only (size, first frame, etc.) --&gt;
+					<br />
+					&lt;video src="movie.mp4" preload="metadata"
+					controls&gt;&lt;/video&gt;
+					<br /><br />
+					&lt;!-- Preload the entire video file --&gt;
+					<br />
+					&lt;video src="short-clip.mp4" preload="auto"
+					controls&gt;&lt;/video&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Responsive Video</h3>
+			<p>
+				To make videos responsive (adapt to different screen sizes), you can use
+				CSS:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;style&gt;
+					<br />
+					&nbsp;&nbsp;.responsive-video {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;height: auto;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;max-width: 100%;
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/style&gt;
+					<br /><br />
+					&lt;video class="responsive-video" controls&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="movie.mp4" type="video/mp4"&gt;
+					<br />
+					&lt;/video&gt;
+				</code>
+			</div>
+			<p>
+				For maintaining aspect ratio while resizing, you can use a container
+				with padding-based technique:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;style&gt;
+					<br />
+					&nbsp;&nbsp;.video-container {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 56.25%; /* 16:9 Aspect Ratio
+					*/
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;height: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;.video-container video {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;top: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;left: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/style&gt;
+					<br /><br />
+					&lt;div class="video-container"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;video controls&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="movie.mp4"
+					type="video/mp4"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/video&gt;
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Background Video</h3>
+			<p>Videos can be used as backgrounds for web pages:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;style&gt;
+					<br />
+					&nbsp;&nbsp;.video-background {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;position: fixed;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;right: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;bottom: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;min-width: 100%;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;min-height: 100%;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;width: auto;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;height: auto;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;z-index: -1;
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/style&gt;
+					<br /><br />
+					&lt;video class="video-background" autoplay muted loop playsinline&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="background.mp4" type="video/mp4"&gt;
+					<br />
+					&lt;/video&gt;
+					<br /><br />
+					&lt;div class="content"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;h1&gt;Content Over Video Background&lt;/h1&gt;
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h3>JavaScript Video API</h3>
+			<p>
+				HTML5 provides a powerful JavaScript API for controlling video playback:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;// Get the video element
+					<br />
+					&nbsp;&nbsp;const video = document.getElementById('myVideo');
+					<br /><br />
+					&nbsp;&nbsp;// Play the video
+					<br />
+					&nbsp;&nbsp;function playVideo() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;video.play();
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;// Pause the video
+					<br />
+					&nbsp;&nbsp;function pauseVideo() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;video.pause();
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;// Toggle fullscreen
+					<br />
+					&nbsp;&nbsp;function toggleFullscreen() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;if (video.requestFullscreen) {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;video.requestFullscreen();
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;} else if (video.webkitRequestFullscreen) { //
+					Safari
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;video.webkitRequestFullscreen();
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;} else if (video.msRequestFullscreen) { //
+					IE11
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;video.msRequestFullscreen();
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;// Event listeners
+					<br />
+					&nbsp;&nbsp;video.addEventListener('play', function() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;console.log('Video started playing');
+					<br />
+					&nbsp;&nbsp;});
+					<br /><br />
+					&nbsp;&nbsp;video.addEventListener('ended', function() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;console.log('Video playback finished');
+					<br />
+					&nbsp;&nbsp;});
+					<br />
+					&lt;/script&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Video Tracks</h3>
+			<p>
+				HTML5 video supports multiple tracks for subtitles, captions,
+				descriptions, chapters, and metadata:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;video controls&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="movie.mp4" type="video/mp4"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;track src="subtitles_en.vtt" kind="subtitles"
+					srclang="en" label="English"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;track src="subtitles_es.vtt" kind="subtitles"
+					srclang="es" label="Spanish"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;track src="descriptions.vtt" kind="descriptions"
+					srclang="en" label="Descriptions"&gt;
+					<br />
+					&lt;/video&gt;
+				</code>
+			</div>
+			<p>
+				The track element uses WebVTT (.vtt) files for subtitles and other text
+				tracks.
+			</p>
+			<br />
+			<h3>Accessibility Considerations</h3>
+			<p>
+				When using video on your website, consider these accessibility best
+				practices:
+			</p>
+			<ul>
+				<li>Always provide controls so users can control playback</li>
+				<li>Avoid autoplay with sound, as it can be disruptive</li>
+				<li>Provide captions or subtitles for deaf or hard-of-hearing users</li>
+				<li>Provide audio descriptions for blind or visually impaired users</li>
+				<li>Ensure video controls are keyboard accessible</li>
+				<li>Don't rely solely on video to convey important information</li>
+			</ul>
+			<br />
+			<h3>Video File Size and Performance</h3>
+			<p>
+				Video files can be large and impact page loading times. Consider these
+				tips:
+			</p>
+			<ul>
+				<li>Use compressed formats with appropriate bitrates</li>
+				<li>
+					Consider using the preload="none" or preload="metadata" attributes for
+					large files
+				</li>
+				<li>Use a content delivery network (CDN) for faster delivery</li>
+				<li>Consider adaptive streaming for different connection speeds</li>
+				<li>Optimize video dimensions for the intended display size</li>
+				<li>
+					Use poster images to provide visual context before the video loads
+				</li>
+			</ul>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch15-audio/audio.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch17-embedpdf/embedpdf.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

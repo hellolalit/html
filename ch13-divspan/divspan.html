@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-13 Div and Span</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 13 - Div and Span in HTML5</h1>
+			<br />
+			<h2>What are Div and Span Elements?</h2>
+			<p>
+				Div and span are container elements in HTML that are used to group and
+				organize content. While they don't have any visual effect on their own,
+				they are essential for applying styles, JavaScript functionality, and
+				creating logical sections in your web pages.
+			</p>
+			<br />
+			<h3>The Div Element</h3>
+			<p>
+				The div element is a block-level container used to group larger sections
+				of content or other HTML elements. It creates a new block in the
+				document flow, meaning it starts on a new line and takes up the full
+				width available.
+			</p>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;div&gt;</strong>
+					<br />
+					&nbsp;&nbsp;&lt;h2&gt;This is a heading inside a div&lt;/h2&gt;
+					<br />
+					&nbsp;&nbsp;&lt;p&gt;This is a paragraph inside the same
+					div.&lt;/p&gt;
+					<br />
+					<strong>&lt;/div&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<h3>The Span Element</h3>
+			<p>
+				The span element is an inline container used to group small pieces of
+				content within a line of text. Unlike div, span doesn't create a new
+				block and only takes up as much width as necessary.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;p&gt;
+					<br />
+					&nbsp;&nbsp;This is a paragraph with
+					<strong>&lt;span style="color: red;"&gt;</strong>some red text<strong
+						>&lt;/span&gt;</strong
+					>
+					in the middle.
+					<br />
+					&lt;/p&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Key Differences Between Div and Span</h3>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Feature</th>
+					<th style="padding: 10px">Div</th>
+					<th style="padding: 10px">Span</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px">Display Type</td>
+					<td style="padding: 10px">Block-level</td>
+					<td style="padding: 10px">Inline</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">Line Break</td>
+					<td style="padding: 10px">Creates new line</td>
+					<td style="padding: 10px">No line break</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">Width</td>
+					<td style="padding: 10px">Takes full width available</td>
+					<td style="padding: 10px">Only as wide as its content</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">Usage</td>
+					<td style="padding: 10px">Grouping larger sections</td>
+					<td style="padding: 10px">Styling parts of text</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Using Div for Layout</h3>
+			<p>
+				Divs are commonly used to create layout structures in web pages. With
+				CSS, you can position, style, and arrange divs to create complex
+				layouts.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;div class="container"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div class="header"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Website Title&lt;/h1&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div class="content"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Main content goes here.&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div class="footer"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Footer content&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Using Span for Inline Styling</h3>
+			<p>
+				Spans are perfect for applying styles to specific parts of text without
+				disrupting the flow.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;p&gt;
+					<br />
+					&nbsp;&nbsp;This product costs &lt;span
+					class="price"&gt;$19.99&lt;/span&gt; and is
+					<br />
+					&nbsp;&nbsp;&lt;span class="highlight"&gt;currently on
+					sale&lt;/span&gt;!
+					<br />
+					&lt;/p&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Div and Span with IDs and Classes</h3>
+			<p>
+				Both div and span elements are often used with ID and class attributes
+				for CSS styling and JavaScript manipulation.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Using ID (unique identifier) --&gt;
+					<br />
+					&lt;div id="header"&gt;This is the header&lt;/div&gt;
+					<br /><br />
+					&lt;!-- Using class (can be reused) --&gt;
+					<br />
+					&lt;div class="section"&gt;This is a section&lt;/div&gt;
+					<br />
+					&lt;div class="section"&gt;This is another section&lt;/div&gt;
+					<br /><br />
+					&lt;!-- Span with class --&gt;
+					<br />
+					&lt;p&gt;Some &lt;span class="highlight"&gt;important&lt;/span&gt;
+					text.&lt;/p&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Practical Example</h3>
+			<p>Here's a practical example showing both div and span in action:</p>
+
+			<div
+				style="
+					border: 1px solid #ddd;
+					padding: 15px;
+					margin: 20px 0;
+					border-radius: 5px;
+				">
+				<div
+					style="background-color: #f0f0f0; padding: 10px; margin-bottom: 10px">
+					<h3 style="color: #333; margin: 0">Product Information</h3>
+				</div>
+				<div style="padding: 10px">
+					<p>
+						The <span style="font-weight: bold">Premium Headphones</span> offer
+						exceptional sound quality. They are available in
+						<span style="color: blue">blue</span>,
+						<span style="color: red">red</span>, and
+						<span style="color: green">green</span>.
+					</p>
+					<p>
+						Price:
+						<span style="color: #e91e63; font-weight: bold">$129.99</span>
+					</p>
+				</div>
+				<div
+					style="
+						background-color: #f9f9f9;
+						padding: 10px;
+						border-top: 1px solid #ddd;
+					">
+					<p style="margin: 0; font-size: 14px">
+						Free shipping on orders over $100
+					</p>
+				</div>
+			</div>
+
+			<div class="code max-w40">
+				<code>
+					&lt;div style="border: 1px solid #ddd; padding: 15px; border-radius:
+					5px;"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div style="background-color: #f0f0f0; padding:
+					10px;"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Product Information&lt;/h3&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div style="padding: 10px;"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The &lt;span style="font-weight:
+					bold;"&gt;Premium Headphones&lt;/span&gt; offer exceptional sound
+					quality.
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They are available in &lt;span
+					style="color: blue;"&gt;blue&lt;/span&gt;, &lt;span style="color:
+					red;"&gt;red&lt;/span&gt;,
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and &lt;span style="color:
+					green;"&gt;green&lt;/span&gt;.
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price: &lt;span style="color:
+					#e91e63; font-weight: bold;"&gt;$129.99&lt;/span&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div style="background-color: #f9f9f9; padding: 10px;
+					border-top: 1px solid #ddd;"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p style="margin: 0; font-size:
+					14px;"&gt;Free shipping on orders over $100&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					Use semantic HTML5 elements (like header, footer, section, article)
+					instead of div when appropriate
+				</li>
+				<li>
+					Don't overuse div elements (known as "div soup") - keep your HTML
+					structure clean and meaningful
+				</li>
+				<li>Use span only when you need to style a specific part of text</li>
+				<li>Always use classes and IDs with meaningful names</li>
+				<li>
+					Separate structure (HTML) from presentation (CSS) by using external
+					stylesheets
+				</li>
+			</ul>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch12-tables/tables.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch14-iframe/iframe.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

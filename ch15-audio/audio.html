@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-15 Audio</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 15 - Audio in HTML5</h1>
+			<br />
+			<h2>What is the Audio Element?</h2>
+			<p>
+				The HTML5 audio element is used to embed sound content in web pages. It
+				provides a standard way to include audio on your website without
+				requiring third-party plugins like Flash. The audio element supports
+				various audio formats and offers controls for playback, volume
+				adjustment, and more.
+			</p>
+			<br />
+			<h3>Basic Audio Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					<strong
+						>&lt;audio src="audio-file.mp3" controls&gt;&lt;/audio&gt;</strong
+					>
+				</code>
+			</div>
+			<br />
+			<h3>Audio Attributes</h3>
+			<p>
+				The audio element supports several attributes to control its behavior:
+			</p>
+			<ul>
+				<li><strong>src</strong> - Specifies the URL of the audio file</li>
+				<li>
+					<strong>controls</strong> - Displays the default audio controls
+					(play/pause, volume, etc.)
+				</li>
+				<li>
+					<strong>autoplay</strong> - Starts playing the audio automatically
+					when the page loads
+				</li>
+				<li><strong>loop</strong> - Plays the audio repeatedly</li>
+				<li><strong>muted</strong> - Mutes the audio output</li>
+				<li>
+					<strong>preload</strong> - Specifies if and how the audio should be
+					loaded when the page loads
+				</li>
+			</ul>
+			<br />
+			<h3>Example with Controls</h3>
+			<p>Here's an example of an audio element with controls:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;audio src="music.mp3" controls&gt;
+					<br />
+					&nbsp;&nbsp;Your browser does not support the audio element.
+					<br />
+					&lt;/audio&gt;
+				</code>
+			</div>
+			<p>
+				Note: The text between the opening and closing audio tags is displayed
+				only if the browser doesn't support the audio element.
+			</p>
+			<br />
+			<h3>Supported Audio Formats</h3>
+			<p>
+				Different browsers support different audio formats. The main formats
+				used with the audio element are:
+			</p>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Format</th>
+					<th style="padding: 10px">File Extension</th>
+					<th style="padding: 10px">MIME Type</th>
+					<th style="padding: 10px">Browser Support</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px">MP3</td>
+					<td style="padding: 10px">.mp3</td>
+					<td style="padding: 10px">audio/mpeg</td>
+					<td style="padding: 10px">All modern browsers</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">WAV</td>
+					<td style="padding: 10px">.wav</td>
+					<td style="padding: 10px">audio/wav</td>
+					<td style="padding: 10px">All modern browsers except IE</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">OGG</td>
+					<td style="padding: 10px">.ogg</td>
+					<td style="padding: 10px">audio/ogg</td>
+					<td style="padding: 10px">Chrome, Firefox, Opera</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">AAC</td>
+					<td style="padding: 10px">.aac</td>
+					<td style="padding: 10px">audio/aac</td>
+					<td style="padding: 10px">Chrome, Safari</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Multiple Source Formats</h3>
+			<p>
+				To ensure cross-browser compatibility, you can provide multiple audio
+				sources using the source element:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;audio controls&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="audio.mp3" type="audio/mpeg"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="audio.ogg" type="audio/ogg"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;source src="audio.wav" type="audio/wav"&gt;
+					<br />
+					&nbsp;&nbsp;Your browser does not support the audio element.
+					<br />
+					&lt;/audio&gt;
+				</code>
+			</div>
+			<p>The browser will use the first recognized format in the list.</p>
+			<br />
+			<h3>Autoplay Attribute</h3>
+			<p>
+				The autoplay attribute starts playing the audio automatically when the
+				page loads:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;audio src="background-music.mp3" autoplay&gt;&lt;/audio&gt;
+				</code>
+			</div>
+			<p>
+				<strong>Note:</strong> Many modern browsers block autoplay with sound to
+				improve user experience. To autoplay audio, you may need to also include
+				the muted attribute or start playback in response to a user action.
+			</p>
+			<br />
+			<h3>Loop Attribute</h3>
+			<p>The loop attribute makes the audio play repeatedly:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;audio src="background-music.mp3" loop&gt;&lt;/audio&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Preload Attribute</h3>
+			<p>
+				The preload attribute specifies if and how the audio should be loaded
+				when the page loads:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- No preloading (saves bandwidth) --&gt;
+					<br />
+					&lt;audio src="large-file.mp3" preload="none"
+					controls&gt;&lt;/audio&gt;
+					<br /><br />
+					&lt;!-- Preload metadata only (size, first frame, etc.) --&gt;
+					<br />
+					&lt;audio src="music.mp3" preload="metadata"
+					controls&gt;&lt;/audio&gt;
+					<br /><br />
+					&lt;!-- Preload the entire audio file --&gt;
+					<br />
+					&lt;audio src="short-clip.mp3" preload="auto"
+					controls&gt;&lt;/audio&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Styling Audio Controls</h3>
+			<p>
+				The default audio controls can be styled to some extent using CSS, but
+				the styling options are limited. For complete control over the
+				appearance, you can create custom controls using JavaScript:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- HTML --&gt;
+					<br />
+					&lt;audio id="myAudio" src="music.mp3"&gt;&lt;/audio&gt;
+					<br />
+					&lt;div class="custom-audio-controls"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;button
+					onclick="document.getElementById('myAudio').play()"&gt;Play&lt;/button&gt;
+					<br />
+					&nbsp;&nbsp;&lt;button
+					onclick="document.getElementById('myAudio').pause()"&gt;Pause&lt;/button&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="range" id="volume" min="0" max="1"
+					step="0.1" value="1"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;oninput="document.getElementById('myAudio').volume
+					= this.value"&gt;
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h3>JavaScript Audio API</h3>
+			<p>
+				HTML5 also provides a powerful JavaScript API for controlling audio
+				playback:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;// Get the audio element
+					<br />
+					&nbsp;&nbsp;const audio = document.getElementById('myAudio');
+					<br /><br />
+					&nbsp;&nbsp;// Play the audio
+					<br />
+					&nbsp;&nbsp;function playAudio() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;audio.play();
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;// Pause the audio
+					<br />
+					&nbsp;&nbsp;function pauseAudio() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;audio.pause();
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;// Set the volume (0.0 to 1.0)
+					<br />
+					&nbsp;&nbsp;function setVolume(volume) {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;audio.volume = volume;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;// Skip to a specific time (in seconds)
+					<br />
+					&nbsp;&nbsp;function skipTo(time) {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;audio.currentTime = time;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;// Event listeners
+					<br />
+					&nbsp;&nbsp;audio.addEventListener('play', function() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;console.log('Audio started playing');
+					<br />
+					&nbsp;&nbsp;});
+					<br /><br />
+					&nbsp;&nbsp;audio.addEventListener('ended', function() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;console.log('Audio playback finished');
+					<br />
+					&nbsp;&nbsp;});
+					<br />
+					&lt;/script&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Background Audio</h3>
+			<p>
+				For background audio that doesn't need controls, you can hide the audio
+				element:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;audio src="background-music.mp3" autoplay loop&gt;&lt;/audio&gt;
+				</code>
+			</div>
+			<p>
+				Remember that autoplay with sound is often blocked by browsers unless
+				the user has interacted with the page.
+			</p>
+			<br />
+			<h3>Accessibility Considerations</h3>
+			<p>
+				When using audio on your website, consider these accessibility best
+				practices:
+			</p>
+			<ul>
+				<li>Always provide controls so users can control playback</li>
+				<li>Avoid autoplay with sound, as it can be disruptive</li>
+				<li>Provide transcripts or captions for audio content</li>
+				<li>Ensure audio controls are keyboard accessible</li>
+				<li>Don't rely solely on sound to convey important information</li>
+			</ul>
+			<br />
+			<h3>Audio File Size and Performance</h3>
+			<p>
+				Audio files can be large and impact page loading times. Consider these
+				tips:
+			</p>
+			<ul>
+				<li>Use compressed formats like MP3 with appropriate bitrates</li>
+				<li>
+					Consider using the preload="none" or preload="metadata" attributes for
+					large files
+				</li>
+				<li>Use a content delivery network (CDN) for faster delivery</li>
+				<li>Consider streaming for very large audio files</li>
+			</ul>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch14-iframe/iframe.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch16-video/video.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

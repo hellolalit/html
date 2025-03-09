@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-17 Embed PDF</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 17 - Embedding PDF Files in HTML</h1>
+			<br />
+			<h2>What is PDF Embedding?</h2>
+			<p>
+				Embedding PDF files in HTML allows you to display PDF documents directly
+				within your web page, enabling users to view the content without
+				downloading the file or opening it in a separate application. This can
+				be particularly useful for displaying documents such as reports,
+				brochures, user manuals, or any other content that is best presented in
+				a PDF format.
+			</p>
+			<br />
+			<h3>Methods for Embedding PDF Files</h3>
+			<p>
+				There are several methods to embed PDF files in HTML. Let's explore the
+				most common approaches:
+			</p>
+			<br />
+			<h4>1. Using the Object Element</h4>
+			<p>
+				The object element is a versatile way to embed PDFs and provides good
+				browser compatibility:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;object
+					<br />
+					&nbsp;&nbsp;data="document.pdf"
+					<br />
+					&nbsp;&nbsp;type="application/pdf"
+					<br />
+					&nbsp;&nbsp;width="800"
+					<br />
+					&nbsp;&nbsp;height="600"
+					<br />
+					&gt;
+					<br />
+					&nbsp;&nbsp;&lt;p&gt;Your browser does not support PDFs.
+					<br />
+					&nbsp;&nbsp;&lt;a href="document.pdf"&gt;Download the
+					PDF&lt;/a&gt;.&lt;/p&gt;
+					<br />
+					&lt;/object&gt;
+				</code>
+			</div>
+			<p>
+				The content between the opening and closing object tags is displayed
+				only if the browser cannot render the PDF.
+			</p>
+			<br />
+			<h4>2. Using the Embed Element</h4>
+			<p>
+				The embed element is a simpler, self-closing tag for embedding PDFs:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;embed
+					<br />
+					&nbsp;&nbsp;src="document.pdf"
+					<br />
+					&nbsp;&nbsp;type="application/pdf"
+					<br />
+					&nbsp;&nbsp;width="800"
+					<br />
+					&nbsp;&nbsp;height="600"
+					<br />
+					&gt;
+				</code>
+			</div>
+			<p>
+				The embed element doesn't allow for fallback content, so it's best used
+				when you're confident that your users' browsers support PDF embedding.
+			</p>
+			<br />
+			<h4>3. Using the Iframe Element</h4>
+			<p>The iframe element can also be used to embed PDFs:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;iframe
+					<br />
+					&nbsp;&nbsp;src="document.pdf"
+					<br />
+					&nbsp;&nbsp;width="800"
+					<br />
+					&nbsp;&nbsp;height="600"
+					<br />
+					&nbsp;&nbsp;title="PDF Document"
+					<br />
+					&gt;
+					<br />
+					&nbsp;&nbsp;This browser does not support PDFs. Please download the
+					PDF to view it:
+					<br />
+					&nbsp;&nbsp;&lt;a href="document.pdf"&gt;Download PDF&lt;/a&gt;
+					<br />
+					&lt;/iframe&gt;
+				</code>
+			</div>
+			<p>
+				Using iframes for PDFs provides good isolation from the rest of your
+				page content.
+			</p>
+			<br />
+			<h3>Controlling PDF Display Options</h3>
+			<p>
+				You can control how the PDF is displayed by adding parameters to the
+				URL. This works with the object, embed, and iframe elements:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;object
+					<br />
+					&nbsp;&nbsp;data="document.pdf#page=2&zoom=50&toolbar=0&navpanes=0"
+					<br />
+					&nbsp;&nbsp;type="application/pdf"
+					<br />
+					&nbsp;&nbsp;width="800"
+					<br />
+					&nbsp;&nbsp;height="600"
+					<br />
+					&gt;
+					<br />
+					&nbsp;&nbsp;&lt;p&gt;Your browser does not support PDFs.
+					<br />
+					&nbsp;&nbsp;&lt;a href="document.pdf"&gt;Download the
+					PDF&lt;/a&gt;.&lt;/p&gt;
+					<br />
+					&lt;/object&gt;
+				</code>
+			</div>
+			<br />
+			<h4>Common PDF URL Parameters</h4>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Parameter</th>
+					<th style="padding: 10px">Description</th>
+					<th style="padding: 10px">Example</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px">page</td>
+					<td style="padding: 10px">Specifies which page to display</td>
+					<td style="padding: 10px">#page=4</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">zoom</td>
+					<td style="padding: 10px">Sets the zoom level (in percentage)</td>
+					<td style="padding: 10px">#zoom=75</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">toolbar</td>
+					<td style="padding: 10px">Shows (1) or hides (0) the toolbar</td>
+					<td style="padding: 10px">#toolbar=0</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">navpanes</td>
+					<td style="padding: 10px">
+						Shows (1) or hides (0) the navigation panes
+					</td>
+					<td style="padding: 10px">#navpanes=0</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">scrollbar</td>
+					<td style="padding: 10px">Shows (1) or hides (0) the scrollbars</td>
+					<td style="padding: 10px">#scrollbar=0</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">view</td>
+					<td style="padding: 10px">
+						Sets the view mode (Fit, FitH, FitV, etc.)
+					</td>
+					<td style="padding: 10px">#view=FitH</td>
+				</tr>
+			</table>
+			<p>You can combine multiple parameters using the ampersand (&) symbol:</p>
+			<div class="code max-w40">
+				<code> document.pdf#page=3&zoom=100&toolbar=0 </code>
+			</div>
+			<br />
+			<h3>Using Google Docs Viewer</h3>
+			<p>
+				For better cross-browser compatibility, you can use Google Docs Viewer
+				to display PDFs:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;iframe
+					<br />
+					&nbsp;&nbsp;src="https://docs.google.com/viewer?url=https://example.com/document.pdf&embedded=true"
+					<br />
+					&nbsp;&nbsp;width="800"
+					<br />
+					&nbsp;&nbsp;height="600"
+					<br />
+					&nbsp;&nbsp;frameborder="0"
+					<br />
+					&gt;
+					<br />
+					&lt;/iframe&gt;
+				</code>
+			</div>
+			<p>
+				Note: The PDF must be accessible via a public URL for Google Docs Viewer
+				to display it.
+			</p>
+			<br />
+			<h3>Using PDF.js</h3>
+			<p>
+				PDF.js is a JavaScript library developed by Mozilla that allows you to
+				display PDFs in web browsers without relying on native PDF support:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Include PDF.js --&gt;
+					<br />
+					&lt;script
+					src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"&gt;&lt;/script&gt;
+					<br /><br />
+					&lt;!-- PDF.js viewer container --&gt;
+					<br />
+					&lt;div id="pdf-container" style="width: 800px; height:
+					600px;"&gt;&lt;/div&gt;
+					<br /><br />
+					&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;// Set the worker source
+					<br />
+					&nbsp;&nbsp;pdfjsLib.GlobalWorkerOptions.workerSrc =
+					'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+					<br /><br />
+					&nbsp;&nbsp;// Load the PDF
+					<br />
+					&nbsp;&nbsp;const loadingTask = pdfjsLib.getDocument('document.pdf');
+					<br />
+					&nbsp;&nbsp;loadingTask.promise.then(function(pdf) {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// Get the first page
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;pdf.getPage(1).then(function(page) {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const scale = 1.5;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const viewport =
+					page.getViewport({ scale: scale });
+					<br /><br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Prepare canvas
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const container =
+					document.getElementById('pdf-container');
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const canvas =
+					document.createElement('canvas');
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const context =
+					canvas.getContext('2d');
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;canvas.width = viewport.width;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;canvas.height = viewport.height;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;container.appendChild(canvas);
+					<br /><br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Render PDF page
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const renderContext = {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;canvasContext:
+					context,
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewport: viewport
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page.render(renderContext);
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;});
+					<br />
+					&nbsp;&nbsp;});
+					<br />
+					&lt;/script&gt;
+				</code>
+			</div>
+			<p>
+				PDF.js provides more control over how PDFs are displayed and works in
+				browsers that don't natively support PDF embedding.
+			</p>
+			<br />
+			<h3>Responsive PDF Embedding</h3>
+			<p>To make embedded PDFs responsive, you can use CSS:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;style&gt;
+					<br />
+					&nbsp;&nbsp;.pdf-container {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;height: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 129.4%; /* Aspect ratio for A4
+					PDF */
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;.pdf-container object,
+					<br />
+					&nbsp;&nbsp;.pdf-container embed,
+					<br />
+					&nbsp;&nbsp;.pdf-container iframe {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;top: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;left: 0;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/style&gt;
+					<br /><br />
+					&lt;div class="pdf-container"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;object data="document.pdf" type="application/pdf"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Your browser does not support PDFs.
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="document.pdf"&gt;Download the
+					PDF&lt;/a&gt;.&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/object&gt;
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Accessibility Considerations</h3>
+			<p>When embedding PDFs, consider these accessibility best practices:</p>
+			<ul>
+				<li>Always provide a download link as an alternative</li>
+				<li>
+					Ensure the PDF itself is accessible (contains proper headings, alt
+					text for images, etc.)
+				</li>
+				<li>
+					Add a title attribute to iframe or object elements describing the PDF
+					content
+				</li>
+				<li>
+					Consider providing a text summary of the PDF content on the page
+				</li>
+				<li>
+					Test the embedded PDF with screen readers and keyboard navigation
+				</li>
+			</ul>
+			<br />
+			<h3>Security Considerations</h3>
+			<p>When embedding PDFs, be aware of these security considerations:</p>
+			<ul>
+				<li>Only embed PDFs from trusted sources</li>
+				<li>
+					Consider using the sandbox attribute with iframes to restrict
+					capabilities
+				</li>
+				<li>Be cautious when embedding PDFs that contain JavaScript</li>
+				<li>
+					Ensure that sensitive PDFs are properly protected and not publicly
+					accessible
+				</li>
+			</ul>
+			<br />
+			<h3>Browser Compatibility</h3>
+			<p>PDF embedding support varies across browsers:</p>
+			<ul>
+				<li>Chrome, Firefox, and Edge have built-in PDF viewers</li>
+				<li>Safari may open PDFs in a separate application or viewer</li>
+				<li>Mobile browsers have varying levels of support</li>
+				<li>Older browsers may not support PDF embedding at all</li>
+			</ul>
+			<p>
+				Always provide fallback options for browsers that don't support PDF
+				embedding.
+			</p>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch16-video/video.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch18-embedYoutubeVideo/embedyoutubevideo.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>
