@@ -7,26 +7,168 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
-			<h2>Ch11 - Lists.</h2>
-
+		<main class="main-scope" id="top">
+			<h1>Chapter 11 - Lists in HTML</h1>
+			<h2>Understanding HTML Lists</h2>
 			<p>
-				Coming Soon.... <br />
-				Please goto chapter 12 - Tables as it is available.
+				Lists are essential HTML elements used to group related items and create
+				structured content. HTML provides three types of lists: unordered lists
+				(ul), ordered lists (ol), and description lists (dl). Each type serves
+				different purposes and can be styled in various ways.
 			</p>
-			<br />
 
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
+			<h3>Unordered Lists (UL)</h3>
+			<p>
+				Unordered lists are used when the order of items doesn't matter. Each
+				item is marked with a bullet point by default:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;ul&gt; &lt;li&gt;First item&lt;/li&gt; &lt;li&gt;Second
+					item&lt;/li&gt; &lt;li&gt;Third item&lt;/li&gt; &lt;/ul&gt;
+				</code>
+			</div>
+			<p>Example:</p>
+			<ul>
+				<li>Apples</li>
+				<li>Bananas</li>
+				<li>Oranges</li>
+			</ul>
 
-			<a href="../ch10-Marquee/marquee.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
+			<h3>Ordered Lists (OL)</h3>
+			<p>
+				Ordered lists are used when the sequence matters. Items are
+				automatically numbered:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;ol&gt; &lt;li&gt;First step&lt;/li&gt; &lt;li&gt;Second
+					step&lt;/li&gt; &lt;li&gt;Third step&lt;/li&gt; &lt;/ol&gt;
+				</code>
+			</div>
+			<p>Example:</p>
+			<ol>
+				<li>Mix the ingredients</li>
+				<li>Bake for 20 minutes</li>
+				<li>Let it cool</li>
+			</ol>
 
-			<a href="../ch12-tables/tables.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Description Lists (DL)</h3>
+			<p>Description lists pair terms with their descriptions:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;dl&gt; &lt;dt&gt;HTML&lt;/dt&gt; &lt;dd&gt;HyperText Markup
+					Language&lt;/dd&gt; &lt;dt&gt;CSS&lt;/dt&gt; &lt;dd&gt;Cascading Style
+					Sheets&lt;/dd&gt; &lt;/dl&gt;
+				</code>
+			</div>
+			<p>Example:</p>
+			<dl>
+				<dt>HTML</dt>
+				<dd>
+					HyperText Markup Language - The standard markup language for web pages
+				</dd>
+				<dt>CSS</dt>
+				<dd>Cascading Style Sheets - The language used to style web pages</dd>
+			</dl>
+
+			<h3>Nested Lists</h3>
+			<p>Lists can be nested inside other lists:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;ul&gt; &lt;li&gt;Main item 1 &lt;ul&gt; &lt;li&gt;Sub item
+					1.1&lt;/li&gt; &lt;li&gt;Sub item 1.2&lt;/li&gt; &lt;/ul&gt;
+					&lt;/li&gt; &lt;li&gt;Main item 2&lt;/li&gt; &lt;/ul&gt;
+				</code>
+			</div>
+			<p>Example:</p>
+			<ul>
+				<li>
+					Front-end Development
+					<ul>
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>JavaScript</li>
+					</ul>
+				</li>
+				<li>
+					Back-end Development
+					<ul>
+						<li>Python</li>
+						<li>Node.js</li>
+						<li>PHP</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>List Attributes</h3>
+			<ul>
+				<li><strong>type</strong> - For ordered lists (1, A, a, I, i)</li>
+				<li><strong>start</strong> - Starting number for ordered lists</li>
+				<li><strong>reversed</strong> - Reverses the order of numbers</li>
+				<li><strong>value</strong> - Sets the number for a specific item</li>
+			</ul>
+
+			<h3>Styling Lists with CSS</h3>
+			<div class="code max-w40">
+				<code>
+					ul { list-style-type: square; /* Changes bullet style */ padding-left:
+					20px; /* Adjusts indentation */ } ol { list-style-type: lower-roman;
+					/* Changes number style */ counter-reset: item; /* For custom counters
+					*/ } li { margin-bottom: 10px; /* Adds spacing between items */ }
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Use semantic meaning</strong> - Choose the right list type for
+					your content
+				</li>
+				<li>
+					<strong>Keep lists focused</strong> - Each list should group related
+					items
+				</li>
+				<li>
+					<strong>Maintain consistency</strong> - Use similar structure within
+					lists
+				</li>
+				<li>
+					<strong>Consider accessibility</strong> - Lists help screen readers
+					understand content structure
+				</li>
+				<li>
+					<strong>Style appropriately</strong> - Use CSS to enhance visual
+					presentation
+				</li>
+			</ul>
+
+			<h3>Common Use Cases</h3>
+			<ol>
+				<li>Navigation menus</li>
+				<li>Feature lists</li>
+				<li>Step-by-step instructions</li>
+				<li>Site maps</li>
+				<li>Product specifications</li>
+				<li>FAQ sections</li>
+				<li>Table of contents</li>
+			</ol>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch10-Marquee/marquee.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch12-tables/tables.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

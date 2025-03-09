@@ -1,29 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ch-9 Images</title>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <main class="main-scope" id="#top">
-            <h2>Ch9 - Images.</h2>
-            <p>
-                Coming Soon....
-                <br>
-                Please goto chapter 12 - Tables as it is available.
-            </p>
-            <br>
-            <a href="../index.html">
-                <button class="go-btn">Back to HOME PAGE</button>
-            </a>
-            <a href="../ch8-emaillinks/emaillinks.html">
-                <button class="prev-ch">Previous chapter</button>
-            </a>
-            <a href="../ch10-Marquee/marquee.html">
-                <button class="next-ch">Next chapter</button>
-            </a>
-        </main>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-9 Images</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="top">
+			<h1>Chapter 9 - Images in HTML</h1>
+			<h2>Understanding HTML Images</h2>
+			<p>
+				Images are essential elements in web design, making content more
+				engaging and informative. HTML provides the img element to embed images
+				into web pages, along with various attributes to control how images are
+				displayed and to provide alternative text for accessibility.
+			</p>
+
+			<h3>Basic Image Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;img src="path/to/image.jpg" alt="Description of image"&gt;
+				</code>
+			</div>
+
+			<h3>Essential Image Attributes</h3>
+			<ul>
+				<li><strong>src</strong> - The source URL of the image (required)</li>
+				<li>
+					<strong>alt</strong> - Alternative text description (required for
+					accessibility)
+				</li>
+				<li><strong>width</strong> - Image width in pixels</li>
+				<li><strong>height</strong> - Image height in pixels</li>
+				<li>
+					<strong>loading</strong> - Controls image loading behavior (lazy,
+					eager)
+				</li>
+			</ul>
+
+			<h3>Image File Types</h3>
+			<ul>
+				<li>
+					<strong>JPEG/JPG</strong> - Best for photographs and complex images
+				</li>
+				<li>
+					<strong>PNG</strong> - Best for images with transparency or text
+				</li>
+				<li><strong>GIF</strong> - Best for simple animations</li>
+				<li><strong>SVG</strong> - Best for logos and icons (scalable)</li>
+				<li><strong>WebP</strong> - Modern format with better compression</li>
+			</ul>
+
+			<h3>Responsive Images</h3>
+			<p>Make images responsive using the srcset and sizes attributes:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;img src="small.jpg" srcset="small.jpg 300w, medium.jpg 600w,
+					large.jpg 900w" sizes="(max-width: 500px) 300px, (max-width: 900px)
+					600px, 900px" alt="Responsive image example"&gt;
+				</code>
+			</div>
+
+			<h3>Image as a Link</h3>
+			<p>Wrap an image in an anchor tag to make it clickable:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;a href="large-version.jpg"&gt; &lt;img src="thumbnail.jpg"
+					alt="Click to view larger image" width="150" height="150"&gt;
+					&lt;/a&gt;
+				</code>
+			</div>
+
+			<h3>Figure and Figcaption</h3>
+			<p>Use figure and figcaption elements for images with captions:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;figure&gt; &lt;img src="example.jpg" alt="Example image"&gt;
+					&lt;figcaption&gt; This is a caption for the image &lt;/figcaption&gt;
+					&lt;/figure&gt;
+				</code>
+			</div>
+
+			<h3>Example with Figure</h3>
+			<figure>
+				<img
+					src="sample-image.jpg"
+					alt="A sample image showing figure and figcaption usage"
+					width="300"
+					height="200" />
+				<figcaption>
+					This is an example of an image with a caption using figure and
+					figcaption elements
+				</figcaption>
+			</figure>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Always use alt text</strong> - Crucial for accessibility
+				</li>
+				<li>
+					<strong>Optimize image sizes</strong> - Balance quality and load time
+				</li>
+				<li>
+					<strong>Choose appropriate formats</strong> - Use the right format for
+					each use case
+				</li>
+				<li>
+					<strong>Specify dimensions</strong> - Helps prevent layout shifts
+				</li>
+				<li>
+					<strong>Use responsive images</strong> - For better mobile experience
+				</li>
+				<li>
+					<strong>Compress images</strong> - Reduce file size without losing
+					quality
+				</li>
+				<li>
+					<strong>Consider lazy loading</strong> - Improve initial page load
+					time
+				</li>
+			</ul>
+
+			<h3>Common Use Cases</h3>
+			<ol>
+				<li>Product photos in e-commerce</li>
+				<li>Blog post featured images</li>
+				<li>Company logos and branding</li>
+				<li>Background images</li>
+				<li>Image galleries</li>
+				<li>User avatars and profiles</li>
+				<li>Infographics and diagrams</li>
+			</ol>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch8-emaillinks/emaillinks.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch10-Marquee/marquee.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
+		</main>
+		<script src="../script.js"></script>
+	</body>
 </html>

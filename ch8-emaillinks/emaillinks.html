@@ -7,23 +7,121 @@
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
-        <main class="main-scope" id="#top">
-            <h2>Ch8 - Email Links.</h2>
+        <main class="main-scope" id="top">
+            <h1>Chapter 8 - Email Links in HTML</h1>
+            <h2>Understanding Email Links</h2>
             <p>
-                Coming Soon....
-                <br>
-                Please goto chapter 12 - Tables as it is available.
+                Email links, also known as mailto links, allow users to quickly open their default email client 
+                with a pre-configured email. These links can include not just the recipient's email address, 
+                but also the subject line, CC recipients, BCC recipients, and even the email body.
             </p>
-            <br>
-            <a href="../index.html">
-                <button class="go-btn">Back to HOME PAGE</button>
-            </a>
-            <a href="../ch7-links/links.html">
-                <button class="prev-ch">Previous chapter</button>
-            </a>
-            <a href="../ch9-images/images.html">
-                <button class="next-ch">Next chapter</button>
-            </a>
+
+            <h3>Basic Email Link Syntax</h3>
+            <div class="code max-w40">
+                <code>
+                    &lt;a href="mailto:example@email.com"&gt;Send email&lt;/a&gt;
+                </code>
+            </div>
+
+            <h3>Adding Subject Line</h3>
+            <p>
+                You can pre-fill the subject line using the subject parameter:
+            </p>
+            <div class="code max-w40">
+                <code>
+                    &lt;a href="mailto:example@email.com?subject=Website%20Inquiry"&gt;
+                        Contact Support
+                    &lt;/a&gt;
+                </code>
+            </div>
+
+            <h3>Adding CC and BCC Recipients</h3>
+            <p>
+                Include additional recipients using cc and bcc parameters:
+            </p>
+            <div class="code max-w40">
+                <code>
+                    &lt;a href="mailto:primary@email.com?cc=copy@email.com&amp;bcc=secret@email.com"&gt;
+                        Send email with CC and BCC
+                    &lt;/a&gt;
+                </code>
+            </div>
+
+            <h3>Pre-filling Email Body</h3>
+            <p>
+                Add pre-written content to the email body using the body parameter:
+            </p>
+            <div class="code max-w40">
+                <code>
+                    &lt;a href="mailto:example@email.com?subject=Hello&amp;body=Hi%20there%2C%0A%0AI%20wanted%20to%20reach%20out..."&gt;
+                        Send pre-written email
+                    &lt;/a&gt;
+                </code>
+            </div>
+
+            <h3>URL Encoding</h3>
+            <p>
+                Special characters in mailto links must be URL encoded:
+                <ul>
+                    <li>Space = %20</li>
+                    <li>Line break = %0A</li>
+                    <li>Question mark = %3F</li>
+                    <li>Ampersand = %26</li>
+                    <li>Equal sign = %3D</li>
+                </ul>
+            </p>
+
+            <h3>Live Examples</h3>
+            <p>
+                Click these examples to see email links in action:
+            </p>
+            <ul>
+                <li>
+                    <a href="mailto:example@email.com">Basic email link</a>
+                </li>
+                <li>
+                    <a href="mailto:example@email.com?subject=Website%20Feedback">Email with subject</a>
+                </li>
+                <li>
+                    <a href="mailto:example@email.com?subject=Hello&body=Hi%20there%2C%0A%0AJust%20wanted%20to%20say%20hello!">
+                        Email with subject and body
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li><strong>Use clear link text</strong> - Make it obvious the link will open an email client</li>
+                <li><strong>Consider fallbacks</strong> - Not all users have email clients configured</li>
+                <li><strong>URL encode parameters</strong> - Ensure special characters work correctly</li>
+                <li><strong>Keep it simple</strong> - Don't overload with too many parameters</li>
+                <li><strong>Protect against spam</strong> - Consider obfuscating email addresses</li>
+            </ul>
+
+            <h3>Common Use Cases</h3>
+            <ol>
+                <li>Contact forms and support links</li>
+                <li>Feedback buttons</li>
+                <li>Report issue links</li>
+                <li>Newsletter subscriptions</li>
+                <li>Business contact information</li>
+            </ol>
+
+            <div class="nav-container">
+                <a href="#top">
+                    <button class="topbtn">Go to top</button>
+                </a>
+                <a href="../index.html">
+                    <button class="go-btn">Back to HOME PAGE</button>
+                </a>
+                <a href="../ch7-links/links.html">
+                    <button class="prev-ch">Previous chapter</button>
+                </a>
+                <a href="../ch9-images/images.html">
+                    <button class="next-ch">Next chapter</button>
+                </a>
+            </div>
         </main>
+        <script src="../script.js"></script>
     </body>
 </html>

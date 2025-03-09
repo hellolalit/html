@@ -1,27 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
+	<head>
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ch12 - Tables</title>
-        <link rel="stylesheet" type="text/css" href="/style.css">
-    </head>
-    <body>
-        <main class="main-scope">
-            <h1>Ch12 - Tables in Html5</h1>
+		<title>Ch-12 Tables</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="top">
+			<h1>Chapter 12 - Tables in HTML</h1>
+			<h2>Understanding HTML Tables</h2>
+			<p>
+				HTML tables allow you to organize data into rows and columns, making it
+				easier to present structured information. Tables should be used for
+				tabular data only, not for layout purposes. Modern web design uses CSS
+				Grid and Flexbox for layout.
+			</p>
 
-            <br />
-            <a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
+			<h3>Basic Table Structure</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;table&gt; &lt;tr&gt; &lt;th&gt;Header 1&lt;/th&gt;
+					&lt;th&gt;Header 2&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Data
+					1&lt;/td&gt; &lt;td&gt;Data 2&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
+				</code>
+			</div>
 
-			<a href="../ch5-formatting/formatting.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
+			<h3>Table Elements</h3>
+			<ul>
+				<li><strong>table</strong> - Container for the table</li>
+				<li><strong>tr</strong> - Table row</li>
+				<li><strong>th</strong> - Table header cell</li>
+				<li><strong>td</strong> - Table data cell</li>
+				<li><strong>thead</strong> - Groups header content</li>
+				<li><strong>tbody</strong> - Groups body content</li>
+				<li><strong>tfoot</strong> - Groups footer content</li>
+				<li><strong>caption</strong> - Table caption/title</li>
+			</ul>
 
-			<a href="../ch7-links/links.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
-        </main>
-    </body>
+			<h3>Example Table</h3>
+			<table border="1">
+				<caption>
+					Web Development Technologies
+				</caption>
+				<thead>
+					<tr>
+						<th>Technology</th>
+						<th>Type</th>
+						<th>Purpose</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>HTML</td>
+						<td>Markup</td>
+						<td>Structure</td>
+					</tr>
+					<tr>
+						<td>CSS</td>
+						<td>Style</td>
+						<td>Presentation</td>
+					</tr>
+					<tr>
+						<td>JavaScript</td>
+						<td>Programming</td>
+						<td>Interactivity</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Essential web technologies</td>
+					</tr>
+				</tfoot>
+			</table>
+
+			<h3>Table Attributes</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;table&gt; &lt;tr&gt; &lt;td colspan="2"&gt;Spans 2
+					columns&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td rowspan="2"&gt;Spans
+					2 rows&lt;/td&gt; &lt;td&gt;Data&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
+				</code>
+			</div>
+
+			<h3>Cell Spanning</h3>
+			<table border="1">
+				<tr>
+					<td colspan="2">Header spanning two columns</td>
+				</tr>
+				<tr>
+					<td>Column 1</td>
+					<td>Column 2</td>
+				</tr>
+				<tr>
+					<td rowspan="2">Row spanning two rows</td>
+					<td>Row 1</td>
+				</tr>
+				<tr>
+					<td>Row 2</td>
+				</tr>
+			</table>
+
+			<h3>Styling Tables with CSS</h3>
+			<div class="code max-w40">
+				<code>
+					table { border-collapse: collapse; width: 100%; } th, td { border: 1px
+					solid #ddd; padding: 8px; text-align: left; } th { background-color:
+					#f2f2f2; } tr:nth-child(even) { background-color: #f9f9f9; }
+				</code>
+			</div>
+
+			<h3>Responsive Tables</h3>
+			<p>Make tables responsive by wrapping them in a container:</p>
+			<div class="code max-w40">
+				<code> .table-container { overflow-x: auto; max-width: 100%; } </code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li><strong>Use tables for data</strong> - Not for layout</li>
+				<li><strong>Include headers</strong> - Makes tables more accessible</li>
+				<li><strong>Use caption</strong> - Provides context</li>
+				<li><strong>Keep it simple</strong> - Avoid complex nested tables</li>
+				<li><strong>Consider mobile</strong> - Make tables responsive</li>
+				<li><strong>Use semantic markup</strong> - thead, tbody, tfoot</li>
+				<li>
+					<strong>Add proper spacing</strong> - Makes content more readable
+				</li>
+			</ul>
+
+			<h3>Common Use Cases</h3>
+			<ol>
+				<li>Data comparison</li>
+				<li>Financial reports</li>
+				<li>Product specifications</li>
+				<li>Schedule/timetables</li>
+				<li>Statistical data</li>
+				<li>Pricing tables</li>
+				<li>Sports scores</li>
+			</ol>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch11-Lists/lists.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch13-forms/forms.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
+		</main>
+		<script src="../script.js"></script>
+	</body>
 </html>

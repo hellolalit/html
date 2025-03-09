@@ -7,26 +7,134 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
-			<h2>Ch10 - Marquee.</h2>
-
+		<main class="main-scope" id="top">
+			<h1>Chapter 10 - Marquee and Modern Alternatives</h1>
+			<h2>Understanding Marquee</h2>
 			<p>
-				Coming Soon.... <br />
-				Please goto chapter 12 - Tables as it is available.
+				The marquee element was historically used to create scrolling text or
+				content. However, it's important to note that the marquee element is
+				deprecated and should not be used in modern web development. Instead,
+				we'll learn about modern alternatives using CSS animations and
+				JavaScript.
 			</p>
-			<br />
 
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
+			<h3>Historical Marquee Usage (Not Recommended)</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;marquee&gt;This text will scroll from right to
+					left&lt;/marquee&gt;
+				</code>
+			</div>
 
-			<a href="../ch9-images/images.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
+			<h3>Modern Alternative: CSS Animation</h3>
+			<p>Use CSS animations for scrolling text effects:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;div class="scroll-text"&gt; This text will scroll smoothly
+					&lt;/div&gt; &lt;style&gt; .scroll-text { animation: scroll-left 20s
+					linear infinite; white-space: nowrap; } @keyframes scroll-left { 0% {
+					transform: translateX(100%); } 100% { transform: translateX(-100%); }
+					} &lt;/style&gt;
+				</code>
+			</div>
 
-			<a href="../ch11-Lists/lists.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>CSS Animation Properties</h3>
+			<ul>
+				<li>
+					<strong>animation-name</strong> - Name of the @keyframes animation
+				</li>
+				<li>
+					<strong>animation-duration</strong> - How long the animation takes
+				</li>
+				<li>
+					<strong>animation-timing-function</strong> - Speed curve of the
+					animation
+				</li>
+				<li>
+					<strong>animation-iteration-count</strong> - Number of times to run
+				</li>
+				<li><strong>animation-direction</strong> - Direction of animation</li>
+			</ul>
+
+			<h3>Modern Alternative: JavaScript</h3>
+			<p>Create more interactive scrolling effects with JavaScript:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;div id="scroll-container"&gt; &lt;p id="scroll-text"&gt;This will
+					scroll smoothly&lt;/p&gt; &lt;/div&gt; &lt;script&gt; const text =
+					document.getElementById('scroll-text'); let position =
+					window.innerWidth; function animate() { position--;
+					text.style.transform = `translateX(${position}px)`; if (position <
+					-text.offsetWidth) { position = window.innerWidth; }
+					requestAnimationFrame(animate); } animate(); &lt;/script&gt;
+				</code>
+			</div>
+
+			<h3>CSS Transform and Transition</h3>
+			<p>For simpler hover effects that might have used marquee:</p>
+			<div class="code max-w40">
+				<code>
+					.hover-text { transition: transform 0.3s ease; } .hover-text:hover {
+					transform: translateX(10px); }
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Avoid marquee element</strong> - It's deprecated and not
+					accessible
+				</li>
+				<li>
+					<strong>Use CSS animations</strong> - For simple scrolling effects
+				</li>
+				<li>
+					<strong>Consider JavaScript</strong> - For more complex animations
+				</li>
+				<li>
+					<strong>Respect user preferences</strong> - Check
+					prefers-reduced-motion
+				</li>
+				<li>
+					<strong>Keep it subtle</strong> - Don't overuse animation effects
+				</li>
+				<li>
+					<strong>Ensure accessibility</strong> - Provide pause/stop controls
+				</li>
+			</ul>
+
+			<h3>Modern Use Cases</h3>
+			<ol>
+				<li>News tickers</li>
+				<li>Announcement banners</li>
+				<li>Social media feeds</li>
+				<li>Stock tickers</li>
+				<li>Event countdowns</li>
+			</ol>
+
+			<h3>Accessibility Considerations</h3>
+			<div class="code max-w40">
+				<code>
+					@media (prefers-reduced-motion: reduce) { .scroll-text { animation:
+					none; } }
+				</code>
+			</div>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch9-images/images.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch11-Lists/lists.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

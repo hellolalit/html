@@ -7,210 +7,118 @@
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
-        <main class="main-scope" id="#top">
-            <h1>Chapter 7 - Links in HTML5</h1>
-            <br>
-            <h2>What is Link?</h2>
+        <main class="main-scope" id="top">
+            <h1>Chapter 7 - Links in HTML</h1>
+            <h2>Understanding HTML Links</h2>
             <p>
-                Link is a reference to another document or resource. It is a way to
-				connect web pages together. Links are the most important part of HTML5.
-				Without it, the internet could not be created. Links in HTML5 are
-				generally created using the "a" tag and it's attribute "href". Here's an
-				example shown below -
+                Links are the foundation of the World Wide Web, allowing users to navigate between web pages and resources. In HTML, links are created using the "a" (anchor) tag with its "href" attribute. Without links, the internet as we know it would not exist.
             </p>
-            <br>
+
+            <h3>Basic Link Syntax</h3>
             <div class="code max-w40">
                 <code>
-                    <strong> &lt;a href="https://google.com"&gt;</strong>
-                    Google
-                    <strong> &lt;/a&gt;</strong>
+                    &lt;a href="https://google.com"&gt;Google&lt;/a&gt;
                 </code>
             </div>
-            <br>
-            <p>
-                As we saw how you can create a Link in HTML5. Now let's understand what
-				does the
-                <strong>attribute "href" does</strong>
-                and inside the
-                <strong>a</strong>
-                tag why
-                <strong>"Google"</strong>
-                is written?
+
+            <h3>The HREF Attribute</h3>
+            <p id="href_attribute">
+                The <em>href</em> (Hypertext Reference) attribute specifies the destination of a link. It can point to:
+                <ul>
+                    <li>Web pages</li>
+                    <li>Images</li>
+                    <li>Videos</li>
+                    <li>Documents</li>
+                    <li>Sections within the same page</li>
+                </ul>
             </p>
-            <br>
-            <h3 id="href_attribute">The "href" attribute -</h3>
+
+            <h3>The Target Attribute</h3>
             <p>
-                <em>"href"</em>
-                stands for
-                <strong>Hypertext Reference.</strong>
-                It is
-				used to specify the link of a web page. The value of the "href"
-				attribute is the URL of the page you want to link to. The URL can be a
-				web page, an image, a video, a sound file, or any other file or link.
-            </p>
-            <br>
-            <h3>Why "Google" was written inside "a" tag? -</h3>
-            <p>
-                <em>"Google"</em>
-                was written because we wanted to redirect to
-                <em>google.com website.</em>
-                So, we have to write only those things
-				which indicates where the URL inside "href" will redirect the user. For
-				example, here google.com in this example above.
-                <br>
-                <br>
-            </p>
-            <h3>The "target" attrubute -</h3>
-            <p>
-                The
-                <em>"target"</em>
-                attribute specifies where to open the linked
-				document. It controls whether to open the link in same tab, new tab or a
-				specific frame. The value of the "target" attribute can be one of the
-				following values:
-                <br>
+                The <em>target</em> attribute controls how the linked content is displayed. Common values include:
                 <ul>
                     <li>
-                        <strong>_blank</strong>
-                        (Opens the linked document in a new window or tab.),
+                        <strong>_blank</strong> - Opens in a new window/tab
                     </li>
                     <li>
-                        <strong>_self</strong>
-                        (Opens the linked document in the same frame or window as the link. {Default behavior}),
+                        <strong>_self</strong> - Opens in the same frame (default)
                     </li>
                     <li>
-                        <strong>_parent</strong>
-                        (Opens the linked document in the parent frame.),
+                        <strong>_parent</strong> - Opens in the parent frame
                     </li>
                     <li>
-                        <strong>_top</strong>
-                        (Opens the linked document in the full body of the window.),
+                        <strong>_top</strong> - Opens in the full window body
                     </li>
                     <li>
-                        <strong>framename</strong>
-                        (Opens the linked document in a specified frame. The frame's name is specified in the attribute.).
+                        <strong>framename</strong> - Opens in a specified frame
                     </li>
                 </ul>
             </p>
+
+            <h3>The Title Attribute</h3>
             <p>
-                For more details please visit
-                <a href="https://www.geeksforgeeks.org/html-links/" target="_blank">
-                    Geeksforgeeks HTML Links
-                </a
-				>
+                The <em>title</em> attribute provides additional information about the link, displayed when users hover over it. Example:
             </p>
-            <br>
-            <h3>The "title" attrubute -</h3>
+            <div class="code max-w40">
+                <code>
+                    &lt;a href="https://startpage.com" 
+                       title="Privacy-focused search engine" 
+                       target="_blank"&gt;
+                        Startpage
+                    &lt;/a&gt;
+                </code>
+            </div>
+
+            <h3>Local Links (Page Sections)</h3>
             <p>
-                The
-                <em>"title"</em>
-                attribute specifies extra information about the
-				linked document. The value of the "title" attribute can be any text.
-				When you move the mouse over the link, the title text will be displayed.
-				(When user hovers on the link, the title is shown.)
+                Local links allow navigation to specific sections within the same page using IDs:
             </p>
-            <h3>Example -</h3>
+            <div class="code max-w40">
+                <code>
+                    &lt;!-- Link to section --&gt;
+                    &lt;a href="#section-id"&gt;Go to Section&lt;/a&gt;
+                    
+                    &lt;!-- Target section --&gt;
+                    &lt;h2 id="section-id"&gt;Section Title&lt;/h2&gt;
+                </code>
+            </div>
+
+            <h3>Linking Images</h3>
             <p>
-                <a href="https://startpage.com" title="Startpage.com" target="_blank">
-                    Click here
-                </a>
-                to visit privacy focused search engine Startpage which is best
-				alternative of Google.com as it gives same result as Google but without
-				tracking you.
+                Images can be made clickable by wrapping them in an anchor tag:
             </p>
-            <br>
-            <h2>How to go to a particular area of a webpage (also know as Local Links)?</h2>
-            <p>
-                When we want the user to scroll to a particular
-                <em>
-                    <u>area/section</u>
-                </em>
-                then we use
-                <strong>Local Links.</strong>
-                Let's understand the
-                <strong>Local Links.</strong>
-                with an example below -
+            <div class="code max-w40">
+                <code>
+                    &lt;a href="image.jpg"&gt;
+                        &lt;img src="thumbnail.jpg" 
+                             alt="Click to view full image"
+                             width="150"
+                             height="150"&gt;
+                    &lt;/a&gt;
+                </code>
+            </div>
+
+            <h3>Example with Image Link</h3>
+            <a href="/ch7-links/logo/manjaro-logo.svg">
+                <img
+                    src="/ch7-links/logo/manjaro-logo.svg"
+                    alt="Manjaro Logo"
+                    width="150"
+                    height="150"
+                >
                 <br>
-                Let consider that above is a area named
-                <strong>"href attribute".</strong>
-                Now, User wants to go to that area and see what  is
-                <strong>"href attribute?"</strong>
-                <br>
-                So, we create a
-                <strong>
-                    <u>Local Link</u>
-                </strong>
-                below which will take to user to that area. Here's how to do it -
-                <br>
-                <br>
-                <div class="code max-w40">
-                    <code>
-                        <strong> &lt;a href="#href_attribute"&gt;</strong>
-                        <br>
-                        The text which is required to write for the link.
-                        <strong>
-                            <br>
-                            &lt;/a&gt;
-                        </strong>
-                    </code>
-                </div>
-                <br>
-                <p>
-                    Now we have seen how to do it. Let's create a real
-                    <strong>Local Link</strong>
-                    below to demo the above example -
-                    <br>
-                    <a href="#href_attribute">
-                        Click here to goto "Href attribute" area.
-                    </a>
-                </p>
-            </p>
-            <br>
-            <h2>How to link an image?</h2>
-            <p>
-                How to
-                <em>create a link</em>
-                which let us to to that specific image?
-                <br>
-                In order to do the above,
-                <em>we need to use "the name of that image file in the href attribute."</em>
-                Then inside that, wrap the Text of the Link inside a
-                <strong>"img"</strong>
-                tag.
-                See the example below -
-                <br>
-                <br>
-                <div class="code max-w40">
-                    <code>
-                        <strong> &lt;a href="/ch7-links/logo/manjaro-logo.svg"&gt;</strong>
-                        <br>
-                        <strong>
-                            &lt;img scr="/ch7-links/logo/manjaro-logo.svg" alt="Manjaro Logo" width="150px" height="150px /&gt;
-                        </strong>
-                        <br>
-                        Click on the image to view it.
-                        <br>
-                        <strong> &lt;/a&gt;</strong>
-                    </code>
-                </div>
-                <br>
-                <p>
-                    As shown in the above example, let us create a real example and see the demo below-
-                </p>
-                <a href="/ch7-links/logo/manjaro-logo.svg">
-                    <img
-                        src="/ch7-links/logo/manjaro-logo.svg"
-                        alt="Manjaro Logo"
-                        width="150px"
-                        height="150px"
-                    >
-                    <br>
-                    Click on the image to view it.
-                </a>
-            </p>
-            
-            <br>
-            <br>
+                Click to view full image
+            </a>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li><strong>Use descriptive text</strong> - Make link text meaningful</li>
+                <li><strong>Consider accessibility</strong> - Add title attributes for context</li>
+                <li><strong>Check links</strong> - Ensure all links work and point to correct destinations</li>
+                <li><strong>Style consistently</strong> - Make links visually distinct</li>
+                <li><strong>Use relative paths</strong> - For internal links within your site</li>
+            </ul>
+
             <div class="nav-container">
                 <a href="#top">
                     <button class="topbtn">Go to top</button>
@@ -226,5 +134,6 @@
                 </a>
             </div>
         </main>
+        <script src="../script.js"></script>
     </body>
 </html>

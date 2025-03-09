@@ -105,3 +105,82 @@ function updateNavigation() {
 
 // Call updateNavigation when the page loads
 document.addEventListener("DOMContentLoaded", updateNavigation);
+
+// Function to verify chapter structure and content
+function verifyChapterStructure(chapterPath) {
+	const chapter = document.querySelector("main");
+	if (!chapter) return false;
+
+	// Check basic structure
+	const hasProperID = chapter.id === "top";
+	const hasH1 = chapter.querySelector("h1");
+	const hasH2 = chapter.querySelector("h2");
+	const hasNavContainer = chapter.querySelector(".nav-container");
+	const hasAllButtons =
+		chapter.querySelectorAll(".nav-container button").length === 4;
+
+	// Check navigation buttons
+	const hasTopButton = chapter.querySelector(".topbtn");
+	const hasHomeButton = chapter.querySelector(".go-btn");
+	const hasPrevButton = chapter.querySelector(".prev-ch");
+	const hasNextButton = chapter.querySelector(".next-ch");
+
+	// Check content sections
+	const hasCodeExamples = chapter.querySelectorAll(".code").length > 0;
+	const hasBestPractices = Array.from(chapter.querySelectorAll("h3")).some(
+		(h) => h.textContent.includes("Best Practices")
+	);
+
+	return {
+		structure: {
+			hasProperID,
+			hasH1,
+			hasH2,
+			hasNavContainer,
+			hasAllButtons,
+		},
+		navigation: {
+			hasTopButton,
+			hasHomeButton,
+			hasPrevButton,
+			hasNextButton,
+		},
+		content: {
+			hasCodeExamples,
+			hasBestPractices,
+		},
+	};
+}
+
+// Function to update chapter navigation
+function updateChapterNavigation() {
+	const main = document.querySelector("main");
+	if (!main) return;
+
+	const currentChapter = getCurrentChapter();
+	if (!currentChapter) return;
+
+	const prevChapter = getPreviousChapter(currentChapter);
+	const nextChapter = getNextChapter(currentChapter);
+
+	// Update navigation buttons
+	const prevButton = main.querySelector(".prev-ch");
+	const nextButton = main.querySelector(".next-ch");
+
+	if (prevButton && prevChapter) {
+		prevButton.closest("a").href = `../ch${
+			prevChapter.id
+		}-${prevChapter.title.toLowerCase()}/${prevChapter.title.toLowerCase()}.html`;
+	}
+
+	if (nextButton && nextChapter) {
+		nextButton.closest("a").href = `../ch${
+			nextChapter.id
+		}-${nextChapter.title.toLowerCase()}/${nextChapter.title.toLowerCase()}.html`;
+	}
+}
+
+// Call updateNavigation when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+	updateChapterNavigation();
+});

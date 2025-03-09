@@ -7,10 +7,9 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
-			<h1>Chapter 14 - Iframes in HTML5</h1>
-			<br />
-			<h2>What is an Iframe?</h2>
+		<main class="main-scope" id="top">
+			<h1>Chapter 14 - Iframes in HTML</h1>
+			<h2>Understanding Inline Frames</h2>
 			<p>
 				An iframe (Inline Frame) is an HTML element that allows you to embed
 				another HTML document within the current document. It creates a window
@@ -18,323 +17,124 @@
 				Iframes are commonly used to embed content from other websites, such as
 				maps, videos, or social media feeds.
 			</p>
-			<br />
+
 			<h3>Basic Iframe Syntax</h3>
 			<div class="code max-w40">
 				<code>
-					<strong
-						>&lt;iframe src="https://www.example.com" width="600"
-						height="400"&gt;&lt;/iframe&gt;</strong
-					>
+					&lt;iframe src="https://www.example.com" width="600" height="400"
+					title="Example Website"&gt; &lt;/iframe&gt;
 				</code>
 			</div>
-			<br />
-			<h3>Iframe Attributes</h3>
-			<p>
-				The iframe element supports several attributes to control its appearance
-				and behavior:
-			</p>
+
+			<h3>Essential Attributes</h3>
 			<ul>
-				<li>
-					<strong>src</strong> - Specifies the URL of the document to embed
-				</li>
-				<li><strong>width</strong> - Specifies the width of the iframe</li>
-				<li><strong>height</strong> - Specifies the height of the iframe</li>
-				<li>
-					<strong>title</strong> - Provides a title for the iframe (important
-					for accessibility)
-				</li>
-				<li>
-					<strong>name</strong> - Specifies a name for the iframe (used as a
-					target for links)
-				</li>
-				<li>
-					<strong>sandbox</strong> - Enables extra restrictions on the content
-					in the iframe
-				</li>
-				<li>
-					<strong>loading</strong> - Specifies whether the iframe should be
-					loaded immediately or when needed (lazy loading)
-				</li>
-				<li>
-					<strong>allow</strong> - Specifies a feature policy for the iframe
-				</li>
-				<li>
-					<strong>allowfullscreen</strong> - Allows the iframe to be displayed
-					in fullscreen mode
-				</li>
+				<li><strong>src</strong> - URL of the document to embed</li>
+				<li><strong>width</strong> - Width of the iframe</li>
+				<li><strong>height</strong> - Height of the iframe</li>
+				<li><strong>title</strong> - Title for accessibility</li>
+				<li><strong>name</strong> - Name for targeting</li>
+				<li><strong>sandbox</strong> - Security restrictions</li>
+				<li><strong>loading</strong> - Loading behavior (lazy/eager)</li>
+				<li><strong>allow</strong> - Feature permissions</li>
 			</ul>
-			<br />
-			<h3>Example: Embedding a Website</h3>
-			<p>Here's an example of embedding a website using an iframe:</p>
+
+			<h3>Security Attributes</h3>
 			<div class="code max-w40">
 				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://www.example.com"
-					<br />
-					&nbsp;&nbsp;width="600"
-					<br />
-					&nbsp;&nbsp;height="400"
-					<br />
-					&nbsp;&nbsp;title="Example Website"
-					<br />
-					&nbsp;&nbsp;loading="lazy"
-					<br />
-					&gt;
-					<br />
-					&nbsp;&nbsp;Your browser does not support iframes.
-					<br />
-					&lt;/iframe&gt;
+					&lt;iframe src="https://example.com" sandbox="allow-scripts
+					allow-same-origin" referrerpolicy="no-referrer" loading="lazy"
+					allow="camera; microphone"&gt; &lt;/iframe&gt;
 				</code>
 			</div>
-			<p>
-				Note: The text between the opening and closing iframe tags is displayed
-				only if the browser doesn't support iframes.
-			</p>
-			<br />
-			<h3>Embedding Local Content</h3>
-			<p>You can also embed local HTML files from your own website:</p>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe src="local-page.html" width="100%"
-					height="300"&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Styling Iframes with CSS</h3>
-			<p>Iframes can be styled using CSS, just like other HTML elements:</p>
-			<div class="code max-w40">
-				<code>
-					&lt;style&gt;
-					<br />
-					&nbsp;&nbsp;iframe {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid #3498db;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 10px;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;margin: 20px 0;
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/style&gt;
-				</code>
-			</div>
-			<br />
+
+			<h3>Sandbox Values</h3>
+			<ul>
+				<li><strong>allow-forms</strong> - Allow form submission</li>
+				<li><strong>allow-scripts</strong> - Allow JavaScript execution</li>
+				<li><strong>allow-same-origin</strong> - Allow same origin access</li>
+				<li><strong>allow-popups</strong> - Allow popups</li>
+				<li><strong>allow-modals</strong> - Allow modal dialogs</li>
+				<li><strong>allow-downloads</strong> - Allow downloads</li>
+			</ul>
+
 			<h3>Responsive Iframes</h3>
-			<p>
-				To make iframes responsive (adapt to different screen sizes), you can
-				use CSS:
-			</p>
+			<p>Make iframes responsive using CSS:</p>
 			<div class="code max-w40">
 				<code>
-					&lt;style&gt;
-					<br />
-					&nbsp;&nbsp;.responsive-iframe-container {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;padding-top: 56.25%; /* 16:9 Aspect Ratio */
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					<br />
-					&nbsp;&nbsp;.responsive-iframe-container iframe {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;top: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;left: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;border: 0;
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/style&gt;
-					<br />
-					<br />
-					&lt;div class="responsive-iframe-container"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;iframe src="https://www.example.com" title="Example
-					Website"&gt;&lt;/iframe&gt;
-					<br />
-					&lt;/div&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Security Considerations: The Sandbox Attribute</h3>
-			<p>
-				The sandbox attribute restricts the capabilities of an iframe's content
-				for security purposes. It can prevent the embedded content from:
-			</p>
-			<ul>
-				<li>Executing JavaScript</li>
-				<li>Submitting forms</li>
-				<li>Opening popup windows</li>
-				<li>Accessing the parent page</li>
-			</ul>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- Most restrictive (blocks everything) --&gt;
-					<br />
-					&lt;iframe src="https://example.com" sandbox&gt;&lt;/iframe&gt;
-					<br /><br />
-					&lt;!-- Allow specific features --&gt;
-					<br />
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://example.com"
-					<br />
-					&nbsp;&nbsp;sandbox="allow-scripts allow-forms"
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<p>Common sandbox values include:</p>
-			<ul>
-				<li><strong>allow-scripts</strong> - Allows JavaScript execution</li>
-				<li><strong>allow-forms</strong> - Allows form submission</li>
-				<li><strong>allow-popups</strong> - Allows popups</li>
-				<li>
-					<strong>allow-same-origin</strong> - Allows the content to be treated
-					as being from the same origin
-				</li>
-				<li>
-					<strong>allow-top-navigation</strong> - Allows the iframe to navigate
-					its top-level browsing context
-				</li>
-			</ul>
-			<br />
-			<h3>Common Uses of Iframes</h3>
-			<h4>1. Embedding Maps</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059353029!2d-74.25986548248684!3d40.69714941680757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1612345678901!5m2!1sen!2sin"
-					<br />
-					&nbsp;&nbsp;width="600"
-					<br />
-					&nbsp;&nbsp;height="450"
-					<br />
-					&nbsp;&nbsp;style="border:0;"
-					<br />
-					&nbsp;&nbsp;allowfullscreen=""
-					<br />
-					&nbsp;&nbsp;loading="lazy"
-					<br />
-					&gt;&lt;/iframe&gt;
+					.iframe-container { position: relative; width: 100%; padding-bottom:
+					56.25%; /* 16:9 Aspect Ratio */ } .iframe-container iframe { position:
+					absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 				</code>
 			</div>
 
-			<h4>2. Embedding Videos</h4>
+			<h3>Fallback Content</h3>
+			<p>Provide fallback content for browsers that don't support iframes:</p>
 			<div class="code max-w40">
 				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;width="560"
-					<br />
-					&nbsp;&nbsp;height="315"
-					<br />
-					&nbsp;&nbsp;src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-					<br />
-					&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write;
-					encrypted-media; gyroscope; picture-in-picture"
-					<br />
-					&nbsp;&nbsp;allowfullscreen
-					<br />
-					&gt;&lt;/iframe&gt;
+					&lt;iframe src="video.html"&gt; &lt;p&gt;Your browser does not support
+					iframes.&lt;/p&gt; &lt;a href="video.html"&gt;Watch the video
+					here&lt;/a&gt; &lt;/iframe&gt;
 				</code>
 			</div>
 
-			<h4>3. Embedding Social Media Content</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- Twitter Tweet --&gt;
-					<br />
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://platform.twitter.com/embed/Tweet.html?id=1234567890123456789"
-					<br />
-					&nbsp;&nbsp;width="550"
-					<br />
-					&nbsp;&nbsp;height="250"
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Limitations and Considerations</h3>
+			<h3>Common Use Cases</h3>
+			<ol>
+				<li>Embedding maps (Google Maps)</li>
+				<li>Social media feeds</li>
+				<li>Video players (YouTube)</li>
+				<li>Payment forms</li>
+				<li>Advertisement spaces</li>
+				<li>External widgets</li>
+				<li>Code examples (CodePen, JSFiddle)</li>
+			</ol>
+
+			<h3>Best Practices</h3>
 			<ul>
 				<li>
-					<strong>Same-Origin Policy</strong> - Browsers restrict interactions
-					between documents from different origins for security reasons
+					<strong>Use title attribute</strong> - Essential for accessibility
+				</li>
+				<li><strong>Apply sandbox restrictions</strong> - Enhance security</li>
+				<li>
+					<strong>Make it responsive</strong> - Adapt to different screen sizes
 				</li>
 				<li>
-					<strong>Performance Impact</strong> - Iframes can slow down page
-					loading, especially with multiple iframes
+					<strong>Provide fallback content</strong> - Handle unsupported cases
 				</li>
 				<li>
-					<strong>SEO Implications</strong> - Search engines may not index
-					content within iframes
+					<strong>Consider loading="lazy"</strong> - Improve page performance
 				</li>
+				<li><strong>Use HTTPS sources</strong> - Ensure secure connections</li>
 				<li>
-					<strong>X-Frame-Options</strong> - Some websites prevent their content
-					from being displayed in iframes
-				</li>
-				<li>
-					<strong>Accessibility</strong> - Always include a title attribute for
-					screen readers
-				</li>
-				<li>
-					<strong>Mobile Responsiveness</strong> - Ensure iframes work well on
-					mobile devices
+					<strong>Limit iframe usage</strong> - Can impact page performance
 				</li>
 			</ul>
-			<br />
-			<h3>HTML5 and Iframes</h3>
-			<p>
-				In HTML5, the iframe element has been improved with new attributes like
-				sandbox and srcdoc. The srcdoc attribute allows you to specify the HTML
-				content directly within the iframe tag:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe srcdoc="&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;p&gt;This is
-					inline HTML content.&lt;/p&gt;" width="300"
-					height="150"&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch13-divspan/divspan.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch15-audio/audio.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Security Considerations</h3>
+			<ul>
+				<li>
+					Always use the sandbox attribute when embedding untrusted content
+				</li>
+				<li>Set appropriate Content Security Policy (CSP) headers</li>
+				<li>Use HTTPS sources to prevent mixed content warnings</li>
+				<li>Be cautious with allow-same-origin in sandbox</li>
+				<li>Consider using srcdoc for static content instead of src</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch13-divspan/divspan.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch15-audio/audio.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>
