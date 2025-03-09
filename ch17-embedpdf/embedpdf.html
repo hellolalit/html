@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-17 Embed PDF</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="top">
+			<h1>Chapter 17 - Embedding PDFs in HTML</h1>
+			<h2>Understanding PDF Embedding</h2>
+			<p>
+				HTML provides several methods to embed PDF documents directly into web
+				pages. This allows users to view PDF content without downloading or
+				opening external applications. We'll explore different approaches and
+				their pros and cons.
+			</p>
+
+			<h3>Using the Object Element</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;object data="document.pdf" type="application/pdf" width="100%"
+					height="600"&gt; &lt;p&gt;Your browser does not support PDFs. &lt;a
+					href="document.pdf"&gt;Download the PDF&lt;/a&gt;.&lt;/p&gt;
+					&lt;/object&gt;
+				</code>
+			</div>
+
+			<h3>Using the Embed Element</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;embed src="document.pdf" type="application/pdf" width="100%"
+					height="600"&gt;
+				</code>
+			</div>
+
+			<h3>Using the Iframe Element</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;iframe src="document.pdf" width="100%" height="600" title="PDF
+					Document"&gt; This browser does not support PDFs. Please download the
+					PDF to view it. &lt;/iframe&gt;
+				</code>
+			</div>
+
+			<h3>Using PDF.js</h3>
+			<p>
+				Mozilla's PDF.js is a JavaScript library that allows you to render PDFs
+				directly in the browser:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;script
+					src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"&gt;&lt;/script&gt;
+					&lt;div id="pdf-container"&gt;&lt;/div&gt; &lt;script&gt;
+					pdfjsLib.getDocument('document.pdf').promise.then(function(pdf) {
+					return pdf.getPage(1); }).then(function(page) { var canvas =
+					document.createElement('canvas');
+					document.getElementById('pdf-container').appendChild(canvas); var
+					context = canvas.getContext('2d'); var viewport =
+					page.getViewport({scale: 1.5}); canvas.height = viewport.height;
+					canvas.width = viewport.width; page.render({ canvasContext: context,
+					viewport: viewport }); }); &lt;/script&gt;
+				</code>
+			</div>
+
+			<h3>Google Docs Viewer</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;iframe
+					src="https://docs.google.com/viewer?url=YOUR_PDF_URL&embedded=true"
+					width="100%" height="600" title="PDF Viewer"&gt; &lt;/iframe&gt;
+				</code>
+			</div>
+
+			<h3>Responsive PDF Embedding</h3>
+			<div class="code max-w40">
+				<code>
+					.pdf-container { position: relative; width: 100%; padding-top:
+					141.42%; /* A4 aspect ratio */ } .pdf-container object { position:
+					absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Always provide fallback content</strong> - For browsers that
+					don't support PDF embedding
+				</li>
+				<li>
+					<strong>Consider file size</strong> - Large PDFs can slow page loading
+				</li>
+				<li>
+					<strong>Use appropriate dimensions</strong> - Set width/height for
+					good UX
+				</li>
+				<li>
+					<strong>Test cross-browser</strong> - PDF support varies by browser
+				</li>
+				<li><strong>Add loading indicators</strong> - For large PDF files</li>
+				<li>
+					<strong>Consider mobile users</strong> - Ensure responsive design
+				</li>
+				<li><strong>Optimize PDFs</strong> - Compress when possible</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Provide alternative text descriptions</li>
+				<li>Ensure keyboard navigation works</li>
+				<li>Include download links as alternatives</li>
+				<li>Use proper ARIA labels</li>
+				<li>Consider screen reader compatibility</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch16-video/video.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch18-embedyoutubevideo/embedyoutubevideo.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
+		</main>
+		<script src="../script.js"></script>
+	</body>
+</html>

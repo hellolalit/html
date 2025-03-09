@@ -7,555 +7,140 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
+		<main class="main-scope" id="top">
 			<h1>Chapter 20 - HTML Entities</h1>
-			<br />
-			<h2>What are HTML Entities?</h2>
+			<h2>Understanding HTML Entities</h2>
 			<p>
 				HTML entities are special codes used to represent characters that have
-				special meaning in HTML or characters that are difficult to type
-				directly. They allow you to display characters that might otherwise be
-				interpreted as HTML code or characters that aren't available on your
-				keyboard.
+				special meaning in HTML or are difficult to type directly. They begin
+				with an ampersand (&) and end with a semicolon (;), allowing you to
+				display characters that might otherwise be interpreted as HTML code or
+				aren't available on your keyboard.
 			</p>
-			<p>
-				HTML entities begin with an ampersand (&) and end with a semicolon (;).
-				They can be written in two forms:
-			</p>
-			<ul>
-				<li>
-					<strong>Named entities</strong>: Use a descriptive name (e.g.,
-					<code>&amp;lt;</code> for the less-than sign)
-				</li>
-				<li>
-					<strong>Numeric entities</strong>: Use the character's Unicode code
-					point, either in decimal (e.g., <code>&amp;#60;</code>) or hexadecimal
-					(e.g., <code>&amp;#x3C;</code>)
-				</li>
-			</ul>
-			<br />
-			<h3>Why Use HTML Entities?</h3>
-			<p>There are several reasons to use HTML entities:</p>
-			<ol>
-				<li>
-					To display reserved characters that have special meaning in HTML (like
-					&lt;, &gt;, &amp;)
-				</li>
-				<li>To display characters not available on your keyboard</li>
-				<li>To display invisible or non-printing characters</li>
-				<li>
-					To ensure proper rendering across different browsers and character
-					encodings
-				</li>
-				<li>To avoid conflicts with character encoding issues</li>
-			</ol>
-			<br />
-			<h3>Essential HTML Entities</h3>
-			<p>Here are the most commonly used HTML entities:</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Character</th>
-					<th style="padding: 10px">Entity Name</th>
-					<th style="padding: 10px">Numeric Entity</th>
-					<th style="padding: 10px">Description</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&lt;</td>
-					<td style="padding: 10px">&amp;lt;</td>
-					<td style="padding: 10px">&amp;#60;</td>
-					<td style="padding: 10px">Less than sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&gt;</td>
-					<td style="padding: 10px">&amp;gt;</td>
-					<td style="padding: 10px">&amp;#62;</td>
-					<td style="padding: 10px">Greater than sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&amp;</td>
-					<td style="padding: 10px">&amp;amp;</td>
-					<td style="padding: 10px">&amp;#38;</td>
-					<td style="padding: 10px">Ampersand</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&quot;</td>
-					<td style="padding: 10px">&amp;quot;</td>
-					<td style="padding: 10px">&amp;#34;</td>
-					<td style="padding: 10px">Double quotation mark</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&apos;</td>
-					<td style="padding: 10px">&amp;apos;</td>
-					<td style="padding: 10px">&amp;#39;</td>
-					<td style="padding: 10px">Single quotation mark (apostrophe)</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&nbsp;</td>
-					<td style="padding: 10px">&amp;nbsp;</td>
-					<td style="padding: 10px">&amp;#160;</td>
-					<td style="padding: 10px">Non-breaking space</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">©</td>
-					<td style="padding: 10px">&amp;copy;</td>
-					<td style="padding: 10px">&amp;#169;</td>
-					<td style="padding: 10px">Copyright symbol</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">®</td>
-					<td style="padding: 10px">&amp;reg;</td>
-					<td style="padding: 10px">&amp;#174;</td>
-					<td style="padding: 10px">Registered trademark</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">™</td>
-					<td style="padding: 10px">&amp;trade;</td>
-					<td style="padding: 10px">&amp;#8482;</td>
-					<td style="padding: 10px">Trademark symbol</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Reserved Characters in HTML</h3>
-			<p>
-				Some characters are reserved in HTML and must be represented as entities
-				to be displayed correctly:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;p&gt;To display the tag &amp;lt;div&amp;gt; in HTML, you need to
-					use entities.&lt;/p&gt;
-				</code>
-			</div>
-			<p>
-				This will display: To display the tag &lt;div&gt; in HTML, you need to
-				use entities.
-			</p>
-			<p>
-				Without entities, the browser would interpret &lt;div&gt; as an actual
-				HTML tag rather than text to display.
-			</p>
-			<br />
-			<h3>Space Entities</h3>
-			<p>
-				HTML collapses multiple spaces into a single space when rendering. To
-				add extra spaces, you can use space entities:
-			</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Entity</th>
-					<th style="padding: 10px">Description</th>
-					<th style="padding: 10px">Width</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&amp;nbsp;</td>
-					<td style="padding: 10px">Non-breaking space</td>
-					<td style="padding: 10px">Width of a normal space</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&amp;ensp;</td>
-					<td style="padding: 10px">En space</td>
-					<td style="padding: 10px">Width of half an em (N)</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&amp;emsp;</td>
-					<td style="padding: 10px">Em space</td>
-					<td style="padding: 10px">Width of one em (M)</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">&amp;thinsp;</td>
-					<td style="padding: 10px">Thin space</td>
-					<td style="padding: 10px">Width of 1/6 of an em</td>
-				</tr>
-			</table>
-			<p>Example of using space entities:</p>
-			<div class="code max-w40">
-				<code>
-					&lt;p&gt;Normal&amp;nbsp;space&lt;/p&gt;
-					<br />
-					&lt;p&gt;En&amp;ensp;space&lt;/p&gt;
-					<br />
-					&lt;p&gt;Em&amp;emsp;space&lt;/p&gt;
-					<br />
-					&lt;p&gt;Thin&amp;thinsp;space&lt;/p&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Currency Symbols</h3>
-			<p>HTML entities can be used to display various currency symbols:</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Symbol</th>
-					<th style="padding: 10px">Entity Name</th>
-					<th style="padding: 10px">Numeric Entity</th>
-					<th style="padding: 10px">Description</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">$</td>
-					<td style="padding: 10px">N/A</td>
-					<td style="padding: 10px">&amp;#36;</td>
-					<td style="padding: 10px">Dollar sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">€</td>
-					<td style="padding: 10px">&amp;euro;</td>
-					<td style="padding: 10px">&amp;#8364;</td>
-					<td style="padding: 10px">Euro sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">£</td>
-					<td style="padding: 10px">&amp;pound;</td>
-					<td style="padding: 10px">&amp;#163;</td>
-					<td style="padding: 10px">Pound sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">¥</td>
-					<td style="padding: 10px">&amp;yen;</td>
-					<td style="padding: 10px">&amp;#165;</td>
-					<td style="padding: 10px">Yen sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">₹</td>
-					<td style="padding: 10px">&amp;inr;</td>
-					<td style="padding: 10px">&amp;#8377;</td>
-					<td style="padding: 10px">Indian Rupee sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">¢</td>
-					<td style="padding: 10px">&amp;cent;</td>
-					<td style="padding: 10px">&amp;#162;</td>
-					<td style="padding: 10px">Cent sign</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Mathematical Symbols</h3>
-			<p>HTML entities can represent various mathematical symbols:</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Symbol</th>
-					<th style="padding: 10px">Entity Name</th>
-					<th style="padding: 10px">Numeric Entity</th>
-					<th style="padding: 10px">Description</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">±</td>
-					<td style="padding: 10px">&amp;plusmn;</td>
-					<td style="padding: 10px">&amp;#177;</td>
-					<td style="padding: 10px">Plus-minus sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">×</td>
-					<td style="padding: 10px">&amp;times;</td>
-					<td style="padding: 10px">&amp;#215;</td>
-					<td style="padding: 10px">Multiplication sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">÷</td>
-					<td style="padding: 10px">&amp;divide;</td>
-					<td style="padding: 10px">&amp;#247;</td>
-					<td style="padding: 10px">Division sign</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">≠</td>
-					<td style="padding: 10px">&amp;ne;</td>
-					<td style="padding: 10px">&amp;#8800;</td>
-					<td style="padding: 10px">Not equal to</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">≤</td>
-					<td style="padding: 10px">&amp;le;</td>
-					<td style="padding: 10px">&amp;#8804;</td>
-					<td style="padding: 10px">Less than or equal to</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">≥</td>
-					<td style="padding: 10px">&amp;ge;</td>
-					<td style="padding: 10px">&amp;#8805;</td>
-					<td style="padding: 10px">Greater than or equal to</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">∞</td>
-					<td style="padding: 10px">&amp;infin;</td>
-					<td style="padding: 10px">&amp;#8734;</td>
-					<td style="padding: 10px">Infinity</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">√</td>
-					<td style="padding: 10px">&amp;radic;</td>
-					<td style="padding: 10px">&amp;#8730;</td>
-					<td style="padding: 10px">Square root</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">∑</td>
-					<td style="padding: 10px">&amp;sum;</td>
-					<td style="padding: 10px">&amp;#8721;</td>
-					<td style="padding: 10px">Summation (sigma)</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">π</td>
-					<td style="padding: 10px">&amp;pi;</td>
-					<td style="padding: 10px">&amp;#960;</td>
-					<td style="padding: 10px">Pi</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Arrows and Directional Symbols</h3>
-			<p>HTML entities can represent various arrow and directional symbols:</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Symbol</th>
-					<th style="padding: 10px">Entity Name</th>
-					<th style="padding: 10px">Numeric Entity</th>
-					<th style="padding: 10px">Description</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">←</td>
-					<td style="padding: 10px">&amp;larr;</td>
-					<td style="padding: 10px">&amp;#8592;</td>
-					<td style="padding: 10px">Left arrow</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">→</td>
-					<td style="padding: 10px">&amp;rarr;</td>
-					<td style="padding: 10px">&amp;#8594;</td>
-					<td style="padding: 10px">Right arrow</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">↑</td>
-					<td style="padding: 10px">&amp;uarr;</td>
-					<td style="padding: 10px">&amp;#8593;</td>
-					<td style="padding: 10px">Up arrow</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">↓</td>
-					<td style="padding: 10px">&amp;darr;</td>
-					<td style="padding: 10px">&amp;#8595;</td>
-					<td style="padding: 10px">Down arrow</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">↔</td>
-					<td style="padding: 10px">&amp;harr;</td>
-					<td style="padding: 10px">&amp;#8596;</td>
-					<td style="padding: 10px">Left-right arrow</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">⇒</td>
-					<td style="padding: 10px">&amp;rArr;</td>
-					<td style="padding: 10px">&amp;#8658;</td>
-					<td style="padding: 10px">Double right arrow</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">⇐</td>
-					<td style="padding: 10px">&amp;lArr;</td>
-					<td style="padding: 10px">&amp;#8656;</td>
-					<td style="padding: 10px">Double left arrow</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Accented Characters</h3>
-			<p>
-				HTML entities can represent accented characters used in various
-				languages:
-			</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Character</th>
-					<th style="padding: 10px">Entity Name</th>
-					<th style="padding: 10px">Numeric Entity</th>
-					<th style="padding: 10px">Description</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">á</td>
-					<td style="padding: 10px">&amp;aacute;</td>
-					<td style="padding: 10px">&amp;#225;</td>
-					<td style="padding: 10px">a with acute accent</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">é</td>
-					<td style="padding: 10px">&amp;eacute;</td>
-					<td style="padding: 10px">&amp;#233;</td>
-					<td style="padding: 10px">e with acute accent</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">í</td>
-					<td style="padding: 10px">&amp;iacute;</td>
-					<td style="padding: 10px">&amp;#237;</td>
-					<td style="padding: 10px">i with acute accent</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">ñ</td>
-					<td style="padding: 10px">&amp;ntilde;</td>
-					<td style="padding: 10px">&amp;#241;</td>
-					<td style="padding: 10px">n with tilde</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">ö</td>
-					<td style="padding: 10px">&amp;ouml;</td>
-					<td style="padding: 10px">&amp;#246;</td>
-					<td style="padding: 10px">o with umlaut</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">ç</td>
-					<td style="padding: 10px">&amp;ccedil;</td>
-					<td style="padding: 10px">&amp;#231;</td>
-					<td style="padding: 10px">c with cedilla</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Using HTML Entities in Code</h3>
-			<p>Here are some examples of using HTML entities in your code:</p>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- Displaying reserved characters --&gt;
-					<br />
-					&lt;p&gt;The &amp;lt;div&amp;gt; tag is used to create a division or
-					section in HTML.&lt;/p&gt;
-					<br /><br />
-					&lt;!-- Using non-breaking spaces to keep words together --&gt;
-					<br />
-					&lt;p&gt;Mr.&amp;nbsp;Smith will not wrap to the next line.&lt;/p&gt;
-					<br /><br />
-					&lt;!-- Using copyright symbol --&gt;
-					<br />
-					&lt;footer&gt;&amp;copy; 2023 My Website. All rights
-					reserved.&lt;/footer&gt;
-					<br /><br />
-					&lt;!-- Using mathematical symbols --&gt;
-					<br />
-					&lt;p&gt;The area of a circle is &amp;pi;r&amp;sup2;.&lt;/p&gt;
-					<br /><br />
-					&lt;!-- Using arrows --&gt;
-					<br />
-					&lt;p&gt;Click here &amp;rarr; to continue.&lt;/p&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Best Practices for Using HTML Entities</h3>
-			<p>When working with HTML entities, keep these best practices in mind:</p>
-			<ol>
-				<li>
-					<strong>Use named entities when available</strong> - They're more
-					readable and easier to remember than numeric entities.
-				</li>
-				<li>
-					<strong>Always include the semicolon</strong> - While some browsers
-					might render entities without the semicolon, it's required for valid
-					HTML.
-				</li>
-				<li>
-					<strong>Use UTF-8 encoding</strong> - With UTF-8 encoding, many
-					special characters can be typed directly without entities, but
-					entities ensure consistent rendering across all browsers.
-				</li>
-				<li>
-					<strong>Consider accessibility</strong> - Ensure that the use of
-					special characters doesn't impact screen readers or other assistive
-					technologies.
-				</li>
-				<li>
-					<strong>Be consistent</strong> - If you use entities for special
-					characters, do so consistently throughout your site.
-				</li>
-			</ol>
-			<br />
-			<h3>Finding HTML Entities</h3>
-			<p>
-				There are many more HTML entities than those listed here. You can find
-				comprehensive lists of HTML entities at:
-			</p>
-			<ul>
-				<li>
-					<a
-						href="https://www.w3.org/TR/html4/sgml/entities.html"
-						target="_blank"
-						>W3C HTML 4 Entities</a
-					>
-				</li>
-				<li>
-					<a href="https://dev.w3.org/html5/html-author/charref" target="_blank"
-						>W3C HTML5 Character Reference</a
-					>
-				</li>
-				<li>
-					<a
-						href="https://www.freeformatter.com/html-entities.html"
-						target="_blank"
-						>FreeFormatter HTML Entities</a
-					>
-				</li>
-			</ul>
-			<br />
-			<h3>Character Encoding and HTML Entities</h3>
-			<p>
-				HTML entities are closely related to character encoding. The character
-				encoding of your HTML document (specified in the meta charset tag)
-				determines which characters can be displayed directly and which need to
-				be represented as entities.
-			</p>
-			<p>
-				With UTF-8 encoding (the recommended encoding for HTML5), most special
-				characters can be typed directly without using entities. However,
-				entities are still necessary for reserved characters like &lt;, &gt;,
-				and &amp;, and they provide a reliable way to ensure characters display
-				correctly across all browsers and devices.
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;!DOCTYPE html&gt;
-					<br />
-					&lt;html&gt;
-					<br />
-					&lt;head&gt;
-					<br />
-					&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;title&gt;Character Encoding Example&lt;/title&gt;
-					<br />
-					&lt;/head&gt;
-					<br />
-					&lt;body&gt;
-					<br />
-					&nbsp;&nbsp;&lt;p&gt;Direct special characters: € £ ¥ © ®&lt;/p&gt;
-					<br />
-					&nbsp;&nbsp;&lt;p&gt;Entity special characters: &amp;euro; &amp;pound;
-					&amp;yen; &amp;copy; &amp;reg;&lt;/p&gt;
-					<br />
-					&lt;/body&gt;
-					<br />
-					&lt;/html&gt;
-				</code>
-			</div>
-			<p>
-				With UTF-8 encoding, both approaches will display the same characters,
-				but entities provide better cross-browser compatibility.
-			</p>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch19-embedgooglemaps/embedgooglemaps.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch21-symbols/symbols.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Entity Types</h3>
+			<ul>
+				<li>
+					<strong>Named entities</strong> - Use descriptive names (e.g.,
+					&amp;lt; for &lt;)
+				</li>
+				<li>
+					<strong>Decimal entities</strong> - Use decimal numbers (e.g.,
+					&amp;#60; for &lt;)
+				</li>
+				<li>
+					<strong>Hexadecimal entities</strong> - Use hex numbers (e.g.,
+					&amp;#x3C; for &lt;)
+				</li>
+			</ul>
+
+			<h3>Common Reserved Characters</h3>
+			<div class="code max-w40">
+				<code>
+					&lt; - &amp;lt; or &amp;#60; &gt; - &amp;gt; or &amp;#62; &amp; -
+					&amp;amp; or &amp;#38; " - &amp;quot; or &amp;#34; ' - &amp;apos; or
+					&amp;#39;
+				</code>
+			</div>
+
+			<h3>Special Characters</h3>
+			<div class="code max-w40">
+				<code>
+					© - &amp;copy; or &amp;#169; ® - &amp;reg; or &amp;#174; ™ -
+					&amp;trade; or &amp;#8482; € - &amp;euro; or &amp;#8364; £ -
+					&amp;pound; or &amp;#163; ¥ - &amp;yen; or &amp;#165; ° - &amp;deg; or
+					&amp;#176; ± - &amp;plusmn; or &amp;#177; × - &amp;times; or
+					&amp;#215; ÷ - &amp;divide; or &amp;#247;
+				</code>
+			</div>
+
+			<h3>Space Entities</h3>
+			<div class="code max-w40">
+				<code>
+					Non-breaking space - &amp;nbsp; or &amp;#160; En space - &amp;ensp; or
+					&amp;#8194; Em space - &amp;emsp; or &amp;#8195; Thin space -
+					&amp;thinsp; or &amp;#8201;
+				</code>
+			</div>
+
+			<h3>Mathematical Symbols</h3>
+			<div class="code max-w40">
+				<code>
+					∀ - &amp;forall; or &amp;#8704; ∂ - &amp;part; or &amp;#8706; ∃ -
+					&amp;exist; or &amp;#8707; ∅ - &amp;empty; or &amp;#8709; ∇ -
+					&amp;nabla; or &amp;#8711; ∈ - &amp;isin; or &amp;#8712; ∉ -
+					&amp;notin; or &amp;#8713; ∋ - &amp;ni; or &amp;#8715; ∏ - &amp;prod;
+					or &amp;#8719; ∑ - &amp;sum; or &amp;#8721;
+				</code>
+			</div>
+
+			<h3>Currency Symbols</h3>
+			<div class="code max-w40">
+				<code>
+					$ - &amp;#36; ¢ - &amp;cent; or &amp;#162; £ - &amp;pound; or
+					&amp;#163; ¤ - &amp;curren; or &amp;#164; ¥ - &amp;yen; or &amp;#165;
+					€ - &amp;euro; or &amp;#8364;
+				</code>
+			</div>
+
+			<h3>Arrows</h3>
+			<div class="code max-w40">
+				<code>
+					← - &amp;larr; or &amp;#8592; ↑ - &amp;uarr; or &amp;#8593; → -
+					&amp;rarr; or &amp;#8594; ↓ - &amp;darr; or &amp;#8595; ↔ - &amp;harr;
+					or &amp;#8596; ⇐ - &amp;lArr; or &amp;#8656; ⇒ - &amp;rArr; or
+					&amp;#8658; ⇔ - &amp;hArr; or &amp;#8660;
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Use named entities</strong> - More readable and maintainable
+				</li>
+				<li>
+					<strong>Declare character encoding</strong> - Use UTF-8 when possible
+				</li>
+				<li><strong>Be consistent</strong> - Stick to one entity style</li>
+				<li><strong>Consider compatibility</strong> - Check browser support</li>
+				<li><strong>Document usage</strong> - Comment complex entities</li>
+				<li><strong>Validate output</strong> - Ensure correct rendering</li>
+			</ul>
+
+			<h3>Common Use Cases</h3>
+			<ul>
+				<li>Displaying code examples</li>
+				<li>Copyright notices</li>
+				<li>Mathematical formulas</li>
+				<li>Special typography</li>
+				<li>Multi-language content</li>
+				<li>Legal documents</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Use semantic HTML when possible</li>
+				<li>Ensure screen readers can interpret entities</li>
+				<li>Provide context for special characters</li>
+				<li>Test with different assistive technologies</li>
+				<li>Consider alternative text representations</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch19-embedgooglemaps/embedgooglemaps.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch21-symbols/symbols.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

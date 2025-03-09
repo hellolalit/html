@@ -7,675 +7,134 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
+		<main class="main-scope" id="top">
 			<h1>Chapter 18 - Embedding YouTube Videos in HTML</h1>
-			<br />
-			<h2>Introduction to YouTube Embedding</h2>
+			<h2>Understanding YouTube Video Embedding</h2>
 			<p>
-				Embedding YouTube videos in your HTML pages allows you to share video
-				content without requiring users to leave your website. YouTube provides
-				a simple iframe-based embedding system that makes it easy to include
-				videos in your web pages. This approach is widely supported across
-				browsers and devices, making it one of the most reliable ways to add
-				video content to your site.
+				Embedding YouTube videos allows you to integrate video content directly
+				into your web pages without requiring users to leave your site. YouTube
+				provides an iframe-based embedding system that's widely supported across
+				browsers and devices, making it a reliable way to add video content to
+				your website.
 			</p>
-			<br />
-			<h3>Basic YouTube Embed Code</h3>
-			<p>
-				The simplest way to embed a YouTube video is to use the iframe element
-				with the video's embed URL:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;width="560"
-					<br />
-					&nbsp;&nbsp;height="315"
-					<br />
-					&nbsp;&nbsp;src="https://www.youtube.com/embed/VIDEO_ID"
-					<br />
-					&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write;
-					encrypted-media; gyroscope; picture-in-picture; web-share"
-					<br />
-					&nbsp;&nbsp;allowfullscreen
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<p>
-				Replace <strong>VIDEO_ID</strong> with the ID of the YouTube video you
-				want to embed. The video ID is the part of the YouTube URL after "v=".
-				For example, in the URL "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-				the video ID is "dQw4w9WgXcQ".
-			</p>
-			<br />
-			<h3>Getting the Embed Code from YouTube</h3>
-			<p>
-				The easiest way to get the correct embed code is directly from YouTube:
-			</p>
-			<ol>
-				<li>Go to the YouTube video you want to embed</li>
-				<li>Click the "Share" button below the video</li>
-				<li>Click "Embed" in the sharing options</li>
-				<li>Customize the embed options if needed</li>
-				<li>Copy the provided iframe code</li>
-				<li>Paste the code into your HTML document</li>
-			</ol>
-			<br />
-			<h3>YouTube Embed Parameters</h3>
-			<p>
-				You can customize the embedded video by adding parameters to the YouTube
-				embed URL. These parameters are added after the video ID with a question
-				mark (?) for the first parameter and an ampersand (&) for each
-				additional parameter.
-			</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Parameter</th>
-					<th style="padding: 10px">Description</th>
-					<th style="padding: 10px">Example</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">autoplay</td>
-					<td style="padding: 10px">
-						Automatically starts the video when the page loads (1 = yes, 0 = no)
-					</td>
-					<td style="padding: 10px">autoplay=1</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">controls</td>
-					<td style="padding: 10px">
-						Shows or hides player controls (1 = show, 0 = hide)
-					</td>
-					<td style="padding: 10px">controls=0</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">loop</td>
-					<td style="padding: 10px">
-						Plays the video repeatedly (1 = yes, 0 = no)
-					</td>
-					<td style="padding: 10px">loop=1</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">mute</td>
-					<td style="padding: 10px">Mutes the video (1 = yes, 0 = no)</td>
-					<td style="padding: 10px">mute=1</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">start</td>
-					<td style="padding: 10px">
-						Starts the video at a specific time (in seconds)
-					</td>
-					<td style="padding: 10px">start=30</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">end</td>
-					<td style="padding: 10px">
-						Ends the video at a specific time (in seconds)
-					</td>
-					<td style="padding: 10px">end=60</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">rel</td>
-					<td style="padding: 10px">
-						Shows related videos from the same channel (1) or any channel (0)
-					</td>
-					<td style="padding: 10px">rel=0</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">modestbranding</td>
-					<td style="padding: 10px">
-						Hides the YouTube logo (1 = yes, 0 = no)
-					</td>
-					<td style="padding: 10px">modestbranding=1</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">cc_load_policy</td>
-					<td style="padding: 10px">
-						Shows closed captions by default (1 = yes)
-					</td>
-					<td style="padding: 10px">cc_load_policy=1</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">cc_lang_pref</td>
-					<td style="padding: 10px">Sets the default language for captions</td>
-					<td style="padding: 10px">cc_lang_pref=en</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">playsinline</td>
-					<td style="padding: 10px">
-						Plays the video inline on iOS (1 = yes, 0 = no)
-					</td>
-					<td style="padding: 10px">playsinline=1</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Examples with Parameters</h3>
-			<h4>Example 1: Autoplay, Muted, and Start at 30 Seconds</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;width="560"
-					<br />
-					&nbsp;&nbsp;height="315"
-					<br />
-					&nbsp;&nbsp;src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&start=30"
-					<br />
-					&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write;
-					encrypted-media; gyroscope; picture-in-picture"
-					<br />
-					&nbsp;&nbsp;allowfullscreen
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<p>
-				Note: Most modern browsers require videos to be muted for autoplay to
-				work.
-			</p>
-			<br />
-			<h4>Example 2: Loop and Hide Controls</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;width="560"
-					<br />
-					&nbsp;&nbsp;height="315"
-					<br />
-					&nbsp;&nbsp;src="https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1&controls=0&playlist=dQw4w9WgXcQ"
-					<br />
-					&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write;
-					encrypted-media; gyroscope; picture-in-picture"
-					<br />
-					&nbsp;&nbsp;allowfullscreen
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<p>
-				Note: When using the loop parameter, you must also include the playlist
-				parameter with the same video ID.
-			</p>
-			<br />
-			<h4>Example 3: Specific Time Range (30-60 seconds)</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;width="560"
-					<br />
-					&nbsp;&nbsp;height="315"
-					<br />
-					&nbsp;&nbsp;src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=30&end=60"
-					<br />
-					&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write;
-					encrypted-media; gyroscope; picture-in-picture"
-					<br />
-					&nbsp;&nbsp;allowfullscreen
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Responsive YouTube Embeds</h3>
-			<p>
-				To make YouTube embeds responsive (adapt to different screen sizes), you
-				can use CSS:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;style&gt;
-					<br />
-					&nbsp;&nbsp;.video-container {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 56.25%; /* 16:9 Aspect Ratio
-					*/
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;max-width: 100%;
-					<br />
-					&nbsp;&nbsp;}
-					<br /><br />
-					&nbsp;&nbsp;.video-container iframe {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;top: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;left: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/style&gt;
-					<br /><br />
-					&lt;div class="video-container"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;iframe
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;allow="accelerometer; autoplay;
-					clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;allowfullscreen
-					<br />
-					&nbsp;&nbsp;&gt;&lt;/iframe&gt;
-					<br />
-					&lt;/div&gt;
-				</code>
-			</div>
-			<p>
-				This CSS creates a responsive container that maintains a 16:9 aspect
-				ratio (the standard YouTube video aspect ratio) at any screen size.
-			</p>
-			<br />
-			<h3>YouTube Embed Privacy-Enhanced Mode</h3>
-			<p>
-				YouTube offers a privacy-enhanced mode that doesn't use cookies until
-				the user plays the video:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;width="560"
-					<br />
-					&nbsp;&nbsp;height="315"
-					<br />
-					&nbsp;&nbsp;src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-					<br />
-					&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write;
-					encrypted-media; gyroscope; picture-in-picture"
-					<br />
-					&nbsp;&nbsp;allowfullscreen
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<p>
-				Notice the domain is "youtube-nocookie.com" instead of "youtube.com".
-				This is important for GDPR compliance in the EU and other regions with
-				strict privacy laws.
-			</p>
-			<br />
-			<h3>YouTube JavaScript API</h3>
-			<p>
-				For more advanced control over embedded videos, you can use the YouTube
-				IFrame Player API:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- 1. The iframe (with enablejsapi=1) --&gt;
-					<br />
-					&lt;div id="player"&gt;&lt;/div&gt;
-					<br /><br />
-					&lt;!-- 2. Buttons for controlling the video --&gt;
-					<br />
-					&lt;button id="play-button"&gt;Play&lt;/button&gt;
-					<br />
-					&lt;button id="pause-button"&gt;Pause&lt;/button&gt;
-					<br />
-					&lt;button id="mute-button"&gt;Mute&lt;/button&gt;
-					<br /><br />
-					&lt;!-- 3. The YouTube iframe API script --&gt;
-					<br />
-					&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;// Load the IFrame Player API code asynchronously
-					<br />
-					&nbsp;&nbsp;var tag = document.createElement('script');
-					<br />
-					&nbsp;&nbsp;tag.src = "https://www.youtube.com/iframe_api";
-					<br />
-					&nbsp;&nbsp;var firstScriptTag =
-					document.getElementsByTagName('script')[0];
-					<br />
-					&nbsp;&nbsp;firstScriptTag.parentNode.insertBefore(tag,
-					firstScriptTag);
-					<br /><br />
-					&nbsp;&nbsp;// Create the player when API is ready
-					<br />
-					&nbsp;&nbsp;var player;
-					<br />
-					&nbsp;&nbsp;function onYouTubeIframeAPIReady() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;player = new YT.Player('player', {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: '315',
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: '560',
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;videoId: 'dQw4w9WgXcQ',
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;events: {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'onReady':
-					onPlayerReady,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'onStateChange':
-					onPlayerStateChange
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br />
-					&nbsp;&nbsp;}
-					<br /><br />
-					&nbsp;&nbsp;// The API will call this function when the video player
-					is ready
-					<br />
-					&nbsp;&nbsp;function onPlayerReady(event) {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// Add event listeners to buttons
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('play-button').addEventListener('click',
-					function() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player.playVideo();
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br /><br />
-					&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('pause-button').addEventListener('click',
-					function() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player.pauseVideo();
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br /><br />
-					&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('mute-button').addEventListener('click',
-					function() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (player.isMuted()) {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player.unMute();
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.textContent =
-					'Mute';
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player.mute();
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.textContent =
-					'Unmute';
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br />
-					&nbsp;&nbsp;}
-					<br /><br />
-					&nbsp;&nbsp;// The API calls this function when the player's state
-					changes
-					<br />
-					&nbsp;&nbsp;function onPlayerStateChange(event) {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// YT.PlayerState.ENDED,
-					YT.PlayerState.PLAYING, YT.PlayerState.PAUSED
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;if (event.data == YT.PlayerState.ENDED) {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Video ended');
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/script&gt;
-				</code>
-			</div>
-			<p>
-				The YouTube IFrame API allows you to control the video player
-				programmatically, respond to events, and create custom controls.
-			</p>
-			<br />
-			<h3>Embedding YouTube Playlists</h3>
-			<p>
-				You can embed an entire YouTube playlist by using the playlist
-				parameter:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;width="560"
-					<br />
-					&nbsp;&nbsp;height="315"
-					<br />
-					&nbsp;&nbsp;src="https://www.youtube.com/embed/videoseries?list=PLAYLIST_ID"
-					<br />
-					&nbsp;&nbsp;title="YouTube video player"
-					<br />
-					&nbsp;&nbsp;frameborder="0"
-					<br />
-					&nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write;
-					encrypted-media; gyroscope; picture-in-picture"
-					<br />
-					&nbsp;&nbsp;allowfullscreen
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<p>
-				Replace <strong>PLAYLIST_ID</strong> with the ID of the YouTube playlist
-				you want to embed. The playlist ID is the part of the YouTube playlist
-				URL after "list=".
-			</p>
-			<br />
-			<h3>Accessibility Considerations</h3>
-			<p>
-				When embedding YouTube videos, consider these accessibility best
-				practices:
-			</p>
-			<ul>
-				<li>Always include a descriptive title attribute in the iframe</li>
-				<li>Provide a text description or transcript of the video content</li>
-				<li>Enable closed captions for videos when available</li>
-				<li>Ensure keyboard navigation works with the embedded video</li>
-				<li>
-					Consider adding the cc_load_policy=1 parameter to show captions by
-					default
-				</li>
-			</ul>
-			<br />
-			<h3>Performance Considerations</h3>
-			<p>
-				Embedded YouTube videos can impact page load times. Consider these
-				performance tips:
-			</p>
-			<ul>
-				<li>
-					Use lazy loading for videos that are not immediately visible on page
-					load
-				</li>
-				<li>
-					Consider loading the video only after a user interaction (like
-					clicking a thumbnail)
-				</li>
-				<li>Limit the number of embedded videos on a single page</li>
-				<li>
-					Use the privacy-enhanced mode (youtube-nocookie.com) to reduce initial
-					cookies
-				</li>
-			</ul>
-			<br />
-			<h4>Example of Lazy Loading with a Thumbnail</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;style&gt;
-					<br />
-					&nbsp;&nbsp;.video-container {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 56.25%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;max-width: 100%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;
-					<br />
-					&nbsp;&nbsp;}
-					<br /><br />
-					&nbsp;&nbsp;.video-container img {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;top: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;left: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;
-					<br />
-					&nbsp;&nbsp;}
-					<br /><br />
-					&nbsp;&nbsp;.play-button {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;top: 50%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;left: 50%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;transform: translate(-50%, -50%);
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;width: 68px;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 48px;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgba(0, 0, 0, 0.7);
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 10px;
-					<br />
-					&nbsp;&nbsp;}
-					<br /><br />
-					&nbsp;&nbsp;.play-button:before {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;content: '';
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;top: 50%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;left: 50%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;transform: translate(-40%, -50%);
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;width: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;border-width: 10px 0 10px 20px;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;border-color: transparent transparent
-					transparent white;
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/style&gt;
-					<br /><br />
-					&lt;div class="video-container" id="video-container"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;img
-					src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
-					alt="Video thumbnail"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;div class="play-button"&gt;&lt;/div&gt;
-					<br />
-					&lt;/div&gt;
-					<br /><br />
-					&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;document.getElementById('video-container').addEventListener('click',
-					function() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;var iframe = document.createElement('iframe');
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;iframe.setAttribute('src',
-					'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1');
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;iframe.setAttribute('frameborder', '0');
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;iframe.setAttribute('allowfullscreen', '1');
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;iframe.setAttribute('allow', 'accelerometer;
-					autoplay; clipboard-write; encrypted-media; gyroscope;
-					picture-in-picture');
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;this.innerHTML = '';
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;this.appendChild(iframe);
-					<br />
-					&nbsp;&nbsp;});
-					<br />
-					&lt;/script&gt;
-				</code>
-			</div>
-			<p>
-				This approach loads a thumbnail image first and only loads the actual
-				YouTube video when the user clicks on the thumbnail.
-			</p>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch17-embedpdf/emdedpdf.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch19-embedgooglemaps/embedgooglemaps.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Basic Embed Code</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;iframe width="560" height="315"
+					src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video
+					player" allow="accelerometer; autoplay; clipboard-write;
+					encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;
+					&lt;/iframe&gt;
+				</code>
+			</div>
+
+			<h3>URL Parameters</h3>
+			<ul>
+				<li><strong>autoplay=1</strong> - Start playing automatically</li>
+				<li><strong>controls=0</strong> - Hide player controls</li>
+				<li><strong>loop=1</strong> - Play video repeatedly</li>
+				<li><strong>mute=1</strong> - Start with audio muted</li>
+				<li><strong>start=30</strong> - Start at 30 seconds</li>
+				<li><strong>end=60</strong> - End at 60 seconds</li>
+				<li><strong>rel=0</strong> - Hide related videos</li>
+				<li><strong>modestbranding=1</strong> - Hide YouTube logo</li>
+			</ul>
+
+			<h3>Example with Parameters</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;iframe width="560" height="315"
+					src="https://www.youtube.com/embed/VIDEO_ID? autoplay=1& mute=1&
+					controls=1& start=30& end=60" title="YouTube video player"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+					gyroscope; picture-in-picture" allowfullscreen&gt; &lt;/iframe&gt;
+				</code>
+			</div>
+
+			<h3>Responsive Embedding</h3>
+			<div class="code max-w40">
+				<code>
+					.video-container { position: relative; width: 100%; padding-bottom:
+					56.25%; /* 16:9 Aspect Ratio */ } .video-container iframe { position:
+					absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+				</code>
+			</div>
+
+			<h3>JavaScript API Integration</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- 1. Include the YouTube IFrame API --&gt; &lt;script
+					src="https://www.youtube.com/iframe_api"&gt;&lt;/script&gt; &lt;!-- 2.
+					Create the player div --&gt; &lt;div id="player"&gt;&lt;/div&gt;
+					&lt;script&gt; // 3. Create the player object var player; function
+					onYouTubeIframeAPIReady() { player = new YT.Player('player', { height:
+					'315', width: '560', videoId: 'VIDEO_ID', events: { 'onReady':
+					onPlayerReady, 'onStateChange': onPlayerStateChange } }); } // 4.
+					Control functions function onPlayerReady(event) { // Player is ready
+					event.target.playVideo(); } function onPlayerStateChange(event) { if
+					(event.data == YT.PlayerState.ENDED) { // Video ended } }
+					&lt;/script&gt;
+				</code>
+			</div>
+
+			<h3>Custom Player Controls</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;div class="custom-controls"&gt; &lt;button
+					onclick="player.playVideo()"&gt;Play&lt;/button&gt; &lt;button
+					onclick="player.pauseVideo()"&gt;Pause&lt;/button&gt; &lt;button
+					onclick="player.mute()"&gt;Mute&lt;/button&gt; &lt;button
+					onclick="player.unMute()"&gt;Unmute&lt;/button&gt; &lt;input
+					type="range" min="0" max="100"
+					onchange="player.seekTo(this.value)"&gt; &lt;/div&gt;
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Use HTTPS URLs</strong> - For security and compatibility
+				</li>
+				<li><strong>Add title attribute</strong> - For accessibility</li>
+				<li>
+					<strong>Consider autoplay policies</strong> - Mute if autoplaying
+				</li>
+				<li><strong>Make it responsive</strong> - Adapt to screen sizes</li>
+				<li>
+					<strong>Optimize loading</strong> - Use lazy loading when possible
+				</li>
+				<li>
+					<strong>Provide fallback content</strong> - Handle errors gracefully
+				</li>
+				<li><strong>Test cross-browser</strong> - Ensure wide compatibility</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Include descriptive titles</li>
+				<li>Enable closed captions</li>
+				<li>Ensure keyboard navigation</li>
+				<li>Provide video transcripts</li>
+				<li>Use ARIA labels appropriately</li>
+				<li>Consider auto-pause on visibility change</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch17-embedpdf/embedpdf.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch19-embedgooglemaps/embedgooglemaps.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

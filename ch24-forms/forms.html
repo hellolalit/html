@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-24 HTML Forms</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="top">
+			<h1>Chapter 24 - HTML Forms</h1>
+
+			<h2>Understanding HTML Forms</h2>
+			<p>
+				HTML forms are essential elements that allow users to input data and
+				interact with web applications. Forms can collect various types of
+				information, from simple text to complex data like files and dates.
+				Well-designed forms are crucial for user experience and data collection.
+			</p>
+
+			<h3>Basic Form Structure</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;form action="/submit" method="post"&gt; &lt;label
+					for="username"&gt;Username:&lt;/label&gt; &lt;input type="text"
+					id="username" name="username" required&gt; &lt;label
+					for="password"&gt;Password:&lt;/label&gt; &lt;input type="password"
+					id="password" name="password" required&gt; &lt;button
+					type="submit"&gt;Submit&lt;/button&gt; &lt;/form&gt;
+				</code>
+			</div>
+
+			<h3>Form Elements</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Text inputs -->
+					&lt;input type="text"&gt; - Single line text &lt;input
+					type="password"&gt; - Password field &lt;input type="email"&gt; -
+					Email address &lt;input type="tel"&gt; - Phone number &lt;input
+					type="url"&gt; - Website URL &lt;textarea&gt; - Multi-line text
+
+					<!-- Numbers and ranges -->
+					&lt;input type="number"&gt; - Numeric input &lt;input type="range"&gt;
+					- Slider control
+
+					<!-- Date and time -->
+					&lt;input type="date"&gt; - Date picker &lt;input type="time"&gt; -
+					Time picker &lt;input type="datetime-local"&gt; - Date and time
+
+					<!-- Files and colors -->
+					&lt;input type="file"&gt; - File upload &lt;input type="color"&gt; -
+					Color picker
+
+					<!-- Options -->
+					&lt;input type="checkbox"&gt; - Checkboxes &lt;input type="radio"&gt;
+					- Radio buttons &lt;select&gt; - Dropdown list &lt;datalist&gt; -
+					Autocomplete options
+				</code>
+			</div>
+
+			<h3>Form Attributes</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Form attributes -->
+					action - Form submission URL method - HTTP method (get/post) enctype -
+					Form data encoding novalidate - Disable validation autocomplete -
+					Enable/disable autocomplete target - Where to display response
+
+					<!-- Input attributes -->
+					required - Required field pattern - Regex pattern minlength/maxlength
+					- Text length limits min/max - Number range limits step - Number
+					increment placeholder - Input hint readonly - Read-only field disabled
+					- Disabled field autofocus - Focus on load
+				</code>
+			</div>
+
+			<h3>Form Organization</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;form&gt; &lt;fieldset&gt; &lt;legend&gt;Personal
+					Information&lt;/legend&gt; &lt;div class="form-group"&gt; &lt;label
+					for="name"&gt;Name:&lt;/label&gt; &lt;input type="text" id="name"
+					name="name" required&gt; &lt;/div&gt; &lt;div class="form-group"&gt;
+					&lt;label for="email"&gt;Email:&lt;/label&gt; &lt;input type="email"
+					id="email" name="email" required&gt; &lt;/div&gt; &lt;/fieldset&gt;
+					&lt;fieldset&gt; &lt;legend&gt;Preferences&lt;/legend&gt; &lt;div
+					class="form-group"&gt; &lt;label&gt; &lt;input type="checkbox"
+					name="newsletter"&gt; Subscribe to newsletter &lt;/label&gt;
+					&lt;/div&gt; &lt;div class="form-group"&gt; &lt;label
+					for="theme"&gt;Theme:&lt;/label&gt; &lt;select id="theme"
+					name="theme"&gt; &lt;option value="light"&gt;Light&lt;/option&gt;
+					&lt;option value="dark"&gt;Dark&lt;/option&gt; &lt;/select&gt;
+					&lt;/div&gt; &lt;/fieldset&gt; &lt;/form&gt;
+				</code>
+			</div>
+
+			<h3>Form Validation</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Built-in validation -->
+					&lt;input type="email" required&gt; &lt;input type="url"
+					pattern="https?://.+"&gt; &lt;input type="text" minlength="3"
+					maxlength="50"&gt; &lt;input type="number" min="0" max="100"
+					step="5"&gt;
+
+					<!-- Custom validation -->
+					&lt;input type="text" pattern="[A-Za-z]{3,}" title="Must contain at
+					least 3 letters"&gt;
+
+					<!-- Validation styles -->
+					input:valid { border-color: green; } input:invalid { border-color:
+					red; } input:required { background-color: #fff3f3; }
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Use semantic markup</strong> - Labels, fieldsets, and legends
+				</li>
+				<li>
+					<strong>Add proper validation</strong> - Both client and server-side
+				</li>
+				<li>
+					<strong>Provide clear feedback</strong> - Error and success messages
+				</li>
+				<li><strong>Maintain accessibility</strong> - ARIA labels and roles</li>
+				<li><strong>Group related fields</strong> - Logical organization</li>
+				<li>
+					<strong>Use appropriate types</strong> - Match input to data type
+				</li>
+			</ul>
+
+			<h3>Common Use Cases</h3>
+			<ul>
+				<li>User registration</li>
+				<li>Login forms</li>
+				<li>Contact forms</li>
+				<li>Search interfaces</li>
+				<li>Payment forms</li>
+				<li>Survey forms</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Label all form controls</li>
+				<li>Use fieldsets for groups</li>
+				<li>Provide error feedback</li>
+				<li>Ensure keyboard navigation</li>
+				<li>Add descriptive instructions</li>
+				<li>Test with screen readers</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch23-semantics/semantics.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch25-tables/tables.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
+		</main>
+		<script src="../script.js"></script>
+	</body>
+</html>

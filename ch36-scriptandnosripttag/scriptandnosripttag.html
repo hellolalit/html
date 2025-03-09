@@ -5,251 +5,277 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ch-36 Script and Noscript Tags</title>
 		<link rel="stylesheet" href="../style.css" />
-		<!-- Example script -->
+		<!-- Example scripts for this chapter -->
 		<script>
+			// Demo counter for script loading order
+			let counter = 0;
+
+			// Basic interaction demo
 			function showMessage() {
 				alert("Hello from JavaScript!");
 			}
+
+			// DOM manipulation demo
+			function updateCounter() {
+				counter++;
+				document.getElementById("counter").textContent = counter;
+			}
+
+			// Dynamic styling demo
+			function toggleTheme() {
+				const demo = document.querySelector(".demo-box");
+				demo.classList.toggle("dark-theme");
+			}
+
+			// Async operation demo
+			async function fetchData() {
+				const result = document.getElementById("fetch-result");
+				result.textContent = "Loading...";
+
+				try {
+					const response = await fetch("https://api.example.com/data");
+					const data = await response.json();
+					result.textContent = "Data fetched successfully!";
+				} catch (error) {
+					result.textContent = "Error fetching data";
+				}
+			}
 		</script>
+		<style>
+			.demo-box {
+				border: 2px solid #3498db;
+				padding: 20px;
+				margin: 15px 0;
+				border-radius: 8px;
+				background: #f8f9fa;
+				transition: all 0.3s ease;
+			}
+
+			.demo-box.dark-theme {
+				background: #343a40;
+				color: white;
+				border-color: #6c757d;
+			}
+
+			.demo-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 15px;
+				margin: 15px 0;
+			}
+
+			@media (max-width: 600px) {
+				.demo-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			.demo-button {
+				padding: 8px 16px;
+				border: none;
+				border-radius: 4px;
+				background: #007bff;
+				color: white;
+				cursor: pointer;
+				transition: background 0.3s ease;
+			}
+
+			.demo-button:hover {
+				background: #0056b3;
+			}
+		</style>
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
-			<h1>Chapter 36 - Script and Noscript Tags in HTML5</h1>
-			<br />
-			<h2>The Script Tag</h2>
+		<main class="main-scope" id="top">
+			<h1>Chapter 36 - Script and Noscript Tags in HTML</h1>
+
+			<h2>Understanding Script Tags</h2>
 			<p>
 				The script tag is used to embed or reference executable code, typically
-				JavaScript, within an HTML document. It allows you to add interactivity,
-				dynamic content, and behavior to your web pages. The script tag can be
-				placed in the head or body section of an HTML document.
+				JavaScript, within an HTML document. It enables dynamic content,
+				interactivity, and enhanced user experiences. Scripts can be embedded
+				directly in the HTML or loaded from external files, with various loading
+				strategies available for optimal performance.
 			</p>
-			<br />
-			<h3>Basic Script Tag Syntax</h3>
-			<div class="code max-w40">
-				<code>
-					<strong>&lt;script&gt;</strong>
-					<br />
-					&nbsp;&nbsp;// JavaScript code goes here
-					<br />
-					&nbsp;&nbsp;function greet() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello, World!");
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					<strong>&lt;/script&gt;</strong>
-				</code>
-			</div>
-			<br />
-			<h3>Script Tag Attributes</h3>
-			<p>The script tag has several important attributes:</p>
-			<ul>
-				<li>
-					<strong>src</strong> - Specifies the URL of an external script file
-				</li>
-				<li>
-					<strong>type</strong> - Specifies the MIME type of the script (default
-					is "text/javascript")
-				</li>
-				<li>
-					<strong>async</strong> - Specifies that the script should be executed
-					asynchronously
-				</li>
-				<li>
-					<strong>defer</strong> - Specifies that the script should be executed
-					after the page has finished parsing
-				</li>
-				<li>
-					<strong>crossorigin</strong> - Configures CORS settings for the script
-				</li>
-				<li>
-					<strong>integrity</strong> - Allows browsers to verify that a fetched
-					script has not been manipulated
-				</li>
-			</ul>
-			<br />
-			<h3>External JavaScript Files</h3>
-			<p>You can include external JavaScript files using the src attribute:</p>
-			<div class="code max-w40">
-				<code>
-					<strong>&lt;script src="script.js"&gt;&lt;/script&gt;</strong>
-				</code>
-			</div>
-			<p>
-				When using the src attribute, any content between the opening and
-				closing script tags is ignored.
-			</p>
-			<br />
-			<h3>Async and Defer Attributes</h3>
-			<p>
-				The async and defer attributes control how the browser loads and
-				executes scripts:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- Regular script: blocks HTML parsing while downloading and
-					executing --&gt;
-					<br />
-					&lt;script src="regular.js"&gt;&lt;/script&gt;
-					<br /><br />
-					&lt;!-- Async script: downloads in parallel, executes as soon as
-					available --&gt;
-					<br />
-					&lt;script src="async.js" <strong>async</strong>&gt;&lt;/script&gt;
-					<br /><br />
-					&lt;!-- Defer script: downloads in parallel, executes after HTML
-					parsing --&gt;
-					<br />
-					&lt;script src="defer.js" <strong>defer</strong>&gt;&lt;/script&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Script Placement</h3>
-			<p>
-				Scripts can be placed in the head or body section of an HTML document:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- In the head section --&gt;
-					<br />
-					&lt;head&gt;
-					<br />
-					&nbsp;&nbsp;&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// JavaScript code
-					<br />
-					&nbsp;&nbsp;&lt;/script&gt;
-					<br />
-					&lt;/head&gt;
-					<br /><br />
-					&lt;!-- At the end of the body section (recommended) --&gt;
-					<br />
-					&lt;body&gt;
-					<br />
-					&nbsp;&nbsp;&lt;!-- HTML content --&gt;
-					<br />
-					&nbsp;&nbsp;&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// JavaScript code
-					<br />
-					&nbsp;&nbsp;&lt;/script&gt;
-					<br />
-					&lt;/body&gt;
-				</code>
-			</div>
-			<p>
-				Placing scripts at the end of the body is often recommended to ensure
-				that the HTML content is loaded before the scripts run, which can
-				improve perceived page load times.
-			</p>
-			<br />
-			<h3>Example of JavaScript in Action</h3>
-			<button onclick="showMessage()">Click Me</button>
-			<p>
-				<small
-					>(This button uses the JavaScript function defined in the head
-					section)</small
-				>
-			</p>
-			<br />
-			<h2>The Noscript Tag</h2>
-			<p>
-				The noscript tag defines alternate content to be displayed when scripts
-				are not supported or disabled in the browser. It provides a fallback for
-				users who have JavaScript disabled or browsers that don't support
-				JavaScript.
-			</p>
-			<br />
-			<h3>Basic Noscript Tag Syntax</h3>
-			<div class="code max-w40">
-				<code>
-					<strong>&lt;noscript&gt;</strong>
-					<br />
-					&nbsp;&nbsp;Your browser does not support JavaScript or it is
-					disabled.
-					<br />
-					&nbsp;&nbsp;Please enable JavaScript to view this website properly.
-					<br />
-					<strong>&lt;/noscript&gt;</strong>
-				</code>
-			</div>
-			<br />
-			<noscript>
-				<div style="border: 2px solid red; padding: 10px; margin: 10px 0">
-					<strong>JavaScript is disabled!</strong>
-					<p>
-						This website works best with JavaScript enabled. Please enable
-						JavaScript in your browser settings.
-					</p>
-				</div>
-			</noscript>
-			<p>
-				The noscript content above will only be visible if JavaScript is
-				disabled in your browser.
-			</p>
-			<br />
-			<h3>Using Noscript in the Head Section</h3>
-			<p>
-				The noscript tag can also be used in the head section to provide
-				alternate stylesheets or meta redirects for browsers with JavaScript
-				disabled:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;head&gt;
-					<br />
-					&nbsp;&nbsp;&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// JavaScript code
-					<br />
-					&nbsp;&nbsp;&lt;/script&gt;
-					<br />
-					&nbsp;&nbsp;<strong>&lt;noscript&gt;</strong>
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet"
-					href="noscript.css"&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta http-equiv="refresh"
-					content="0;url=noscript.html"&gt;
-					<br />
-					&nbsp;&nbsp;<strong>&lt;/noscript&gt;</strong>
-					<br />
-					&lt;/head&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Best Practices for Script and Noscript Tags</h3>
-			<ul>
-				<li>
-					Use external JavaScript files for better caching and maintainability
-				</li>
-				<li>
-					Consider using async or defer attributes for non-critical scripts
-				</li>
-				<li>Place scripts at the end of the body when possible</li>
-				<li>Always provide meaningful fallback content in noscript tags</li>
-				<li>Ensure your website is still usable even without JavaScript</li>
-				<li>
-					Use modern JavaScript features but provide polyfills for older
-					browsers
-				</li>
-			</ul>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch35-styletag/styletag.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch37-opengraphtag/opengraphtag.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Basic Implementation</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Inline Script -->
+					<script>
+						function greet(name) {
+							return `Hello, ${name}!`;
+						}
+
+						// Event Handling
+						document.addEventListener("DOMContentLoaded", () => {
+							console.log("Document ready!");
+						});
+					</script>
+
+					<!-- External Script -->
+					<script src="app.js"></script>
+
+					<!-- Module Script -->
+					<script type="module">
+						import { helper } from "./utils.js";
+						helper.init();
+					</script>
+				</code>
+			</div>
+
+			<h3>Loading Strategies</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Regular Loading (Blocks Parsing) -->
+					<script src="app.js"></script>
+
+					<!-- Async Loading (Non-blocking) -->
+					<script async src="analytics.js"></script>
+
+					<!-- Deferred Loading (Ordered, Non-blocking) -->
+					<script defer src="main.js"></script>
+
+					<!-- Dynamic Loading -->
+					<script>
+						const script = document.createElement("script");
+						script.src = "dynamic.js";
+						script.onload = () => console.log("Script loaded!");
+						document.head.appendChild(script);
+					</script>
+
+					<!-- Resource Hints -->
+					<link rel="preload" href="critical.js" as="script" />
+					<link rel="prefetch" href="non-critical.js" as="script" />
+				</code>
+			</div>
+
+			<h3>Security Features</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Content Security Policy -->
+					<meta
+						http-equiv="Content-Security-Policy"
+						content="script-src 'self' https://trusted.com" />
+
+					<!-- Subresource Integrity -->
+					<script
+						src="https://cdn.example.com/lib.js"
+						integrity="sha384-hash"
+						crossorigin="anonymous"></script>
+
+					<!-- CORS Configuration -->
+					<script src="api.js" crossorigin="use-credentials"></script>
+				</code>
+			</div>
+
+			<h3>Live Examples</h3>
+			<div class="demo-grid">
+				<div class="demo-box">
+					<h4>Counter Demo</h4>
+					<p>Count: <span id="counter">0</span></p>
+					<button class="demo-button" onclick="updateCounter()">
+						Increment
+					</button>
+				</div>
+				<div class="demo-box">
+					<h4>Theme Toggle Demo</h4>
+					<p>Click to toggle dark theme</p>
+					<button class="demo-button" onclick="toggleTheme()">
+						Toggle Theme
+					</button>
+				</div>
+			</div>
+
+			<h2>Understanding Noscript Tags</h2>
+			<p>
+				The noscript tag provides fallback content for users who have JavaScript
+				disabled or browsers that don't support JavaScript. It's essential for
+				ensuring a basic level of functionality and accessibility even when
+				JavaScript is unavailable.
+			</p>
+
+			<h3>Implementation Patterns</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Basic Fallback -->
+					<noscript>
+						<div class="warning">
+							This feature requires JavaScript. Please enable JavaScript in your
+							browser.
+						</div>
+					</noscript>
+
+					<!-- Alternative Content -->
+					<noscript>
+						<div class="static-content">
+							<h3>Static Version</h3>
+							<p>You're viewing the non-JavaScript version.</p>
+						</div>
+					</noscript>
+
+					<!-- Alternative Styles -->
+					<noscript>
+						<link rel="stylesheet" href="no-js.css" />
+					</noscript>
+
+					<!-- Redirect -->
+					<noscript>
+						<meta http-equiv="refresh" content="0;url=static-version.html" />
+					</noscript>
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Performance</strong> - Use async/defer for non-critical
+					scripts
+				</li>
+				<li>
+					<strong>Security</strong> - Implement CSP and SRI for external scripts
+				</li>
+				<li>
+					<strong>Organization</strong> - Keep scripts modular and maintainable
+				</li>
+				<li>
+					<strong>Loading</strong> - Place scripts strategically for optimal
+					loading
+				</li>
+				<li>
+					<strong>Fallbacks</strong> - Provide meaningful noscript content
+				</li>
+				<li>
+					<strong>Progressive Enhancement</strong> - Build core functionality
+					without JS
+				</li>
+			</ul>
+
+			<h3>Browser Support and Debugging</h3>
+			<ul>
+				<li>Use source maps for debugging</li>
+				<li>Test with JavaScript disabled</li>
+				<li>Monitor script errors and performance</li>
+				<li>Consider polyfills for older browsers</li>
+				<li>Implement error boundaries</li>
+				<li>Use feature detection</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch35-styletag/styletag.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch37-opengraphtag/opengraphtag.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

@@ -7,557 +7,138 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
+		<main class="main-scope" id="top">
 			<h1>Chapter 21 - HTML Symbols</h1>
-			<br />
-			<h2>What are HTML Symbols?</h2>
+
+			<h2>Understanding HTML Symbols</h2>
 			<p>
 				HTML symbols are special characters that can be displayed on web pages
 				using HTML code. These include mathematical symbols, Greek letters,
 				arrows, technical symbols, and various other characters that aren't
-				readily available on a standard keyboard. HTML symbols are rendered by
-				browsers as their corresponding visual representations.
+				readily available on a standard keyboard.
 			</p>
-			<p>
-				While HTML entities (covered in the previous chapter) are used to
-				display special characters, HTML symbols specifically refer to the
-				visual characters themselves. Many symbols are represented using HTML
-				entities.
-			</p>
-			<br />
-			<h3>How to Use HTML Symbols</h3>
-			<p>There are three main ways to display symbols in HTML:</p>
-			<ol>
-				<li>
-					<strong>Named Entity</strong>: Using a descriptive name (e.g.,
-					<code>&amp;copy;</code> for the copyright symbol ©)
-				</li>
-				<li>
-					<strong>Decimal Reference</strong>: Using the decimal Unicode code
-					point (e.g., <code>&amp;#169;</code> for ©)
-				</li>
-				<li>
-					<strong>Hexadecimal Reference</strong>: Using the hexadecimal Unicode
-					code point (e.g., <code>&amp;#xA9;</code> for ©)
-				</li>
-			</ol>
-			<br />
-			<h3>Common HTML Symbols</h3>
-			<p>Here are some commonly used HTML symbols organized by category:</p>
-			<br />
-			<h4>Mathematical Symbols</h4>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Symbol</th>
-					<th style="padding: 10px">Description</th>
-					<th style="padding: 10px">Named Entity</th>
-					<th style="padding: 10px">Decimal</th>
-					<th style="padding: 10px">Hexadecimal</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">±</td>
-					<td style="padding: 10px">Plus-minus sign</td>
-					<td style="padding: 10px">&amp;plusmn;</td>
-					<td style="padding: 10px">&amp;#177;</td>
-					<td style="padding: 10px">&amp;#xB1;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">×</td>
-					<td style="padding: 10px">Multiplication sign</td>
-					<td style="padding: 10px">&amp;times;</td>
-					<td style="padding: 10px">&amp;#215;</td>
-					<td style="padding: 10px">&amp;#xD7;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">÷</td>
-					<td style="padding: 10px">Division sign</td>
-					<td style="padding: 10px">&amp;divide;</td>
-					<td style="padding: 10px">&amp;#247;</td>
-					<td style="padding: 10px">&amp;#xF7;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">∑</td>
-					<td style="padding: 10px">Summation (sigma)</td>
-					<td style="padding: 10px">&amp;sum;</td>
-					<td style="padding: 10px">&amp;#8721;</td>
-					<td style="padding: 10px">&amp;#x2211;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">√</td>
-					<td style="padding: 10px">Square root</td>
-					<td style="padding: 10px">&amp;radic;</td>
-					<td style="padding: 10px">&amp;#8730;</td>
-					<td style="padding: 10px">&amp;#x221A;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">∞</td>
-					<td style="padding: 10px">Infinity</td>
-					<td style="padding: 10px">&amp;infin;</td>
-					<td style="padding: 10px">&amp;#8734;</td>
-					<td style="padding: 10px">&amp;#x221E;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">∫</td>
-					<td style="padding: 10px">Integral</td>
-					<td style="padding: 10px">&amp;int;</td>
-					<td style="padding: 10px">&amp;#8747;</td>
-					<td style="padding: 10px">&amp;#x222B;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">≠</td>
-					<td style="padding: 10px">Not equal to</td>
-					<td style="padding: 10px">&amp;ne;</td>
-					<td style="padding: 10px">&amp;#8800;</td>
-					<td style="padding: 10px">&amp;#x2260;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">≤</td>
-					<td style="padding: 10px">Less than or equal to</td>
-					<td style="padding: 10px">&amp;le;</td>
-					<td style="padding: 10px">&amp;#8804;</td>
-					<td style="padding: 10px">&amp;#x2264;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">≥</td>
-					<td style="padding: 10px">Greater than or equal to</td>
-					<td style="padding: 10px">&amp;ge;</td>
-					<td style="padding: 10px">&amp;#8805;</td>
-					<td style="padding: 10px">&amp;#x2265;</td>
-				</tr>
-			</table>
-			<br />
-			<h4>Greek Letters</h4>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Symbol</th>
-					<th style="padding: 10px">Description</th>
-					<th style="padding: 10px">Named Entity</th>
-					<th style="padding: 10px">Decimal</th>
-					<th style="padding: 10px">Hexadecimal</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">α</td>
-					<td style="padding: 10px">Alpha (lowercase)</td>
-					<td style="padding: 10px">&amp;alpha;</td>
-					<td style="padding: 10px">&amp;#945;</td>
-					<td style="padding: 10px">&amp;#x3B1;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">β</td>
-					<td style="padding: 10px">Beta (lowercase)</td>
-					<td style="padding: 10px">&amp;beta;</td>
-					<td style="padding: 10px">&amp;#946;</td>
-					<td style="padding: 10px">&amp;#x3B2;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">γ</td>
-					<td style="padding: 10px">Gamma (lowercase)</td>
-					<td style="padding: 10px">&amp;gamma;</td>
-					<td style="padding: 10px">&amp;#947;</td>
-					<td style="padding: 10px">&amp;#x3B3;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">δ</td>
-					<td style="padding: 10px">Delta (lowercase)</td>
-					<td style="padding: 10px">&amp;delta;</td>
-					<td style="padding: 10px">&amp;#948;</td>
-					<td style="padding: 10px">&amp;#x3B4;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">π</td>
-					<td style="padding: 10px">Pi (lowercase)</td>
-					<td style="padding: 10px">&amp;pi;</td>
-					<td style="padding: 10px">&amp;#960;</td>
-					<td style="padding: 10px">&amp;#x3C0;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">Σ</td>
-					<td style="padding: 10px">Sigma (uppercase)</td>
-					<td style="padding: 10px">&amp;Sigma;</td>
-					<td style="padding: 10px">&amp;#931;</td>
-					<td style="padding: 10px">&amp;#x3A3;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">Ω</td>
-					<td style="padding: 10px">Omega (uppercase)</td>
-					<td style="padding: 10px">&amp;Omega;</td>
-					<td style="padding: 10px">&amp;#937;</td>
-					<td style="padding: 10px">&amp;#x3A9;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">ω</td>
-					<td style="padding: 10px">Omega (lowercase)</td>
-					<td style="padding: 10px">&amp;omega;</td>
-					<td style="padding: 10px">&amp;#969;</td>
-					<td style="padding: 10px">&amp;#x3C9;</td>
-				</tr>
-			</table>
-			<br />
-			<h4>Arrow Symbols</h4>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Symbol</th>
-					<th style="padding: 10px">Description</th>
-					<th style="padding: 10px">Named Entity</th>
-					<th style="padding: 10px">Decimal</th>
-					<th style="padding: 10px">Hexadecimal</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">←</td>
-					<td style="padding: 10px">Left arrow</td>
-					<td style="padding: 10px">&amp;larr;</td>
-					<td style="padding: 10px">&amp;#8592;</td>
-					<td style="padding: 10px">&amp;#x2190;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">→</td>
-					<td style="padding: 10px">Right arrow</td>
-					<td style="padding: 10px">&amp;rarr;</td>
-					<td style="padding: 10px">&amp;#8594;</td>
-					<td style="padding: 10px">&amp;#x2192;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">↑</td>
-					<td style="padding: 10px">Up arrow</td>
-					<td style="padding: 10px">&amp;uarr;</td>
-					<td style="padding: 10px">&amp;#8593;</td>
-					<td style="padding: 10px">&amp;#x2191;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">↓</td>
-					<td style="padding: 10px">Down arrow</td>
-					<td style="padding: 10px">&amp;darr;</td>
-					<td style="padding: 10px">&amp;#8595;</td>
-					<td style="padding: 10px">&amp;#x2193;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">↔</td>
-					<td style="padding: 10px">Left-right arrow</td>
-					<td style="padding: 10px">&amp;harr;</td>
-					<td style="padding: 10px">&amp;#8596;</td>
-					<td style="padding: 10px">&amp;#x2194;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">⇒</td>
-					<td style="padding: 10px">Double right arrow</td>
-					<td style="padding: 10px">&amp;rArr;</td>
-					<td style="padding: 10px">&amp;#8658;</td>
-					<td style="padding: 10px">&amp;#x21D2;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">⇐</td>
-					<td style="padding: 10px">Double left arrow</td>
-					<td style="padding: 10px">&amp;lArr;</td>
-					<td style="padding: 10px">&amp;#8656;</td>
-					<td style="padding: 10px">&amp;#x21D0;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">⇔</td>
-					<td style="padding: 10px">Double left-right arrow</td>
-					<td style="padding: 10px">&amp;hArr;</td>
-					<td style="padding: 10px">&amp;#8660;</td>
-					<td style="padding: 10px">&amp;#x21D4;</td>
-				</tr>
-			</table>
-			<br />
-			<h4>Technical and Special Symbols</h4>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Symbol</th>
-					<th style="padding: 10px">Description</th>
-					<th style="padding: 10px">Named Entity</th>
-					<th style="padding: 10px">Decimal</th>
-					<th style="padding: 10px">Hexadecimal</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">©</td>
-					<td style="padding: 10px">Copyright</td>
-					<td style="padding: 10px">&amp;copy;</td>
-					<td style="padding: 10px">&amp;#169;</td>
-					<td style="padding: 10px">&amp;#xA9;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">®</td>
-					<td style="padding: 10px">Registered trademark</td>
-					<td style="padding: 10px">&amp;reg;</td>
-					<td style="padding: 10px">&amp;#174;</td>
-					<td style="padding: 10px">&amp;#xAE;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">™</td>
-					<td style="padding: 10px">Trademark</td>
-					<td style="padding: 10px">&amp;trade;</td>
-					<td style="padding: 10px">&amp;#8482;</td>
-					<td style="padding: 10px">&amp;#x2122;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">€</td>
-					<td style="padding: 10px">Euro</td>
-					<td style="padding: 10px">&amp;euro;</td>
-					<td style="padding: 10px">&amp;#8364;</td>
-					<td style="padding: 10px">&amp;#x20AC;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">£</td>
-					<td style="padding: 10px">Pound</td>
-					<td style="padding: 10px">&amp;pound;</td>
-					<td style="padding: 10px">&amp;#163;</td>
-					<td style="padding: 10px">&amp;#xA3;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">¥</td>
-					<td style="padding: 10px">Yen</td>
-					<td style="padding: 10px">&amp;yen;</td>
-					<td style="padding: 10px">&amp;#165;</td>
-					<td style="padding: 10px">&amp;#xA5;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">°</td>
-					<td style="padding: 10px">Degree</td>
-					<td style="padding: 10px">&amp;deg;</td>
-					<td style="padding: 10px">&amp;#176;</td>
-					<td style="padding: 10px">&amp;#xB0;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">§</td>
-					<td style="padding: 10px">Section</td>
-					<td style="padding: 10px">&amp;sect;</td>
-					<td style="padding: 10px">&amp;#167;</td>
-					<td style="padding: 10px">&amp;#xA7;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">♠</td>
-					<td style="padding: 10px">Spade</td>
-					<td style="padding: 10px">&amp;spades;</td>
-					<td style="padding: 10px">&amp;#9824;</td>
-					<td style="padding: 10px">&amp;#x2660;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">♣</td>
-					<td style="padding: 10px">Club</td>
-					<td style="padding: 10px">&amp;clubs;</td>
-					<td style="padding: 10px">&amp;#9827;</td>
-					<td style="padding: 10px">&amp;#x2663;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">♥</td>
-					<td style="padding: 10px">Heart</td>
-					<td style="padding: 10px">&amp;hearts;</td>
-					<td style="padding: 10px">&amp;#9829;</td>
-					<td style="padding: 10px">&amp;#x2665;</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px; text-align: center">♦</td>
-					<td style="padding: 10px">Diamond</td>
-					<td style="padding: 10px">&amp;diams;</td>
-					<td style="padding: 10px">&amp;#9830;</td>
-					<td style="padding: 10px">&amp;#x2666;</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Using Symbols in HTML</h3>
-			<p>Here are some examples of how to use HTML symbols in your code:</p>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- Using named entities --&gt;
-					<br />
-					&lt;p&gt;The area of a circle is &amp;pi;r&amp;sup2;.&lt;/p&gt;
-					<br /><br />
-					&lt;!-- Using decimal references --&gt;
-					<br />
-					&lt;p&gt;Water boils at 100&amp;#176;C at standard pressure.&lt;/p&gt;
-					<br /><br />
-					&lt;!-- Using hexadecimal references --&gt;
-					<br />
-					&lt;p&gt;This product costs &amp;#x20AC;19.99.&lt;/p&gt;
-					<br /><br />
-					&lt;!-- Using symbols in headings --&gt;
-					<br />
-					&lt;h2&gt;Safety Instructions &amp;#9888;&lt;/h2&gt;
-					<br /><br />
-					&lt;!-- Using symbols in buttons --&gt;
-					<br />
-					&lt;button&gt;Next &amp;rarr;&lt;/button&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Symbols vs. Icons</h3>
-			<p>
-				While HTML symbols are useful for basic characters, modern web design
-				often uses icon fonts or SVG icons for more complex graphical elements.
-				Here's a comparison:
-			</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Feature</th>
-					<th style="padding: 10px">HTML Symbols</th>
-					<th style="padding: 10px">Icon Fonts/SVG</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Variety</td>
-					<td style="padding: 10px">Limited to Unicode characters</td>
-					<td style="padding: 10px">Virtually unlimited designs</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Styling</td>
-					<td style="padding: 10px">Limited (color, size, etc.)</td>
-					<td style="padding: 10px">Highly customizable</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Resolution</td>
-					<td style="padding: 10px">May appear pixelated when enlarged</td>
-					<td style="padding: 10px">SVG icons are resolution-independent</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Simplicity</td>
-					<td style="padding: 10px">Simple to implement</td>
-					<td style="padding: 10px">Requires additional resources</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Browser Support</td>
-					<td style="padding: 10px">Excellent</td>
-					<td style="padding: 10px">Good, but may require fallbacks</td>
-				</tr>
-			</table>
-			<br />
-			<h3>Finding HTML Symbols</h3>
-			<p>
-				There are many more HTML symbols than those listed here. You can find
-				comprehensive lists of HTML symbols at:
-			</p>
-			<ul>
-				<li>
-					<a href="https://www.toptal.com/designers/htmlarrows/" target="_blank"
-						>HTML Arrows</a
-					>
-					- A visual reference of HTML symbols and entities
-				</li>
-				<li>
-					<a
-						href="https://www.w3schools.com/charsets/ref_utf_symbols.asp"
-						target="_blank"
-						>W3Schools UTF-8 Symbols</a
-					>
-					- Reference for UTF-8 symbols
-				</li>
-				<li>
-					<a href="https://unicode-table.com/" target="_blank">Unicode Table</a>
-					- Complete Unicode character reference
-				</li>
-			</ul>
-			<br />
-			<h3>Browser Compatibility</h3>
-			<p>
-				Most modern browsers support a wide range of HTML symbols, but there can
-				be differences in how they're displayed. Some factors to consider:
-			</p>
-			<ul>
-				<li>The font being used may not include all symbols</li>
-				<li>
-					Older browsers may have limited support for certain Unicode ranges
-				</li>
-				<li>Mobile devices might render some symbols differently</li>
-				<li>
-					For critical symbols, consider using images or icon fonts as fallbacks
-				</li>
-			</ul>
-			<br />
-			<h3>Best Practices for Using HTML Symbols</h3>
-			<ol>
-				<li>
-					<strong>Use named entities when available</strong> - They're more
-					readable and easier to remember
-				</li>
-				<li>
-					<strong>Consider accessibility</strong> - Ensure that symbols used for
-					functionality have appropriate text alternatives
-				</li>
-				<li>
-					<strong>Test across browsers</strong> - Verify that symbols display
-					correctly across different browsers and devices
-				</li>
-				<li>
-					<strong>Use appropriate context</strong> - Choose symbols that clearly
-					convey their intended meaning
-				</li>
-				<li>
-					<strong>Don't overuse</strong> - Too many symbols can make your
-					content difficult to read
-				</li>
-			</ol>
-			<br />
-			<h3>Practical Examples</h3>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- Rating with star symbols --&gt;
-					<br />
-					&lt;div&gt;
-					<br />
-					&nbsp;&nbsp;Rating:
-					&amp;starf;&amp;starf;&amp;starf;&amp;starf;&amp;star;
-					<br />
-					&lt;/div&gt;
-					<br /><br />
-					&lt;!-- Pagination with arrow symbols --&gt;
-					<br />
-					&lt;div class="pagination"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;a href="#"&gt;&amp;laquo; Previous&lt;/a&gt;
-					<br />
-					&nbsp;&nbsp;&lt;a href="#"&gt;1&lt;/a&gt;
-					<br />
-					&nbsp;&nbsp;&lt;a href="#"&gt;2&lt;/a&gt;
-					<br />
-					&nbsp;&nbsp;&lt;a href="#"&gt;3&lt;/a&gt;
-					<br />
-					&nbsp;&nbsp;&lt;a href="#"&gt;Next &amp;raquo;&lt;/a&gt;
-					<br />
-					&lt;/div&gt;
-					<br /><br />
-					&lt;!-- Mathematical formula --&gt;
-					<br />
-					&lt;p&gt;
-					<br />
-					&nbsp;&nbsp;The quadratic formula is: x = (-b &amp;plusmn;
-					&amp;radic;(b&amp;sup2; - 4ac)) / 2a
-					<br />
-					&lt;/p&gt;
-					<br /><br />
-					&lt;!-- Copyright footer --&gt;
-					<br />
-					&lt;footer&gt;
-					<br />
-					&nbsp;&nbsp;&amp;copy; 2023 My Website. All rights reserved.
-					<br />
-					&lt;/footer&gt;
-				</code>
-			</div>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch20-entities/entities.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch22-emojis/emojis.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Symbol Representation Methods</h3>
+			<ul>
+				<li>
+					<strong>Named Entity</strong> - Using descriptive names (e.g.,
+					&amp;copy; for ©)
+				</li>
+				<li>
+					<strong>Decimal Reference</strong> - Using decimal Unicode (e.g.,
+					&amp;#169; for ©)
+				</li>
+				<li>
+					<strong>Hexadecimal Reference</strong> - Using hex Unicode (e.g.,
+					&amp;#xA9; for ©)
+				</li>
+			</ul>
+
+			<h3>Mathematical Symbols</h3>
+			<div class="code max-w40">
+				<code>
+					± - &amp;plusmn; or &amp;#177; × - &amp;times; or &amp;#215; ÷ -
+					&amp;divide; or &amp;#247; ≠ - &amp;ne; or &amp;#8800; ≤ - &amp;le; or
+					&amp;#8804; ≥ - &amp;ge; or &amp;#8805; ∞ - &amp;infin; or &amp;#8734;
+					∑ - &amp;sum; or &amp;#8721; ∏ - &amp;prod; or &amp;#8719; √ -
+					&amp;radic; or &amp;#8730;
+				</code>
+			</div>
+
+			<h3>Greek Letters</h3>
+			<div class="code max-w40">
+				<code>
+					α - &amp;alpha; or &amp;#945; β - &amp;beta; or &amp;#946; γ -
+					&amp;gamma; or &amp;#947; δ - &amp;delta; or &amp;#948; ε -
+					&amp;epsilon; or &amp;#949; π - &amp;pi; or &amp;#960; σ - &amp;sigma;
+					or &amp;#963; τ - &amp;tau; or &amp;#964; φ - &amp;phi; or &amp;#966;
+					ω - &amp;omega; or &amp;#969;
+				</code>
+			</div>
+
+			<h3>Technical Symbols</h3>
+			<div class="code max-w40">
+				<code>
+					© - &amp;copy; or &amp;#169; ® - &amp;reg; or &amp;#174; ™ -
+					&amp;trade; or &amp;#8482; ℃ - &amp;#8451; ℉ - &amp;#8457; ° -
+					&amp;deg; or &amp;#176; µ - &amp;micro; or &amp;#181; ⌘ - &amp;#8984;
+					⌥ - &amp;#8997; ⇧ - &amp;#8679;
+				</code>
+			</div>
+
+			<h3>Currency Symbols</h3>
+			<div class="code max-w40">
+				<code>
+					$ - &amp;#36; ¢ - &amp;cent; or &amp;#162; £ - &amp;pound; or
+					&amp;#163; € - &amp;euro; or &amp;#8364; ¥ - &amp;yen; or &amp;#165; ₹
+					- &amp;#8377; ₽ - &amp;#8381; ₿ - &amp;#8383;
+				</code>
+			</div>
+
+			<h3>Arrows and Controls</h3>
+			<div class="code max-w40">
+				<code>
+					← - &amp;larr; or &amp;#8592; ↑ - &amp;uarr; or &amp;#8593; → -
+					&amp;rarr; or &amp;#8594; ↓ - &amp;darr; or &amp;#8595; ⇐ - &amp;lArr;
+					or &amp;#8656; ⇒ - &amp;rArr; or &amp;#8658; ▶ - &amp;#9654; ◀ -
+					&amp;#9664; ▼ - &amp;#9660; ▲ - &amp;#9650;
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Use semantic names</strong> - More readable and maintainable
+				</li>
+				<li>
+					<strong>Consider fallbacks</strong> - Some symbols may not display in
+					all fonts
+				</li>
+				<li><strong>Test across browsers</strong> - Symbol support varies</li>
+				<li>
+					<strong>Check accessibility</strong> - Ensure screen readers can
+					interpret symbols
+				</li>
+				<li>
+					<strong>Document usage</strong> - Comment complex symbol combinations
+				</li>
+				<li><strong>Use UTF-8 encoding</strong> - Better symbol support</li>
+			</ul>
+
+			<h3>Common Use Cases</h3>
+			<ul>
+				<li>Mathematical equations and formulas</li>
+				<li>Scientific notations</li>
+				<li>Technical documentation</li>
+				<li>User interface elements</li>
+				<li>Financial documents</li>
+				<li>Academic papers</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Provide text alternatives for symbols</li>
+				<li>Use ARIA labels when needed</li>
+				<li>Consider symbol meaning in context</li>
+				<li>Test with screen readers</li>
+				<li>Ensure sufficient color contrast</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch20-entities/entities.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch22-emojis/emojis.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

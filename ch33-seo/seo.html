@@ -7,223 +7,121 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
-			<h1>Chapter 33 - Search Engine Optimization (SEO) in HTML5</h1>
+		<main class="main-scope" id="top">
+			<h1>Chapter 33 - Search Engine Optimization (SEO) in HTML</h1>
 			<br />
-			<h2>What is SEO?</h2>
+			<h2>Understanding SEO</h2>
 			<p>
 				Search Engine Optimization (SEO) is the practice of optimizing your
 				website to increase its visibility in search engine results. When people
 				search for products or services related to your business, you want your
 				website to appear prominently in search results. Good SEO practices help
-				search engines understand what your website is about and improve your
-				chances of ranking higher.
+				search engines understand your content, improve rankings, and drive
+				organic traffic to your website.
 			</p>
 			<br />
-			<h3>Important HTML Elements for SEO</h3>
-			<p>Several HTML elements play a crucial role in SEO:</p>
+			<h3>Essential HTML Elements for SEO</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Title Tag - Most important for SEO --&gt; &lt;head&gt;
+					&lt;title&gt;Best Web Development Tutorials | Learn HTML&lt;/title&gt;
+					&lt;!-- Meta Description --&gt; &lt;meta name="description"
+					content="Learn web development with comprehensive HTML tutorials.
+					Perfect for beginners and experienced developers."&gt; &lt;!-- Meta
+					Keywords (less important now) --&gt; &lt;meta name="keywords"
+					content="HTML, web development, tutorials"&gt; &lt;!-- Viewport for
+					Mobile Optimization --&gt; &lt;meta name="viewport"
+					content="width=device-width, initial-scale=1.0"&gt; &lt;!-- Canonical
+					URL --&gt; &lt;link rel="canonical"
+					href="https://example.com/tutorials/html"&gt; &lt;/head&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Content Structure and Semantic HTML</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Proper Document Structure --&gt; &lt;header&gt; &lt;h1&gt;Main
+					Page Title&lt;/h1&gt; &lt;nav&gt; &lt;ul&gt; &lt;li&gt;&lt;a
+					href="/home"&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a
+					href="/about"&gt;About&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/nav&gt;
+					&lt;/header&gt; &lt;main&gt; &lt;article&gt; &lt;h2&gt;Article
+					Title&lt;/h2&gt; &lt;section&gt; &lt;h3&gt;Section Heading&lt;/h3&gt;
+					&lt;p&gt;Content with &lt;strong&gt;important
+					terms&lt;/strong&gt;&lt;/p&gt; &lt;/section&gt; &lt;/article&gt;
+					&lt;aside&gt; &lt;h3&gt;Related Content&lt;/h3&gt; &lt;!-- Related
+					articles --&gt; &lt;/aside&gt; &lt;/main&gt; &lt;footer&gt; &lt;nav
+					aria-label="Footer Navigation"&gt; &lt;!-- Footer links --&gt;
+					&lt;/nav&gt; &lt;/footer&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Images and Multimedia</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Optimized Image with Alt Text --&gt; &lt;img
+					src="tutorial.jpg" alt="Step-by-step HTML tutorial with code examples"
+					width="800" height="600" loading="lazy"&gt; &lt;!-- Video with
+					Transcripts --&gt; &lt;video controls&gt; &lt;source
+					src="tutorial.mp4" type="video/mp4"&gt; &lt;track kind="captions"
+					src="captions.vtt" srclang="en"&gt; &lt;p&gt;Your browser doesn't
+					support HTML5 video.&lt;/p&gt; &lt;/video&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Technical SEO Elements</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- robots.txt --&gt; User-agent: * Allow: / Disallow: /private/
+					Sitemap: https://example.com/sitemap.xml &lt;!-- sitemap.xml --&gt;
+					&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;urlset
+					xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt; &lt;url&gt;
+					&lt;loc&gt;https://example.com/&lt;/loc&gt;
+					&lt;lastmod&gt;2024-03-20&lt;/lastmod&gt;
+					&lt;changefreq&gt;weekly&lt;/changefreq&gt;
+					&lt;priority&gt;1.0&lt;/priority&gt; &lt;/url&gt; &lt;/urlset&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Best Practices for SEO</h3>
 			<ul>
 				<li>
-					<strong>Title Tag</strong> - Defines the title of the document shown
-					in search results and browser tabs
+					<strong>Content Quality</strong> - Create unique, valuable content
 				</li>
+				<li><strong>Mobile Optimization</strong> - Ensure responsive design</li>
+				<li><strong>Page Speed</strong> - Optimize loading times</li>
+				<li><strong>URL Structure</strong> - Use clean, descriptive URLs</li>
 				<li>
-					<strong>Meta Description</strong> - Provides a brief summary of the
-					page content for search results
+					<strong>Internal Linking</strong> - Create a logical site structure
 				</li>
-				<li>
-					<strong>Headings (h1-h6)</strong> - Structure your content and
-					indicate importance
-				</li>
-				<li>
-					<strong>Alt Text for Images</strong> - Describes images for search
-					engines and accessibility
-				</li>
-				<li>
-					<strong>URL Structure</strong> - Clean, descriptive URLs help search
-					engines understand content
-				</li>
-				<li>
-					<strong>Semantic HTML</strong> - Using proper HTML5 semantic elements
-					helps search engines understand page structure
-				</li>
+				<li><strong>Schema Markup</strong> - Implement structured data</li>
 			</ul>
 			<br />
-			<h3>Title Tag</h3>
-			<p>
-				The title tag is one of the most important elements for SEO. It appears
-				in search engine results and browser tabs. It should be concise,
-				descriptive, and include relevant keywords.
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;head&gt;
-					<br />
-					&nbsp;&nbsp;<strong
-						>&lt;title&gt;Best Web Development Tutorials | Learn HTML, CSS,
-						JavaScript&lt;/title&gt;</strong
-					>
-					<br />
-					&lt;/head&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Meta Description</h3>
-			<p>
-				The meta description provides a summary of the page content. While it
-				doesn't directly affect rankings, a well-written meta description can
-				improve click-through rates from search results.
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;head&gt;
-					<br />
-					&nbsp;&nbsp;&lt;title&gt;Web Development Tutorials&lt;/title&gt;
-					<br />
-					&nbsp;&nbsp;<strong
-						>&lt;meta name="description" content="Learn web development with our
-						comprehensive tutorials on HTML, CSS, JavaScript, and more. Perfect
-						for beginners and experienced developers."&gt;</strong
-					>
-					<br />
-					&lt;/head&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Headings</h3>
-			<p>
-				Headings (h1-h6) help structure your content and indicate the importance
-				of different sections. The h1 tag should be used for the main heading of
-				the page, and there should typically be only one h1 per page.
-			</p>
-			<div class="code max-w40">
-				<code>
-					<strong>&lt;h1&gt;Learn Web Development&lt;/h1&gt;</strong>
-					<br />
-					<br />
-					<strong>&lt;h2&gt;HTML Basics&lt;/h2&gt;</strong>
-					<br />
-					&lt;p&gt;HTML is the standard markup language for creating web
-					pages...&lt;/p&gt;
-					<br />
-					<br />
-					<strong>&lt;h2&gt;CSS Fundamentals&lt;/h2&gt;</strong>
-					<br />
-					&lt;p&gt;CSS is used to style and layout web pages...&lt;/p&gt;
-					<br />
-					<br />
-					<strong>&lt;h3&gt;CSS Selectors&lt;/h3&gt;</strong>
-					<br />
-					&lt;p&gt;CSS selectors are used to target HTML elements...&lt;/p&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Alt Text for Images</h3>
-			<p>
-				Alt text describes images for users who cannot see them and helps search
-				engines understand what the images are about.
-			</p>
-			<div class="code max-w40">
-				<code>
-					<strong
-						>&lt;img src="html-tutorial.jpg" alt="HTML Tutorial showing basic
-						syntax and structure" width="500" height="300"&gt;</strong
-					>
-				</code>
-			</div>
-			<br />
-			<h3>Semantic HTML</h3>
-			<p>
-				Using semantic HTML5 elements helps search engines understand the
-				structure and content of your page.
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;header&gt;
-					<br />
-					&nbsp;&nbsp;&lt;h1&gt;Web Development Blog&lt;/h1&gt;
-					<br />
-					&nbsp;&nbsp;&lt;nav&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Navigation links --&gt;
-					<br />
-					&nbsp;&nbsp;&lt;/nav&gt;
-					<br />
-					&lt;/header&gt;
-					<br />
-					<br />
-					&lt;main&gt;
-					<br />
-					&nbsp;&nbsp;&lt;article&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Article Title&lt;/h2&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Article content...&lt;/p&gt;
-					<br />
-					&nbsp;&nbsp;&lt;/article&gt;
-					<br />
-					&nbsp;&nbsp;&lt;aside&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Related Content&lt;/h3&gt;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Related content --&gt;
-					<br />
-					&nbsp;&nbsp;&lt;/aside&gt;
-					<br />
-					&lt;/main&gt;
-					<br />
-					<br />
-					&lt;footer&gt;
-					<br />
-					&nbsp;&nbsp;&lt;!-- Footer content --&gt;
-					<br />
-					&lt;/footer&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Other SEO Best Practices</h3>
+			<h3>Performance and Accessibility</h3>
 			<ul>
-				<li>
-					<strong>Mobile-Friendly Design</strong> - Ensure your website works
-					well on mobile devices
-				</li>
-				<li>
-					<strong>Page Speed</strong> - Optimize images and code to improve
-					loading times
-				</li>
-				<li>
-					<strong>Internal Linking</strong> - Link to other relevant pages
-					within your website
-				</li>
-				<li>
-					<strong>External Linking</strong> - Link to authoritative sources when
-					appropriate
-				</li>
-				<li>
-					<strong>XML Sitemap</strong> - Create a sitemap to help search engines
-					discover your content
-				</li>
-				<li>
-					<strong>Robots.txt</strong> - Control which pages search engines can
-					crawl
-				</li>
+				<li>Optimize images and media files</li>
+				<li>Implement proper heading hierarchy</li>
+				<li>Use descriptive link text</li>
+				<li>Ensure keyboard navigation</li>
+				<li>Provide alternative text for images</li>
+				<li>Use ARIA labels when necessary</li>
 			</ul>
 			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
-
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch32-labelsfieldsetandlegends/labelsfieldsetandlegends.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch34-favicon/favicon.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a
+					href="../ch32-labelsfieldsetandlegends/labelsfieldsetandlegends.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch34-favicon/favicon.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

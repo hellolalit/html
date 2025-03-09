@@ -7,104 +7,145 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
-			<h1>Chapter 27 - Forms in HTML5</h1>
-			<br />
-			<h2>What is a Form?</h2>
+		<main class="main-scope" id="top">
+			<h1>Chapter 27 - Forms in HTML</h1>
+
+			<h2>Understanding HTML Forms</h2>
 			<p>
-				Forms are an essential part of web pages that allow users to input data
-				and submit it to a server. HTML forms are used for user registration,
-				login, feedback, surveys, and many other interactive features. Forms in
-				HTML5 are created using the "form" tag and various input elements.
+				Forms are essential components of web pages that enable user interaction
+				and data submission. They serve various purposes, from user registration
+				and login to surveys and feedback collection. HTML forms provide a
+				structured way to gather and process user input.
 			</p>
-			<br />
-			<h3>Basic Form Structure</h3>
+
+			<h3>Form Structure</h3>
 			<div class="code max-w40">
 				<code>
-					<strong>&lt;form action="submit.php" method="post"&gt;</strong>
-					<br />
-					&nbsp;&nbsp;&lt;label for="username"&gt;Username:&lt;/label&gt;
-					<br />
-					&nbsp;&nbsp;&lt;input type="text" id="username" name="username"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;
-					<br />
-					<strong>&lt;/form&gt;</strong>
+					<!-- Basic form structure -->
+					<form action="/submit" method="post">
+						<fieldset>
+							<legend>User Information</legend>
+							<div class="form-group">
+								<label for="username">Username:</label>
+								<input type="text" id="username" name="username" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email:</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+						</fieldset>
+						<button type="submit">Submit</button>
+					</form>
 				</code>
 			</div>
-			<br />
+
 			<h3>Form Attributes</h3>
-			<p>The <strong>form</strong> element has several important attributes:</p>
-			<ul>
-				<li>
-					<strong>action</strong> - Specifies where to send the form data when
-					submitted
-				</li>
-				<li>
-					<strong>method</strong> - Specifies the HTTP method to use (GET or
-					POST)
-				</li>
-				<li>
-					<strong>target</strong> - Specifies where to display the response
-					after submitting
-				</li>
-				<li>
-					<strong>autocomplete</strong> - Specifies whether the form should have
-					autocomplete on or off
-				</li>
-				<li>
-					<strong>novalidate</strong> - Specifies that the form should not be
-					validated when submitted
-				</li>
-			</ul>
-			<br />
-			<h3>Form Example</h3>
-			<form action="#" method="get">
-				<label for="name">Name:</label><br />
-				<input type="text" id="name" name="name" /><br /><br />
-
-				<label for="email">Email:</label><br />
-				<input type="email" id="email" name="email" /><br /><br />
-
-				<input type="submit" value="Submit" />
-			</form>
-			<br />
-			<h3>Form Code Example</h3>
 			<div class="code max-w40">
 				<code>
-					&lt;form action="#" method="get"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;label for="name"&gt;Name:&lt;/label&gt;&lt;br&gt;
-					<br />
-					&nbsp;&nbsp;&lt;input type="text" id="name"
-					name="name"&gt;&lt;br&gt;&lt;br&gt;
-					<br />
-					&nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
-					<br />
-					&nbsp;&nbsp;&lt;input type="email" id="email"
-					name="email"&gt;&lt;br&gt;&lt;br&gt;
-					<br />
-					&nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;
-					<br />
-					&lt;/form&gt;
+					<!-- Essential attributes -->
+					action - Form submission URL
+					method - HTTP method (get/post)
+					enctype - Form data encoding
+					name - Form identifier
+					target - Response display target
+					novalidate - Disable validation
+					autocomplete - Enable/disable autocomplete
+
+					<!-- Common values -->
+					method="get" - Data in URL
+					method="post" - Data in request body
+					enctype="multipart/form-data" - File uploads
+					target="_blank" - New window/tab
+					target="_self" - Same frame
 				</code>
 			</div>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch26-input/input.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch28-textarea/textarea.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Form Elements</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Text inputs -->
+					<input type="text"> - Single line text
+					<input type="password"> - Password field
+					<textarea> - Multi-line text
+
+					<!-- Selection inputs -->
+					<select> - Dropdown list
+					<option> - Select options
+					<optgroup> - Option groups
+					<input type="radio"> - Radio buttons
+					<input type="checkbox"> - Checkboxes
+
+					<!-- Buttons -->
+					<button type="submit"> - Submit form
+					<button type="reset"> - Reset form
+					<button type="button"> - Custom action
+
+					<!-- Organization -->
+					<fieldset> - Group fields
+					<legend> - Fieldset title
+					<label> - Field label
+					<datalist> - Predefined options
+				</code>
+			</div>
+
+			<h3>Form Validation</h3>
+			<div class="code max-w40">
+				<code>
+					<!-- Built-in validation -->
+					required - Required field
+					pattern - Regex pattern
+					minlength/maxlength - Text length
+					min/max - Number range
+					type="email" - Email format
+					type="url" - URL format
+
+					<!-- Custom validation -->
+					<script>
+						form.addEventListener('submit', (e) => {
+							if (!validateForm()) {
+								e.preventDefault();
+								showErrors();
+							}
+						});
+					</script>
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li><strong>Use semantic markup</strong> - Proper form structure</li>
+				<li><strong>Add validation</strong> - Client and server-side</li>
+				<li><strong>Provide feedback</strong> - Clear error messages</li>
+				<li><strong>Group fields</strong> - Logical organization</li>
+				<li><strong>Consider UX</strong> - User-friendly design</li>
+				<li><strong>Ensure security</strong> - Protect sensitive data</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Use proper labels and IDs</li>
+				<li>Group related fields</li>
+				<li>Provide error feedback</li>
+				<li>Ensure keyboard navigation</li>
+				<li>Add descriptive instructions</li>
+				<li>Test with screen readers</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch26-input/inputs.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch28-textarea/textarea.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

@@ -7,587 +7,133 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
+		<main class="main-scope" id="top">
 			<h1>Chapter 19 - Embedding Google Maps in HTML</h1>
-			<br />
-			<h2>Introduction to Google Maps Embedding</h2>
+			<h2>Understanding Google Maps Integration</h2>
 			<p>
-				Embedding Google Maps in your HTML pages allows you to display
-				interactive maps directly on your website. This can be useful for
-				showing business locations, event venues, travel routes, or any other
-				geographic information that would benefit from a visual representation.
-				Google provides several methods for embedding maps, from simple iframe
-				embeds to more advanced JavaScript API implementations.
+				Google Maps integration allows you to display interactive maps directly
+				on your web pages. This is useful for showing business locations, event
+				venues, travel routes, or any geographic information. Google provides
+				multiple methods for embedding maps, from simple iframe embeds to
+				advanced JavaScript API implementations.
 			</p>
-			<br />
-			<h3>Basic Google Maps Embed</h3>
-			<p>
-				The simplest way to embed a Google Map is to use the iframe element with
-				Google Maps' embed URL:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573117898!2d-73.98784532418936!3d40.75798833440443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-					<br />
-					&nbsp;&nbsp;width="600"
-					<br />
-					&nbsp;&nbsp;height="450"
-					<br />
-					&nbsp;&nbsp;style="border:0;"
-					<br />
-					&nbsp;&nbsp;allowfullscreen=""
-					<br />
-					&nbsp;&nbsp;loading="lazy"
-					<br />
-					&nbsp;&nbsp;referrerpolicy="no-referrer-when-downgrade"
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Getting the Embed Code from Google Maps</h3>
-			<p>
-				The easiest way to get the correct embed code is directly from Google
-				Maps:
-			</p>
-			<ol>
-				<li>
-					Go to
-					<a href="https://www.google.com/maps" target="_blank">Google Maps</a>
-				</li>
-				<li>Search for the location you want to embed</li>
-				<li>Click on the "Share" button (the paper airplane icon)</li>
-				<li>Select the "Embed a map" tab</li>
-				<li>Choose your desired map size</li>
-				<li>Copy the provided iframe code</li>
-				<li>Paste the code into your HTML document</li>
-			</ol>
-			<br />
-			<h3>Customizing the Embedded Map</h3>
-			<p>
-				You can customize the embedded map by modifying the iframe attributes:
-			</p>
-			<ul>
-				<li>
-					<strong>width</strong> and <strong>height</strong>: Set the dimensions
-					of the map
-				</li>
-				<li><strong>style</strong>: Add CSS styling (e.g., border, margin)</li>
-				<li>
-					<strong>loading="lazy"</strong>: Defers loading the map until it's
-					near the viewport
-				</li>
-				<li>
-					<strong>referrerpolicy</strong>: Controls what referrer information is
-					passed
-				</li>
-			</ul>
-			<p>
-				You can also customize the map itself by modifying the URL parameters in
-				the src attribute, though this is more complex and less reliable than
-				using the Google Maps embed tool.
-			</p>
-			<br />
-			<h3>Responsive Google Maps Embed</h3>
-			<p>
-				To make the embedded map responsive (adapt to different screen sizes),
-				you can use CSS:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;style&gt;
-					<br />
-					&nbsp;&nbsp;.map-container {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;padding-bottom: 75%; /* 4:3 Aspect Ratio */
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;max-width: 100%;
-					<br />
-					&nbsp;&nbsp;}
-					<br /><br />
-					&nbsp;&nbsp;.map-container iframe {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;top: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;left: 0;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/style&gt;
-					<br /><br />
-					&lt;div class="map-container"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;iframe
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573117898!2d-73.98784532418936!3d40.75798833440443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;style="border:0;"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;allowfullscreen=""
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;loading="lazy"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;referrerpolicy="no-referrer-when-downgrade"
-					<br />
-					&nbsp;&nbsp;&gt;&lt;/iframe&gt;
-					<br />
-					&lt;/div&gt;
-				</code>
-			</div>
-			<p>
-				This CSS creates a responsive container that maintains a 4:3 aspect
-				ratio at any screen size. You can adjust the padding-bottom percentage
-				to change the aspect ratio.
-			</p>
-			<br />
-			<h3>Google Maps Embed Types</h3>
-			<p>Google Maps offers several types of embeds:</p>
-			<table
-				border="1"
-				style="border-collapse: collapse; width: 80%; margin: 20px auto">
-				<tr style="background-color: #f2f2f2">
-					<th style="padding: 10px">Embed Type</th>
-					<th style="padding: 10px">Description</th>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Place</td>
-					<td style="padding: 10px">Shows a specific location with a marker</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Directions</td>
-					<td style="padding: 10px">Shows a route between two locations</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Search</td>
-					<td style="padding: 10px">Shows search results for a query</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">View</td>
-					<td style="padding: 10px">
-						Shows a map centered at specific coordinates
-					</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px">Streetview</td>
-					<td style="padding: 10px">Shows a Street View panorama</td>
-				</tr>
-			</table>
-			<p>
-				Each type can be selected when generating the embed code through Google
-				Maps.
-			</p>
-			<br />
-			<h3>Examples of Different Map Embeds</h3>
-			<h4>Example 1: Place Embed (Specific Location)</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573117898!2d-73.98784532418936!3d40.75798833440443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-					<br />
-					&nbsp;&nbsp;width="600"
-					<br />
-					&nbsp;&nbsp;height="450"
-					<br />
-					&nbsp;&nbsp;style="border:0;"
-					<br />
-					&nbsp;&nbsp;allowfullscreen=""
-					<br />
-					&nbsp;&nbsp;loading="lazy"
-					<br />
-					&nbsp;&nbsp;referrerpolicy="no-referrer-when-downgrade"
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<h4>Example 2: Directions Embed (Route Between Locations)</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d48351.43860522455!2d-74.01928583439035!3d40.7400532952429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square%2C%20New%20York%2C%20NY!3m2!1d40.7579747!2d-73.9855426!4m5!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building%2C%20West%2034th%20Street%2C%20New%20York%2C%20NY!3m2!1d40.748817!2d-73.98558099999999!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-					<br />
-					&nbsp;&nbsp;width="600"
-					<br />
-					&nbsp;&nbsp;height="450"
-					<br />
-					&nbsp;&nbsp;style="border:0;"
-					<br />
-					&nbsp;&nbsp;allowfullscreen=""
-					<br />
-					&nbsp;&nbsp;loading="lazy"
-					<br />
-					&nbsp;&nbsp;referrerpolicy="no-referrer-when-downgrade"
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<h4>Example 3: Street View Embed</h4>
-			<div class="code max-w40">
-				<code>
-					&lt;iframe
-					<br />
-					&nbsp;&nbsp;src="https://www.google.com/maps/embed?pb=!4v1710000000000!6m8!1m7!1sCAoSLEFGMVFpcE9fS2VJWnlqdV9NRGRLNUVkUWZSTVBxS2xQUmNfZDhBcmJpTDZn!2m2!1d40.7579747!2d-73.9855426!3f0!4f0!5f0.7820865974627469"
-					<br />
-					&nbsp;&nbsp;width="600"
-					<br />
-					&nbsp;&nbsp;height="450"
-					<br />
-					&nbsp;&nbsp;style="border:0;"
-					<br />
-					&nbsp;&nbsp;allowfullscreen=""
-					<br />
-					&nbsp;&nbsp;loading="lazy"
-					<br />
-					&nbsp;&nbsp;referrerpolicy="no-referrer-when-downgrade"
-					<br />
-					&gt;&lt;/iframe&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Google Maps JavaScript API</h3>
-			<p>
-				For more advanced map functionality, you can use the Google Maps
-				JavaScript API. This requires an API key from the Google Cloud Platform.
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;!-- HTML container for the map --&gt;
-					<br />
-					&lt;div id="map" style="height: 400px; width: 100%;"&gt;&lt;/div&gt;
-					<br /><br />
-					&lt;!-- JavaScript for the map --&gt;
-					<br />
-					&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;// Initialize and add the map
-					<br />
-					&nbsp;&nbsp;function initMap() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// The location of Times Square
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const timesSquare = { lat: 40.7580, lng:
-					-73.9855 };
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// The map, centered at Times Square
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const map = new
-					google.maps.Map(document.getElementById("map"), {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zoom: 15,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;center: timesSquare,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// The marker, positioned at Times Square
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const marker = new google.maps.Marker({
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: timesSquare,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map: map,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "Times Square",
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/script&gt;
-					<br /><br />
-					&lt;!-- Load the Google Maps JavaScript API --&gt;
-					<br />
-					&lt;script
-					<br />
-					&nbsp;&nbsp;src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-					<br />
-					&nbsp;&nbsp;async
-					<br />
-					&nbsp;&nbsp;defer
-					<br />
-					&gt;&lt;/script&gt;
-				</code>
-			</div>
-			<p>
-				Replace <strong>YOUR_API_KEY</strong> with your actual Google Maps API
-				key. The JavaScript API offers more customization options than the
-				iframe embed, including:
-			</p>
-			<ul>
-				<li>Custom markers and info windows</li>
-				<li>Drawing tools and shapes</li>
-				<li>Heatmaps and data visualization</li>
-				<li>Geocoding and directions</li>
-				<li>Custom map styles</li>
-				<li>User interaction handling</li>
-			</ul>
-			<br />
-			<h3>Adding Custom Markers and Info Windows</h3>
-			<div class="code max-w40">
-				<code>
-					&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;function initMap() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const map = new
-					google.maps.Map(document.getElementById("map"), {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zoom: 14,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;center: { lat: 40.7580, lng:
-					-73.9855 },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br /><br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// Array of marker positions and info
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const locations = [
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: { lat:
-					40.7580, lng: -73.9855 },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "Times Square",
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:
-					"&lt;h3&gt;Times Square&lt;/h3&gt;&lt;p&gt;The bustling heart of
-					Manhattan.&lt;/p&gt;"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: { lat:
-					40.7484, lng: -73.9857 },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "Empire State
-					Building",
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:
-					"&lt;h3&gt;Empire State Building&lt;/h3&gt;&lt;p&gt;Iconic skyscraper
-					in Midtown Manhattan.&lt;/p&gt;"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position: { lat:
-					40.7587, lng: -73.9787 },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: "Rockefeller
-					Center",
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:
-					"&lt;h3&gt;Rockefeller Center&lt;/h3&gt;&lt;p&gt;Complex of commercial
-					buildings in Midtown.&lt;/p&gt;"
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;];
-					<br /><br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// Create an info window
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const infoWindow = new
-					google.maps.InfoWindow();
-					<br /><br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// Create markers and add click listeners
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;locations.forEach((location) => {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const marker = new
-					google.maps.Marker({
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position:
-					location.position,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map: map,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: location.title,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br /><br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;marker.addListener("click", () =>
-					{
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;infoWindow.close();
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;infoWindow.setContent(location.content);
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;infoWindow.open(map,
-					marker);
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/script&gt;
-				</code>
-			</div>
-			<br />
-			<h3>Custom Map Styles</h3>
-			<p>
-				You can customize the appearance of your map using the Google Maps
-				JavaScript API:
-			</p>
-			<div class="code max-w40">
-				<code>
-					&lt;script&gt;
-					<br />
-					&nbsp;&nbsp;function initMap() {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// Custom map style
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const darkStyle = [
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ elementType: "geometry",
-					stylers: [{ color: "#242f3e" }] },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ elementType:
-					"labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ elementType: "labels.text.fill",
-					stylers: [{ color: "#746855" }] },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;featureType:
-					"administrative.locality",
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementType:
-					"labels.text.fill",
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stylers: [{ color:
-					"#d59563" }],
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// More style rules...
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;];
-					<br /><br />
-					&nbsp;&nbsp;&nbsp;&nbsp;// Create the map with custom style
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;const map = new
-					google.maps.Map(document.getElementById("map"), {
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;center: { lat: 40.7580, lng:
-					-73.9855 },
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zoom: 15,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;styles: darkStyle,
-					<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br />
-					&nbsp;&nbsp;}
-					<br />
-					&lt;/script&gt;
-				</code>
-			</div>
-			<p>
-				You can create custom map styles using the
-				<a href="https://mapstyle.withgoogle.com/" target="_blank"
-					>Google Maps Styling Wizard</a
-				>
-				and export the JSON for use in your code.
-			</p>
-			<br />
-			<h3>Accessibility Considerations</h3>
-			<p>
-				When embedding Google Maps, consider these accessibility best practices:
-			</p>
-			<ul>
-				<li>
-					Provide a text description or address information alongside the map
-				</li>
-				<li>Add a title attribute to the iframe describing the map content</li>
-				<li>Ensure keyboard navigation works with the embedded map</li>
-				<li>
-					Consider providing alternative directions or location information for
-					users who cannot use the map
-				</li>
-				<li>Use appropriate color contrast for any custom map styles</li>
-			</ul>
-			<br />
-			<h3>Performance Considerations</h3>
-			<p>
-				Embedded maps can impact page load times. Consider these performance
-				tips:
-			</p>
-			<ul>
-				<li>
-					Use the loading="lazy" attribute to defer loading until the map is
-					near the viewport
-				</li>
-				<li>Set an appropriate size for the map to reduce initial load time</li>
-				<li>
-					Consider loading the map only after a user interaction (like clicking
-					a button)
-				</li>
-				<li>Limit the number of markers and features on a single map</li>
-				<li>
-					Use the async and defer attributes when loading the Google Maps
-					JavaScript API
-				</li>
-			</ul>
-			<br />
-			<h3>Privacy and Terms of Use</h3>
-			<p>When using Google Maps on your website, be aware of the following:</p>
-			<ul>
-				<li>
-					Google Maps Platform is subject to the
-					<a
-						href="https://cloud.google.com/maps-platform/terms/"
-						target="_blank"
-						>Google Maps Platform Terms of Service</a
-					>
-				</li>
-				<li>You must comply with Google's terms of use and privacy policies</li>
-				<li>
-					For the JavaScript API, you need to create a billing account (though
-					there is a generous free tier)
-				</li>
-				<li>
-					You should include appropriate privacy notices if your site collects
-					user location data
-				</li>
-			</ul>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch18-embedYoutubeVideo/embedyoutubevideo.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch20-entities/entities.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>Basic Iframe Embed</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_URL"
+					width="600" height="450" style="border:0" loading="lazy"
+					allowfullscreen referrerpolicy="no-referrer-when-downgrade"&gt;
+					&lt;/iframe&gt;
+				</code>
+			</div>
+
+			<h3>Maps JavaScript API</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Include the Maps JavaScript API --&gt; &lt;script
+					src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"&gt;&lt;/script&gt;
+					&lt;!-- Create a div for the map --&gt; &lt;div id="map"
+					style="height: 400px; width: 100%;"&gt;&lt;/div&gt; &lt;script&gt;
+					function initMap() { const location = { lat: -34.397, lng: 150.644 };
+					const map = new google.maps.Map( document.getElementById('map'), {
+					zoom: 8, center: location, } ); // Add a marker const marker = new
+					google.maps.Marker({ position: location, map: map, title: 'Location
+					Name' }); } // Initialize the map when the page loads window.onload =
+					initMap; &lt;/script&gt;
+				</code>
+			</div>
+
+			<h3>Custom Map Styles</h3>
+			<div class="code max-w40">
+				<code>
+					const mapStyles = [ { featureType: 'all', elementType: 'geometry',
+					stylers: [{ color: '#242f3e' }] }, { featureType: 'water',
+					elementType: 'geometry', stylers: [{ color: '#17263c' }] } ]; const
+					map = new google.maps.Map(document.getElementById('map'), { zoom: 8,
+					center: location, styles: mapStyles });
+				</code>
+			</div>
+
+			<h3>Interactive Features</h3>
+			<div class="code max-w40">
+				<code>
+					// Add an info window const infoWindow = new google.maps.InfoWindow({
+					content: '&lt;h3&gt;Location Name&lt;/h3&gt;' + '&lt;p&gt;Location
+					description goes here&lt;/p&gt;' }); // Show info window when marker
+					is clicked marker.addListener('click', () => { infoWindow.open(map,
+					marker); }); // Add custom controls const centerControl =
+					document.createElement('button'); centerControl.textContent = 'Center
+					Map'; centerControl.addEventListener('click', () => {
+					map.setCenter(location); map.setZoom(8); });
+					map.controls[google.maps.ControlPosition.TOP_CENTER]
+					.push(centerControl);
+				</code>
+			</div>
+
+			<h3>Responsive Maps</h3>
+			<div class="code max-w40">
+				<code>
+					.map-container { position: relative; width: 100%; padding-bottom:
+					56.25%; /* 16:9 Aspect Ratio */ } .map-container iframe { position:
+					absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li><strong>Use HTTPS</strong> - For security and compatibility</li>
+				<li>
+					<strong>Add API key restrictions</strong> - Limit usage to your domain
+				</li>
+				<li><strong>Enable lazy loading</strong> - Improve page performance</li>
+				<li><strong>Make maps responsive</strong> - Adapt to screen sizes</li>
+				<li>
+					<strong>Provide fallback content</strong> - Handle loading errors
+				</li>
+				<li>
+					<strong>Optimize markers</strong> - Don't overload with too many
+				</li>
+				<li>
+					<strong>Consider mobile users</strong> - Touch-friendly controls
+				</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Provide text alternatives for map content</li>
+				<li>Ensure keyboard navigation works</li>
+				<li>Add descriptive labels to markers</li>
+				<li>Include location information in text form</li>
+				<li>Make custom controls accessible</li>
+				<li>Consider color contrast in custom styles</li>
+			</ul>
+
+			<h3>Performance Tips</h3>
+			<ul>
+				<li>Load maps only when needed</li>
+				<li>Use appropriate zoom levels</li>
+				<li>Limit the number of markers</li>
+				<li>Optimize custom styles</li>
+				<li>Consider using static maps for simple displays</li>
+				<li>Implement proper error handling</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch18-embedyoutubevideo/embedyoutubevideo.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch20-entities/entities.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

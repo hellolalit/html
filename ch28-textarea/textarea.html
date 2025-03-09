@@ -7,132 +7,120 @@
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope" id="#top">
-			<h1>Chapter 28 - Textarea in HTML5</h1>
-			<br />
-			<h2>What is a Textarea?</h2>
+		<main class="main-scope" id="top">
+			<h1>Chapter 28 - Textarea in HTML</h1>
+
+			<h2>Understanding Textarea</h2>
 			<p>
-				A textarea is an HTML form element that allows users to input multiple
-				lines of text. It's commonly used for comments, reviews, messages, and
-				any other input that requires more than a single line of text. The
-				textarea is created using the "textarea" tag.
+				The textarea element is a form control that enables users to input
+				multiple lines of text. It's essential for collecting longer text
+				content such as comments, messages, reviews, or any input that requires
+				more than a single line. Unlike regular text inputs, textareas can be
+				resized and support line breaks.
 			</p>
-			<br />
-			<h3>Basic Textarea Syntax</h3>
+
+			<h3>Basic Syntax</h3>
 			<div class="code max-w40">
 				<code>
-					<strong>&lt;textarea name="comment" rows="4" cols="50"&gt;</strong>
-					Enter your comment here...
-					<strong>&lt;/textarea&gt;</strong>
+					<!-- Basic textarea -->
+					<textarea name="comment" rows="4" cols="50">
+						Default text here...
+					</textarea
+					>
+
+					<!-- With label and placeholder -->
+					<label for="message">Your Message:</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="5"
+						cols="40"
+						placeholder="Enter your message here..."></textarea>
 				</code>
 			</div>
-			<br />
+
 			<h3>Textarea Attributes</h3>
-			<p>
-				The <strong>textarea</strong> element has several important attributes:
-			</p>
-			<ul>
-				<li>
-					<strong>name</strong> - Specifies the name of the textarea (for form
-					submission)
-				</li>
-				<li><strong>rows</strong> - Specifies the visible number of lines</li>
-				<li>
-					<strong>cols</strong> - Specifies the visible width of the textarea
-				</li>
-				<li>
-					<strong>maxlength</strong> - Specifies the maximum number of
-					characters allowed
-				</li>
-				<li>
-					<strong>placeholder</strong> - Specifies a short hint that describes
-					the expected value
-				</li>
-				<li>
-					<strong>readonly</strong> - Specifies that the textarea should be
-					read-only
-				</li>
-				<li>
-					<strong>disabled</strong> - Specifies that the textarea should be
-					disabled
-				</li>
-				<li>
-					<strong>required</strong> - Specifies that the textarea must be filled
-					out
-				</li>
-				<li>
-					<strong>autofocus</strong> - Specifies that the textarea should
-					automatically get focus when the page loads
-				</li>
-			</ul>
-			<br />
-			<h3>Textarea Example</h3>
-			<form action="#" method="get">
-				<label for="message">Message:</label><br />
-				<textarea
-					id="message"
-					name="message"
-					rows="5"
-					cols="40"
-					placeholder="Type your message here..."></textarea
-				><br /><br />
-
-				<input type="submit" value="Submit" />
-			</form>
-			<br />
-			<h3>Textarea Code Example</h3>
 			<div class="code max-w40">
 				<code>
-					&lt;form action="#" method="get"&gt;
-					<br />
-					&nbsp;&nbsp;&lt;label
-					for="message"&gt;Message:&lt;/label&gt;&lt;br&gt;
-					<br />
-					&nbsp;&nbsp;&lt;textarea id="message" name="message" rows="5"
-					cols="40" placeholder="Type your message
-					here..."&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
-					<br />
-					&nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;
-					<br />
-					&lt;/form&gt;
+					<!-- Essential attributes -->
+					name - Form data name id - Unique identifier rows - Visible lines cols
+					- Visible width
+
+					<!-- Validation attributes -->
+					required - Required field minlength - Minimum characters maxlength -
+					Maximum characters
+
+					<!-- UI attributes -->
+					placeholder - Input hint readonly - Read-only state disabled -
+					Disabled state wrap - Text wrapping (soft/hard) spellcheck - Spell
+					checking
+
+					<!-- Style attributes -->
+					style - Inline CSS class - CSS classes
 				</code>
 			</div>
-			<br />
+
 			<h3>Styling Textarea</h3>
-			<p>You can style a textarea using CSS to match your website's design:</p>
 			<div class="code max-w40">
 				<code>
-					textarea {
-					<br />
-					&nbsp;&nbsp;width: 100%;
-					<br />
-					&nbsp;&nbsp;padding: 12px;
-					<br />
-					&nbsp;&nbsp;border: 1px solid #ccc;
-					<br />
-					&nbsp;&nbsp;border-radius: 4px;
-					<br />
-					&nbsp;&nbsp;resize: vertical; /* Allow vertical resizing */
-					<br />
-					}
+					/* Basic styling */ textarea { padding: 10px; border: 1px solid #ccc;
+					border-radius: 4px; font-family: inherit; font-size: 16px; } /* Resize
+					options */ textarea { resize: none; /* Disable resizing */ resize:
+					vertical; /* Only vertical */ resize: horizontal; /* Only horizontal
+					*/ resize: both; /* Both directions */ } /* Focus state */
+					textarea:focus { outline: none; border-color: #4CAF50; box-shadow: 0 0
+					5px rgba(76, 175, 80, 0.3); }
 				</code>
 			</div>
-			<br />
-			<br />
-			<a href="#top">
-				<button class="topbtn">Go to top</button>
-			</a>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-			<a href="../ch27-form/forms.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-			<a href="../ch29-selectoption/selectoption.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<h3>JavaScript Integration</h3>
+			<div class="code max-w40">
+				<code>
+					// Auto-resize textarea textarea.addEventListener('input', function()
+					{ this.style.height = 'auto'; this.style.height = this.scrollHeight +
+					'px'; }); // Character counter textarea.addEventListener('input',
+					function() { const remaining = this.maxLength - this.value.length;
+					counter.textContent = `${remaining} characters remaining`; }); // Save
+					draft textarea.addEventListener('input', function() {
+					localStorage.setItem('draft', this.value); });
+				</code>
+			</div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li><strong>Use labels</strong> - Associate with label elements</li>
+				<li><strong>Set dimensions</strong> - Appropriate size for content</li>
+				<li><strong>Add placeholders</strong> - Clear input hints</li>
+				<li><strong>Consider validation</strong> - Length limits</li>
+				<li><strong>Enable resizing</strong> - User preference</li>
+				<li><strong>Provide feedback</strong> - Character counts</li>
+			</ul>
+
+			<h3>Accessibility Considerations</h3>
+			<ul>
+				<li>Use proper labels and IDs</li>
+				<li>Add descriptive placeholders</li>
+				<li>Ensure keyboard navigation</li>
+				<li>Provide clear feedback</li>
+				<li>Consider font size and spacing</li>
+				<li>Test with screen readers</li>
+			</ul>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch27-form/form.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch29-selectoption/selectoption.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>
