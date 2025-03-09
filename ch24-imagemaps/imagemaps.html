@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-24 Image Maps</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 24 - Image Maps in HTML</h1>
+			<br />
+			<h2>What are Image Maps?</h2>
+			<p>
+				An image map is an image with clickable areas. These clickable areas,
+				called hotspots, act as links to other web pages, files, or locations
+				within the same page. Image maps allow you to create complex,
+				interactive images where different regions perform different actions
+				when clicked.
+			</p>
+			<p>
+				Image maps are useful when you want to create a visual navigation
+				system, such as an interactive map, diagram, or any image where
+				different parts should link to different destinations.
+			</p>
+			<br />
+			<h3>Types of Image Maps</h3>
+			<p>There are two types of image maps:</p>
+			<ol>
+				<li>
+					<strong>Client-side image maps</strong>: The mapping information is
+					contained within the HTML document and processed by the browser. This
+					is the recommended approach.
+				</li>
+				<li>
+					<strong>Server-side image maps</strong>: The mapping information is
+					processed by a server-side script. This is an older approach and is
+					generally not recommended for modern web development.
+				</li>
+			</ol>
+			<p>
+				In this chapter, we'll focus on client-side image maps, which are more
+				efficient, accessible, and widely supported.
+			</p>
+			<br />
+			<h3>Creating a Client-Side Image Map</h3>
+			<p>To create a client-side image map, you need three main components:</p>
+			<ol>
+				<li>
+					An <strong>&lt;img&gt;</strong> element with a
+					<strong>usemap</strong> attribute that references the map's name
+				</li>
+				<li>
+					A <strong>&lt;map&gt;</strong> element with a
+					<strong>name</strong> attribute that matches the usemap reference
+				</li>
+				<li>
+					One or more <strong>&lt;area&gt;</strong> elements within the map
+					element, defining the clickable regions
+				</li>
+			</ol>
+			<div class="code max-w40">
+				<code>
+					&lt;img src="image.jpg" alt="Description" usemap="#mapName"&gt;
+					<br /><br />
+					&lt;map name="mapName"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="shape" coords="coordinates"
+					href="link.html" alt="Description"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="shape" coords="coordinates"
+					href="link2.html" alt="Description"&gt;
+					<br />
+					&lt;/map&gt;
+				</code>
+			</div>
+			<br />
+			<h3>The &lt;area&gt; Element</h3>
+			<p>
+				The &lt;area&gt; element defines a clickable area within an image map.
+				It has several important attributes:
+			</p>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Attribute</th>
+					<th style="padding: 10px">Description</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>shape</strong></td>
+					<td style="padding: 10px">
+						Specifies the shape of the area (rect, circle, poly, default)
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>coords</strong></td>
+					<td style="padding: 10px">Specifies the coordinates of the area</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>href</strong></td>
+					<td style="padding: 10px">Specifies the URL of the link</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>alt</strong></td>
+					<td style="padding: 10px">
+						Provides alternative text for the area (important for accessibility)
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>target</strong></td>
+					<td style="padding: 10px">
+						Specifies where to open the linked document (_blank, _self, etc.)
+					</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Shape Types and Coordinates</h3>
+			<p>
+				The &lt;area&gt; element supports different shapes, each requiring
+				specific coordinate formats:
+			</p>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Shape</th>
+					<th style="padding: 10px">Coordinates Format</th>
+					<th style="padding: 10px">Example</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>rect</strong> (rectangle)</td>
+					<td style="padding: 10px">
+						x1,y1,x2,y2<br />(top-left and bottom-right corners)
+					</td>
+					<td style="padding: 10px">shape="rect" coords="34,44,270,350"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>circle</strong></td>
+					<td style="padding: 10px">x,y,r<br />(center point and radius)</td>
+					<td style="padding: 10px">shape="circle" coords="125,125,75"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>poly</strong> (polygon)</td>
+					<td style="padding: 10px">
+						x1,y1,x2,y2,...,xn,yn<br />(series of points)
+					</td>
+					<td style="padding: 10px">
+						shape="poly"
+						coords="140,121,181,116,204,160,204,222,191,270,140,329,85,271,71,216,76,136,113,121"
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>default</strong></td>
+					<td style="padding: 10px">
+						No coordinates needed<br />(covers the entire image)
+					</td>
+					<td style="padding: 10px">shape="default"</td>
+				</tr>
+			</table>
+			<p>
+				The coordinates are measured in pixels from the top-left corner of the
+				image (0,0).
+			</p>
+			<br />
+			<h3>Example: Simple Image Map</h3>
+			<p>
+				Here's a simple example of an image map with rectangular and circular
+				regions:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;img src="workspace.jpg" alt="Workspace with computer, phone, and
+					coffee" usemap="#workspaceMap" width="600" height="400"&gt;
+					<br /><br />
+					&lt;map name="workspaceMap"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;!-- Computer area (rectangle) --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="rect" coords="50,50,350,200"
+					href="computer.html" alt="Computer"&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;!-- Phone area (circle) --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="circle" coords="450,100,50"
+					href="phone.html" alt="Phone"&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;!-- Coffee cup area (polygon) --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly"
+					coords="400,250,450,250,475,300,425,350,375,300" href="coffee.html"
+					alt="Coffee Cup"&gt;
+					<br />
+					&lt;/map&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Visual Representation of Image Map Shapes</h3>
+			<div
+				style="
+					border: 1px solid #ddd;
+					padding: 20px;
+					margin: 20px auto;
+					width: 80%;
+					max-width: 600px;
+					text-align: center;
+					background-color: #f9f9f9;
+				">
+				<div
+					style="
+						position: relative;
+						width: 500px;
+						height: 300px;
+						margin: 0 auto;
+						border: 1px solid #ccc;
+						background-color: #eee;
+					">
+					<div
+						style="
+							position: absolute;
+							left: 50px;
+							top: 50px;
+							width: 300px;
+							height: 150px;
+							border: 2px dashed #4285f4;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						">
+						Rectangle (rect)<br />coords="50,50,350,200"
+					</div>
+
+					<div
+						style="
+							position: absolute;
+							left: 450px;
+							top: 100px;
+							width: 100px;
+							height: 100px;
+							border: 2px dashed #ea4335;
+							border-radius: 50%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						">
+						Circle<br />coords="450,100,50"
+					</div>
+
+					<div
+						style="
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+						">
+						<svg
+							width="500"
+							height="300"
+							style="position: absolute; left: 0; top: 0">
+							<polygon
+								points="400,250 450,250 475,300 425,350 375,300"
+								fill="none"
+								stroke="#fbbc05"
+								stroke-width="2"
+								stroke-dasharray="5,5" />
+							<text x="425" y="300" text-anchor="middle" fill="#000">
+								Polygon (poly)
+							</text>
+						</svg>
+					</div>
+				</div>
+				<p style="margin-top: 10px; font-style: italic">
+					Visual representation of different area shapes in an image map
+				</p>
+			</div>
+			<br />
+			<h3>Example: Complex Image Map</h3>
+			<p>Here's a more complex example of an image map for a world map:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;img src="world-map.jpg" alt="World Map" usemap="#worldMap"
+					width="800" height="400"&gt;
+					<br /><br />
+					&lt;map name="worldMap"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;!-- North America --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;coords="67,102,164,48,263,77,284,113,267,131,280,146,244,160,231,181,232,205,187,211,167,183,153,206,113,212,112,176,67,102"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;href="north-america.html"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alt="North America"&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;!-- South America --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;coords="187,211,232,205,253,236,278,329,238,368,213,365,187,211"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;href="south-america.html"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alt="South America"&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;!-- Europe --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;coords="368,94,392,87,420,114,451,110,448,129,433,129,412,143,388,141,368,94"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;href="europe.html"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alt="Europe"&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;!-- Africa --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;coords="378,141,433,129,448,129,478,170,484,235,464,296,412,296,367,236,378,141"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;href="africa.html"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alt="Africa"&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;!-- Asia --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;coords="451,110,567,94,701,180,661,235,569,238,484,235,478,170,448,129,451,110"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;href="asia.html"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alt="Asia"&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;!-- Australia --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;coords="673,235,701,180,736,235,716,296,673,235"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;href="australia.html"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alt="Australia"&gt;
+					<br />
+					&lt;/map&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Creating Image Maps</h3>
+			<p>
+				Determining the exact coordinates for complex shapes can be challenging.
+				Fortunately, there are several online tools that can help you create
+				image maps:
+			</p>
+			<ul>
+				<li>
+					<a href="https://www.image-map.net/" target="_blank">Image-Map.net</a>
+					- A free online tool for creating image maps
+				</li>
+				<li>
+					<a
+						href="https://www.mobilefish.com/services/image_map/image_map.php"
+						target="_blank"
+						>Mobilefish.com Image Map Editor</a
+					>
+					- Another free online image map creator
+				</li>
+				<li>
+					<a href="https://summerstyle.github.io/summer/" target="_blank"
+						>Summer HTML Image Map Creator</a
+					>
+					- A simple, open-source image map editor
+				</li>
+			</ul>
+			<p>
+				These tools allow you to upload an image, draw shapes on it, and
+				generate the HTML code for your image map.
+			</p>
+			<br />
+			<h3>Adding Interactivity with JavaScript</h3>
+			<p>
+				You can enhance image maps with JavaScript to create more interactive
+				experiences. For example, you can highlight areas when users hover over
+				them:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;style&gt;
+					<br />
+					&nbsp;&nbsp;.map-container {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;position: relative;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;.highlight {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgba(255, 255, 0, 0.3);
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;pointer-events: none; /* Allows clicks to pass
+					through */
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;display: none;
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/style&gt;
+					<br /><br />
+					&lt;div class="map-container"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;img src="world-map.jpg" alt="World Map"
+					usemap="#worldMap" width="800" height="400"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div id="northAmerica" class="highlight" style="left:
+					67px; top: 48px; width: 217px; height: 164px;"&gt;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div id="southAmerica" class="highlight" style="left:
+					187px; top: 211px; width: 91px; height: 157px;"&gt;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;!-- More highlight divs for other regions --&gt;
+					<br />
+					&lt;/div&gt;
+					<br /><br />
+					&lt;map name="worldMap"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly" coords="67,102,164,48,..."
+					href="north-america.html" alt="North America"
+					onmouseover="showHighlight('northAmerica')"
+					onmouseout="hideHighlight('northAmerica')"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="poly" coords="187,211,232,205,..."
+					href="south-america.html" alt="South America"
+					onmouseover="showHighlight('southAmerica')"
+					onmouseout="hideHighlight('southAmerica')"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;!-- More areas --&gt;
+					<br />
+					&lt;/map&gt;
+					<br /><br />
+					&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;function showHighlight(id) {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(id).style.display =
+					'block';
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;function hideHighlight(id) {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(id).style.display =
+					'none';
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/script&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Accessibility Considerations</h3>
+			<p>
+				To ensure your image maps are accessible to all users, including those
+				using screen readers or other assistive technologies, follow these best
+				practices:
+			</p>
+			<ol>
+				<li>
+					<strong>Always include alt attributes</strong> for both the
+					&lt;img&gt; element and each &lt;area&gt; element
+				</li>
+				<li>
+					<strong>Provide alternative navigation</strong> options in addition to
+					the image map
+				</li>
+				<li>
+					<strong>Use clear, descriptive text</strong> for the alt attributes
+				</li>
+				<li>
+					<strong>Consider adding visible labels</strong> or a text-based legend
+					near the image map
+				</li>
+				<li>
+					<strong>Test with screen readers</strong> to ensure the image map is
+					navigable
+				</li>
+			</ol>
+			<br />
+			<h3>Responsive Image Maps</h3>
+			<p>
+				Traditional image maps use fixed pixel coordinates, which can cause
+				issues when the image is resized on different devices. To create
+				responsive image maps, you can use JavaScript libraries like
+				<a
+					href="https://github.com/davidjbradshaw/image-map-resizer"
+					target="_blank"
+					>Image Map Resizer</a
+				>
+				or
+				<a
+					href="https://github.com/stowball/jQuery-rwdImageMaps"
+					target="_blank"
+					>jQuery RWD Image Maps</a
+				>.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Include the Image Map Resizer script --&gt;
+					<br />
+					&lt;script src="imageMapResizer.min.js"&gt;&lt;/script&gt;
+					<br /><br />
+					&lt;!-- Your image map code --&gt;
+					<br />
+					&lt;img src="image.jpg" alt="Description" usemap="#myMap"
+					style="max-width: 100%; height: auto;"&gt;
+					<br />
+					&lt;map name="myMap"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;area shape="rect" coords="50,50,350,200" href="#"
+					alt="Area 1"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;!-- More areas --&gt;
+					<br />
+					&lt;/map&gt;
+					<br /><br />
+					&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;// Make the image map responsive
+					<br />
+					&nbsp;&nbsp;imageMapResize();
+					<br />
+					&lt;/script&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Limitations and Alternatives</h3>
+			<p>While image maps can be useful, they do have some limitations:</p>
+			<ul>
+				<li>
+					<strong>Maintenance</strong>: If the image changes, all coordinates
+					need to be updated
+				</li>
+				<li>
+					<strong>Responsiveness</strong>: Traditional image maps don't scale
+					well without JavaScript
+				</li>
+				<li>
+					<strong>Complexity</strong>: Creating complex shapes can be
+					time-consuming
+				</li>
+				<li>
+					<strong>Mobile usability</strong>: Small clickable areas can be
+					difficult to tap on mobile devices
+				</li>
+			</ul>
+			<p>
+				For modern web development, consider these alternatives to image maps:
+			</p>
+			<ul>
+				<li>
+					<strong>SVG (Scalable Vector Graphics)</strong>: SVG elements can be
+					made clickable and scale naturally
+				</li>
+				<li>
+					<strong>CSS positioning</strong>: Overlay clickable elements on top of
+					an image using absolute positioning
+				</li>
+				<li>
+					<strong>Canvas with JavaScript</strong>: Create interactive graphics
+					with the HTML5 canvas element
+				</li>
+				<li>
+					<strong>Interactive mapping libraries</strong>: For geographical maps,
+					consider libraries like Leaflet or Google Maps API
+				</li>
+			</ul>
+			<br />
+			<h3>Conclusion</h3>
+			<p>
+				Image maps provide a way to create clickable regions within an image,
+				allowing for visual navigation and interactive elements. While they have
+				some limitations, they can still be useful for certain applications,
+				especially when enhanced with JavaScript for better responsiveness and
+				interactivity.
+			</p>
+			<p>
+				When creating image maps, remember to focus on accessibility, consider
+				responsive design, and evaluate whether an image map is the best
+				solution for your specific needs.
+			</p>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch23-semanticelements/semantic.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch25-forms/forms.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

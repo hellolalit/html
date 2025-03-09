@@ -8,6 +8,18 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: rgb(43, 16, 165);
+    --secondary-color: rgb(16, 66, 231);
+    --success-color: rgb(1, 208, 1);
+    --warning-color: rgb(230, 201, 9);
+    --info-color: rgb(1, 108, 208);
+    --gray-color: rgb(111, 140, 111);
+    --dark-gray: rgb(68, 93, 68);
+    --code-bg: #f2f2f2;
+    --border-color: rgb(196, 193, 193);
+}
+
 * {
     /* background: rgba(241, 241, 241, 0.485); */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -16,136 +28,211 @@
 }
 
 body {
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     background: linear-gradient(120deg,
             rgba(37, 138, 252, 0.1) 27.64%,
             rgba(136, 91, 255, 0.1) 43.42%,
             rgba(213, 23, 247, 0.1) 58.83%,
             rgba(246, 173, 109, 0.1) 81.81%);
-    padding: 0.5rem;
+    padding: 1rem;
     letter-spacing: 0.2px;
+    color: #333;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--primary-color);
 }
 
 p {
-    font-size: 18px;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
 }
 
+/* Form Elements */
 select,
 option {
-    margin-top: 0.5rem;
-    font-size: 16px;
+    margin: 0.5rem 0;
+    font-size: 1rem;
     letter-spacing: 0.2px;
-    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
     background-clip: content-box;
 }
 
+/* Links */
 a {
     text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
 }
 
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
 button {
     cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: none;
+    border-radius: 7px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
 }
 
 button:hover {
     transform: scale(1.04);
-    transition: 0.3s;
-
 }
 
+/* Layout */
 .main-scope {
     min-height: 98vh;
-    padding: 1rem 3rem 1rem 1rem;
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* Allows items to wrap instead of overflowing */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Components */
 .main-Heading {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: rgb(43, 16, 165);
-    margin-bottom: 0.5rem;
-    background-color: none !important;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .chapter-selector {
     padding: 0.6rem;
-    background: rgb(16, 66, 231);
+    background: var(--secondary-color);
     color: white;
     border: none;
     font-weight: 600;
-    border-radius: 7px;
-    transition: 0.3s;
+    min-width: 200px;
 }
 
 .go-btn {
+    background: var(--success-color);
     margin-left: 0.5rem;
-    padding: 0.4rem 1rem;
-    border: none;
-    border-radius: 7px;
-    background: rgb(1, 208, 1);
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
 }
 
 .topbtn {
-    margin-left: 0.5rem;
-    margin-bottom: 1.2rem;
-    padding: 0.4rem 1rem;
-    border: none;
-    border-radius: 7px;
-    background: rgb(111, 140, 111);
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
-
+    background: var(--gray-color);
+    margin: 0 0.5rem 1.2rem 0.5rem;
 }
 
 .topbtn:hover {
-    background: rgb(68, 93, 68);
+    background: var(--dark-gray);
 }
 
 .prev-ch {
-    margin-left: 0.9rem;
-    padding: 0.4rem 1rem;
-    border: none;
-    border-radius: 7px;
-    background: rgb(230, 201, 9);
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
+    background: var(--warning-color);
+    margin: 0 0.5rem;
 }
 
 .next-ch {
-    margin-left: 0.9rem;
-    padding: 0.4rem 1rem;
-    border: none;
-    border-radius: 7px;
-    background: rgb(1, 108, 208);
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
+    background: var(--info-color);
+    margin: 0 0.5rem;
 }
 
 .code {
-    border: 2px solid rgb(196, 193, 193);
+    border: 2px solid var(--border-color);
     border-radius: 0.4rem;
     padding: 1.5rem;
-    background: #f2f2f2;
+    background: var(--code-bg);
+    margin: 1rem 0;
+    overflow-x: auto;
 }
 
+/* Utility Classes */
 .max-w40 {
     max-width: 40%;
 }
 
 .max-w60 {
     max-width: 60%;
+}
+
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .main-scope {
+        padding: 1rem;
+    }
+
+    .main-Heading {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .chapter-selector {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .go-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-container button {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+
+    .max-w40,
+    .max-w60 {
+        max-width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: none;
+    }
+
+    .main-scope {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .nav-container,
+    .go-btn,
+    select {
+        display: none;
+    }
 }

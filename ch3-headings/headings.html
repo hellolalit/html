@@ -3,53 +3,95 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ch3 - Headings</title>
-		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<title>Ch-3 Headings</title>
+		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope">
-			<h1>Ch3 - Headings</h1>
-
+		<main class="main-scope" id="top">
+			<h1>Chapter 3 - Headings in HTML</h1>
+			<h2>Understanding HTML Headings</h2>
 			<p>
-				There are 6 Heading present in HTML5- H1 to H6. H1 has the largest font
-				size where as H6 has the samllest. <br />
-				As the number decreases from 1 to 6, the font size of the heading
-				decreases.
-				<br />
-				Let's understand with the following example -
+				HTML provides six levels of headings, from H1 to H6. H1 is the most
+				important heading with the largest default font size, while H6 is the
+				least important with the smallest default size. These headings help
+				structure your content and improve both readability and SEO.
 			</p>
 
-			<br />
-			<!-- This is H1, the largesr Heading tag : -->
-			<h1>This is the largest Heading</h1>
-			<h2>This is 2nd largest Heading</h2>
-			<h3>This is 3rd largest Heading</h3>
-			<h4>This is 4th largest Heading</h4>
-			<h5>This is 5th largest Heading</h5>
+			<h3>Heading Examples</h3>
+			<div class="code max-w60">
+				<h1 style="color: #333">This is a Heading 1 (H1)</h1>
+				<h2 style="color: #333">This is a Heading 2 (H2)</h2>
+				<h3 style="color: #333">This is a Heading 3 (H3)</h3>
+				<h4 style="color: #333">This is a Heading 4 (H4)</h4>
+				<h5 style="color: #333">This is a Heading 5 (H5)</h5>
+				<h6 style="color: #333">This is a Heading 6 (H6)</h6>
+			</div>
 
-			<!--This is h6, the smallest Heading tag : -->
-			<h6>This is 6th Largest Heading</h6>
+			<h3>Heading Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;h1&gt;Main Title of the Page&lt;/h1&gt;
+					<br />
+					&lt;h2&gt;Major Sections&lt;/h2&gt;
+					<br />
+					&lt;h3&gt;Subsections&lt;/h3&gt;
+					<br />
+					&lt;h4&gt;Sub-subsections&lt;/h4&gt;
+					<br />
+					&lt;h5&gt;Minor headings&lt;/h5&gt;
+					<br />
+					&lt;h6&gt;Least important headings&lt;/h6&gt;
+				</code>
+			</div>
 
-			<br />
+			<h3>Best Practices for Using Headings</h3>
+			<ul>
+				<li>
+					<strong>Use H1 for the main title</strong>: Each page should have
+					exactly one H1 heading
+				</li>
+				<li>
+					<strong>Maintain hierarchy</strong>: Don't skip heading levels (e.g.,
+					don't go from H2 to H4)
+				</li>
+				<li>
+					<strong>Keep it meaningful</strong>: Use headings to describe the
+					content that follows
+				</li>
+				<li>
+					<strong>Think about SEO</strong>: Search engines use headings to
+					understand page structure
+				</li>
+				<li>
+					<strong>Consider accessibility</strong>: Screen readers use headings
+					for navigation
+				</li>
+			</ul>
 
-			<p>
-				As we saw in the above example, the size of Heading tag descreses as the
-				number from H1 to H6 decreases. So, H1 is used as main title in the HTML
-				document and h6 tag is used to define the least important heading.
-			</p>
+			<h3>Common Uses of Headings</h3>
+			<ol>
+				<li>Page titles and subtitles</li>
+				<li>Section headers in articles</li>
+				<li>Blog post titles</li>
+				<li>Sidebar widget titles</li>
+				<li>Footer section headers</li>
+			</ol>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
-
-			<a href="../ch2-comment/comment.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
-
-			<a href="../ch4-paragraph/paragraph.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch2-comment/comment.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch4-paragraph/paragraph.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

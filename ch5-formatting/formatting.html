@@ -1,129 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ch-5 Formatting</title>
-        <link rel="stylesheet" href="../style.css" />
-    </head>
-    <body>
-        <main class="main-scope">
-            <h1>Ch5 - Formatting</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-5 Formatting</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="top">
+			<h1>Chapter 5 - Text Formatting in HTML</h1>
+			<h2>Understanding Text Formatting</h2>
+			<p>
+				HTML provides various tags for text formatting, allowing you to
+				emphasize text, make it bold, italic, or apply other styles. Each
+				formatting tag has its own semantic meaning and should be used
+				appropriately.
+			</p>
 
-            <h2>B Tag (bold tag) and Strong Tag</h2>
-            <p>What is a "b tag"?</p>
-            <p>
-                The "b" tag specifies bold text without any extra importance. In HTML,
-                there are two types of bold tags: "b" and "strong" tags. "b" tags just
-                make the text bold and do not specify any importance of that bold
-                text, whereas "strong" tags do! This is made for SEO purposes so that
-                search engines can understand the importance of bold text accordingly and
-                do their task!
-            </p>
+			<h3>Bold Text (B Tag vs STRONG Tag)</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;b&gt;Bold text&lt;/b&gt; - Just visual formatting
+					<br />
+					&lt;strong&gt;Important text&lt;/strong&gt; - Semantic importance
+				</code>
+			</div>
+			<p>Example:</p>
+			<p>
+				<b>This text is bold</b> but has no special meaning, while
+				<strong>this text is important</strong> and has semantic value.
+			</p>
 
-            <br />
+			<h3>Italic Text (I Tag vs EM Tag)</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;i&gt;Italic text&lt;/i&gt; - Visual styling
+					<br />
+					&lt;em&gt;Emphasized text&lt;/em&gt; - Semantic emphasis
+				</code>
+			</div>
+			<p>Example:</p>
+			<p>
+				<i>This text is italic</i> for visual purposes, while
+				<em>this text is emphasized</em> for meaning.
+			</p>
 
-            <p>Let's take an example below:</p>
+			<h3>Other Text Formatting Tags</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;mark&gt;Highlighted text&lt;/mark&gt;
+					<br />
+					&lt;small&gt;Smaller text&lt;/small&gt;
+					<br />
+					&lt;del&gt;Deleted text&lt;/del&gt;
+					<br />
+					&lt;ins&gt;Inserted text&lt;/ins&gt;
+					<br />
+					&lt;sub&gt;Subscript&lt;/sub&gt;
+					<br />
+					&lt;sup&gt;Superscript&lt;/sup&gt;
+				</code>
+			</div>
 
-            <br />
-            <p>
-                <b>Windows</b> is good for daily work but has
-                <strong>privacy and security issues.</strong> So, in order to counter
-                that, we have <strong>Linux</strong> as an alternative!
-            </p>
+			<h3>Examples of Text Formatting</h3>
+			<ul>
+				<li><mark>Highlighted text</mark> using mark tag</li>
+				<li><small>Smaller text</small> using small tag</li>
+				<li><del>Deleted text</del> using del tag</li>
+				<li><ins>Inserted text</ins> using ins tag</li>
+				<li>H<sub>2</sub>O using sub tag</li>
+				<li>X<sup>2</sup> using sup tag</li>
+			</ul>
 
-            <br />
+			<h3>Best Practices</h3>
+			<ol>
+				<li>
+					<strong>Use semantic tags</strong>: Choose strong/em over b/i when
+					meaning is important
+				</li>
+				<li>
+					<strong>Avoid overuse</strong>: Too much formatting can make text hard
+					to read
+				</li>
+				<li>
+					<strong>Consider accessibility</strong>: Semantic tags help screen
+					readers understand content
+				</li>
+				<li>
+					<strong>Combine with CSS</strong>: Use CSS for visual styling when
+					possible
+				</li>
+				<li>
+					<strong>Be consistent</strong>: Use the same formatting style
+					throughout your site
+				</li>
+			</ol>
 
-            <p>
-                In the above example, Windows is in bold text but does not have much
-                importance, whereas Linux and privacy and security issues do! So, when
-                we need to add importance to any bold text, we will use the "strong" tag
-                instead of the "b" tag.
-            </p>
-            <br />
-            <br />
-            <h2>I Tag and EM Tag</h2>
+			<h3>Common Use Cases</h3>
+			<ul>
+				<li>
+					<strong>strong tag</strong>: Warnings, important notes, keywords
+				</li>
+				<li><em>em tag</em>: Emphasis, stress, foreign words</li>
+				<li><mark>mark tag</mark>: Highlighting search terms, key points</li>
+				<li>
+					<del>del tag</del> and <ins>ins tag</ins>: Showing document changes
+				</li>
+				<li>
+					<sub>sub tag</sub> and <sup>sup tag</sup>: Mathematical and chemical
+					formulas
+				</li>
+			</ul>
 
-            <h3>What is the "i" tag?</h3>
-            <p>
-                The "i" tag in HTML is used to display the content in italic style. This
-                tag is generally used to display technical terms, phrases, or
-                important words in a different language.
-            </p>
-
-            <h3>What is the "em" tag?</h3>
-            <p>
-                The "em" tag is also one of the elements of HTML used in formatting
-                texts. It is used to define emphasized text or statements.
-            </p>
-
-            <h3>What is the difference then?</h3>
-            <p>
-                The "i" tag is like putting something in italics just for looks, while the "em"
-                tag is for adding real emphasis or importance to the text, indicating
-                that it should be read with more attention. They may both look
-                italicized, but "em" has a meaning beyond appearance.
-                <br />
-                <strong>Note:</strong> By default, the visual result is the same. The
-                main difference between these two tags is that the "em" tag semantically
-                emphasizes the important word or section of words, while the "i" tag is
-                just offset text conventionally styled in italics to show an alternative
-                mood or voice.
-            </p>
-
-            <br />
-            <br />
-
-            <h2>Mark Tag</h2>
-            <h3>What is the Mark Tag?</h3>
-            <p>
-                The "mark" tag in HTML is used to define the marked text. It is used to
-                highlight part of the text in a paragraph. The "mark" tag is new in
-                HTML 5.
-            </p>
-
-            <p><strong>Example:</strong></p>
-
-            <p>
-                <mark>Microsoft's biggest plan was to kill Linux</mark> by buying
-                open-source software, so it bought GitHub, then introduced MS Azure, and now
-                development is also done on Windows instead of Linux!
-            </p>
-            <br />
-            <br />
-
-            <h2>DEL Tag</h2>
-            <h3>What is the Del Tag?</h3>
-            <p>
-                The HTML "del" tag is used to mark a portion of text that has been deleted
-                from the document. The deleted text is rendered as strike-through text
-                by web browsers, although this property can be changed using the CSS
-                text-decoration property. The "del" tag requires a starting and ending
-                tag.
-            </p>
-
-            <p><strong>Example:</strong></p>
-
-            <p>
-                <mark>Microsoft's biggest plan was to kill Linux</mark> by buying
-                open-source software, so it bought GitHub, then introduced MS Azure, and now
-                development is also done on Windows instead of Linux! Please think
-                Microsoft doesn't sell data
-                <strong><del>but that is absolutely wrong!</del></strong>
-            </p>
-            
-            <br />
-            <a href="../index.html">
-                <button class="go-btn">Back to HOME PAGE</button>
-            </a>
-
-            <a href="../ch4-paragraph/paragraph.html">
-                <button class="prev-ch">Previous chapter</button>
-            </a>
-
-            <a href="../ch6-quotation/quotation.html">
-                <button class="next-ch">Next chapter</button>
-            </a>
-        </main>
-    </body>
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch4-paragraph/paragraph.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch6-quotation/quotation.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
+		</main>
+		<script src="../script.js"></script>
+	</body>
 </html>

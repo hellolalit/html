@@ -3,42 +3,109 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ch2 Comments</title>
+		<title>Ch-2 Comments</title>
 		<link rel="stylesheet" href="../style.css" />
 	</head>
 	<body>
-		<main class="main-scope">
-			<h1>Ch 2 - Comments</h1>
+		<main class="main-scope" id="top">
+			<h1>Chapter 2 - Comments in HTML</h1>
+			<h2>What are HTML Comments?</h2>
 			<p>
-				Comments are used to write notes, comment regarding the code (example - to explain why that specific line of code exists?), inform about something or to indicate
-				something in the code.
-				
-				<br />
-				
-				It is <strong> extremely important to write comments
-					for
-					large and complex projects </strong> as it helps to understand the project
-				and makes
-				it easy to maintain it. <strong> Otherwise, it becomes very difficult and frustating for anyone to understand it, maintain it and do some changes if required. </strong>
+				HTML comments are notes that can be added to the HTML code but are not
+				displayed in the browser. They are useful for documenting your HTML
+				code, making it easier to understand and maintain.
 			</p>
 
-			<br />
+			<h3>Comment Syntax</h3>
+			<p>
+				Comments in HTML start with &lt;!-- and end with --&gt;. Everything
+				between these markers is ignored by the browser.
+			</p>
 
-			<h2>Example of Comments in Html-</h2>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- This is a comment --&gt;
+					<br />
+					&lt;!--
+					<br />
+					&nbsp;&nbsp;This is a multi-line comment
+					<br />
+					&nbsp;&nbsp;It can span multiple lines
+					<br />
+					--&gt;
+				</code>
+			</div>
 
+			<h3>Uses of Comments</h3>
+			<ol>
+				<li>
+					<strong>Documentation</strong>: Explain what different parts of your
+					code do
+				</li>
+				<li>
+					<strong>Debugging</strong>: Temporarily disable parts of your code
+				</li>
+				<li>
+					<strong>Organization</strong>: Mark sections of your HTML document
+				</li>
+				<li>
+					<strong>Communication</strong>: Leave notes for other developers
+				</li>
+			</ol>
 
-			<br />
-			<a href="../index.html">
-				<button class="go-btn">Back to HOME PAGE</button>
-			</a>
+			<h3>Example with Comments</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Header section --&gt;
+					<br />
+					&lt;header&gt;
+					<br />
+					&nbsp;&nbsp;&lt;h1&gt;My Website&lt;/h1&gt;
+					<br />
+					&lt;/header&gt;
+					<br /><br />
+					&lt;!-- Navigation menu --&gt;
+					<br />
+					&lt;nav&gt;
+					<br />
+					&nbsp;&nbsp;&lt;!-- TODO: Add more menu items --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Home&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;About&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/ul&gt;
+					<br />
+					&lt;/nav&gt;
+				</code>
+			</div>
 
-			<a href="../ch1-basic/basic.html">
-				<button class="prev-ch">Previous chapter</button>
-			</a>
+			<h3>Best Practices</h3>
+			<ul>
+				<li>Keep comments clear and concise</li>
+				<li>Use comments to explain complex code sections</li>
+				<li>Update comments when you update code</li>
+				<li>Don't overuse comments - let your code be self-documenting</li>
+				<li>Remove debugging comments before deploying</li>
+			</ul>
 
-			<a href="../ch3-headings/headings.html">
-				<button class="next-ch">Next chapter</button>
-			</a>
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch1-basic/basic.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch3-headings/headings.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
 		</main>
+		<script src="../script.js"></script>
 	</body>
 </html>

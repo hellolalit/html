@@ -1,85 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Basics of Html</title>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <main class="main-scope">
-            <h1>Chapter 1 - Basics of HTML.</h1>
-            <h2>Basic TAGS of HTML5 -</h2>
-            <ol>
-                <li>
-                    <h3>The DOCTYPE</h3>
-                    <p>
-                        The "DOCTYPE" neither a HTML tag nor an element. Is is used to tell
-						the browser what version of HTML5 is used.This "DOCYPE" should be
-						decalred at the first line of HTML5 document.
-                        <br>
-                        There are more than 1 DOCTYPES such as SVG and MathML.
-                    </p>
-                </li>
-                <br>
-                <li>
-                    <h3>HTML TAG</h3>
-                    <p>
-                        HTML Tag is the 'root' element of HTML document which means HTML
-						document start with HTML tag and ends with the same HTML tag. The
-						HTML tag is the container for all other HTML elements (except for
-						the !DOCTYPE tag).
-                    </p>
-                </li>
-                <br>
-                <li>
-                    <h3>HEAD TAG</h3>
-                    <p>
-                        HEAD Tag is used to tell the computer that the heading content of
-						the document is present inside
-                        <strong>HEAD tag.</strong>
-                        <br>
-                        It mailny includes meta tag, link tags, title tag and other
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Basics of Html</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="top">
+			<h1>Chapter 1 - Basics of HTML</h1>
+			<h2>Basic TAGS of HTML5</h2>
+			<ol>
+				<li>
+					<h3>The DOCTYPE</h3>
+					<p>
+						The "DOCTYPE" is neither an HTML tag nor an element. It is used to
+						tell the browser what version of HTML5 is used. This "DOCTYPE"
+						should be declared at the first line of an HTML5 document.
+						<br />
+						There are more than 1 DOCTYPES such as SVG and MathML.
+					</p>
+				</li>
+				<li>
+					<h3>HTML TAG</h3>
+					<p>
+						HTML Tag is the 'root' element of an HTML document which means the
+						HTML document starts with an HTML tag and ends with the same HTML
+						tag. The HTML tag is the container for all other HTML elements
+						(except for the !DOCTYPE declaration).
+					</p>
+				</li>
+				<li>
+					<h3>HEAD TAG</h3>
+					<p>
+						HEAD Tag is used to tell the computer that the heading content of
+						the document is present inside the <strong>HEAD tag.</strong>
+						<br />
+						It mainly includes meta tags, link tags, title tag and other
 						important tags within it. HEAD tag is used by browsers to add
-						innforation to the search page like the
-                        <strong> Heading and description</strong>
-                        of the website.
-                    </p>
-                </li>
-                <br>
-                <li>
-                    <h3>TITLE TAG</h3>
-                    <p>TITLE Tag is used to define the title of the website/webpage.</p>
-                </li>
-                <br>
-                <li>
-                    <h3>LINK TAG</h3>
-                    <p>LINK Tag is used to link CSS/other files to the HTML5 document.</p>
-                </li>
-                <br>
-                <li>
-                    <h3>BODY TAG</h3>
-                    <p>
-                        BODY Tag is used to define the body of the html document.
-                        <br>
-                        And the closing of the tag tell the computer that specific line is
-						the end of that body tag and the body if the HTML5 document ends at
-						that specific line.
-                    </p>
-                </li>
-                <br>
-                <li>
-                    <h3>SCRIPT TAG</h3>
-                    <p>
-                        SCRIPT Tag is used to link Javascript files to the HTMl5 document.
-                    </p>
-                </li>
-            </ol>
-            <br>
-            <a href="../index.html">
-                <button class="go-btn">Back to HOME PAGE</button>
-            </a>
-            <a href="../ch2-comment/comment.html">
-                <button class="next-ch">Next chapter</button>
-            </a>
-        </main>
-    </body>
+						information to the search page like the
+						<strong>heading and description</strong>
+						of the website.
+					</p>
+				</li>
+				<li>
+					<h3>TITLE TAG</h3>
+					<p>TITLE Tag is used to define the title of the website/webpage.</p>
+				</li>
+				<li>
+					<h3>BODY TAG</h3>
+					<p>
+						BODY Tag is used to define the body of the HTML document.
+						<br />
+						The closing of the tag tells the computer that specific line is the
+						end of that body tag and the body of the HTML5 document ends at that
+						specific line.
+					</p>
+				</li>
+				<li>
+					<h3>SCRIPT TAG</h3>
+					<p>
+						SCRIPT Tag is used to link Javascript files to the HTML5 document.
+					</p>
+				</li>
+			</ol>
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch2-comment/comment.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
+		</main>
+	</body>
 </html>

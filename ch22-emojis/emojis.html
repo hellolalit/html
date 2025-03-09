@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-22 Emojis</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 22 - Emojis in HTML</h1>
+			<br />
+			<h2>What are Emojis?</h2>
+			<p>
+				Emojis are pictorial symbols that represent emotions, objects, places,
+				activities, and more. Originally from Japan, the word "emoji" comes from
+				the Japanese words "e" (picture) and "moji" (character). Emojis have
+				become an integral part of digital communication, allowing users to
+				express emotions and ideas in a visual way.
+			</p>
+			<p>
+				In HTML, emojis are Unicode characters, which means they can be included
+				directly in your HTML code or referenced using HTML entities.
+			</p>
+			<br />
+			<h3>How to Use Emojis in HTML</h3>
+			<p>There are several ways to include emojis in your HTML documents:</p>
+			<ol>
+				<li>
+					<strong>Direct Insertion</strong>: Simply copy and paste the emoji
+					into your HTML code
+				</li>
+				<li>
+					<strong>Decimal Code Points</strong>: Use the decimal Unicode code
+					point (e.g., <code>&amp;#128512;</code> for 😀)
+				</li>
+				<li>
+					<strong>Hexadecimal Code Points</strong>: Use the hexadecimal Unicode
+					code point (e.g., <code>&amp;#x1F600;</code> for 😀)
+				</li>
+			</ol>
+			<br />
+			<h3>Direct Insertion of Emojis</h3>
+			<p>
+				The simplest way to add emojis to your HTML is to directly insert them
+				into your code:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;p&gt;I love coding! 👨‍💻&lt;/p&gt;
+					<br />
+					&lt;h2&gt;Welcome to our website! 👋&lt;/h2&gt;
+					<br />
+					&lt;button&gt;Click me! 👆&lt;/button&gt;
+				</code>
+			</div>
+			<p>
+				You can insert emojis using the emoji keyboard on your device or by
+				copying them from emoji reference websites.
+			</p>
+			<br />
+			<h3>Using Unicode Code Points</h3>
+			<p>Alternatively, you can use Unicode code points to represent emojis:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Using decimal code points --&gt;
+					<br />
+					&lt;p&gt;I love coding! &amp;#128187;&lt;/p&gt;
+					<br /><br />
+					&lt;!-- Using hexadecimal code points --&gt;
+					<br />
+					&lt;p&gt;Welcome to our website! &amp;#x1F44B;&lt;/p&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Common Emoji Categories</h3>
+			<p>
+				Emojis are organized into various categories. Here are some common
+				categories with examples:
+			</p>
+			<br />
+			<h4>Smileys and Emotions</h4>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Emoji</th>
+					<th style="padding: 10px">Description</th>
+					<th style="padding: 10px">Decimal Code</th>
+					<th style="padding: 10px">Hexadecimal Code</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">😀</td>
+					<td style="padding: 10px">Grinning Face</td>
+					<td style="padding: 10px">&amp;#128512;</td>
+					<td style="padding: 10px">&amp;#x1F600;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">😂</td>
+					<td style="padding: 10px">Face with Tears of Joy</td>
+					<td style="padding: 10px">&amp;#128514;</td>
+					<td style="padding: 10px">&amp;#x1F602;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">😍</td>
+					<td style="padding: 10px">Smiling Face with Heart-Eyes</td>
+					<td style="padding: 10px">&amp;#128525;</td>
+					<td style="padding: 10px">&amp;#x1F60D;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">😎</td>
+					<td style="padding: 10px">Smiling Face with Sunglasses</td>
+					<td style="padding: 10px">&amp;#128526;</td>
+					<td style="padding: 10px">&amp;#x1F60E;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">😢</td>
+					<td style="padding: 10px">Crying Face</td>
+					<td style="padding: 10px">&amp;#128546;</td>
+					<td style="padding: 10px">&amp;#x1F622;</td>
+				</tr>
+			</table>
+			<br />
+			<h4>People and Body</h4>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Emoji</th>
+					<th style="padding: 10px">Description</th>
+					<th style="padding: 10px">Decimal Code</th>
+					<th style="padding: 10px">Hexadecimal Code</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">👋</td>
+					<td style="padding: 10px">Waving Hand</td>
+					<td style="padding: 10px">&amp;#128075;</td>
+					<td style="padding: 10px">&amp;#x1F44B;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">👍</td>
+					<td style="padding: 10px">Thumbs Up</td>
+					<td style="padding: 10px">&amp;#128077;</td>
+					<td style="padding: 10px">&amp;#x1F44D;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">👏</td>
+					<td style="padding: 10px">Clapping Hands</td>
+					<td style="padding: 10px">&amp;#128079;</td>
+					<td style="padding: 10px">&amp;#x1F44F;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">🙏</td>
+					<td style="padding: 10px">Folded Hands</td>
+					<td style="padding: 10px">&amp;#128591;</td>
+					<td style="padding: 10px">&amp;#x1F64F;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">💪</td>
+					<td style="padding: 10px">Flexed Biceps</td>
+					<td style="padding: 10px">&amp;#128170;</td>
+					<td style="padding: 10px">&amp;#x1F4AA;</td>
+				</tr>
+			</table>
+			<br />
+			<h4>Objects</h4>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Emoji</th>
+					<th style="padding: 10px">Description</th>
+					<th style="padding: 10px">Decimal Code</th>
+					<th style="padding: 10px">Hexadecimal Code</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">💻</td>
+					<td style="padding: 10px">Laptop</td>
+					<td style="padding: 10px">&amp;#128187;</td>
+					<td style="padding: 10px">&amp;#x1F4BB;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">📱</td>
+					<td style="padding: 10px">Mobile Phone</td>
+					<td style="padding: 10px">&amp;#128241;</td>
+					<td style="padding: 10px">&amp;#x1F4F1;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">📷</td>
+					<td style="padding: 10px">Camera</td>
+					<td style="padding: 10px">&amp;#128247;</td>
+					<td style="padding: 10px">&amp;#x1F4F7;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">🔑</td>
+					<td style="padding: 10px">Key</td>
+					<td style="padding: 10px">&amp;#128273;</td>
+					<td style="padding: 10px">&amp;#x1F511;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">📚</td>
+					<td style="padding: 10px">Books</td>
+					<td style="padding: 10px">&amp;#128218;</td>
+					<td style="padding: 10px">&amp;#x1F4DA;</td>
+				</tr>
+			</table>
+			<br />
+			<h4>Symbols</h4>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Emoji</th>
+					<th style="padding: 10px">Description</th>
+					<th style="padding: 10px">Decimal Code</th>
+					<th style="padding: 10px">Hexadecimal Code</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">❤️</td>
+					<td style="padding: 10px">Red Heart</td>
+					<td style="padding: 10px">&amp;#10084;&#65039;</td>
+					<td style="padding: 10px">&amp;#x2764;&#xFE0F;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">⭐</td>
+					<td style="padding: 10px">Star</td>
+					<td style="padding: 10px">&amp;#11088;</td>
+					<td style="padding: 10px">&amp;#x2B50;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">✅</td>
+					<td style="padding: 10px">Check Mark Button</td>
+					<td style="padding: 10px">&amp;#9989;</td>
+					<td style="padding: 10px">&amp;#x2705;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">⚠️</td>
+					<td style="padding: 10px">Warning</td>
+					<td style="padding: 10px">&amp;#9888;&#65039;</td>
+					<td style="padding: 10px">&amp;#x26A0;&#xFE0F;</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px; text-align: center; font-size: 24px">🔒</td>
+					<td style="padding: 10px">Locked</td>
+					<td style="padding: 10px">&amp;#128274;</td>
+					<td style="padding: 10px">&amp;#x1F512;</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Emoji Combinations and ZWJ Sequences</h3>
+			<p>
+				Some emojis are created by combining multiple Unicode characters using a
+				special invisible character called the Zero Width Joiner (ZWJ). These
+				are known as ZWJ sequences.
+			</p>
+			<p>
+				For example, the "Family" emoji (👨‍👩‍👧‍👦) is actually a combination of
+				several emojis (Man + ZWJ + Woman + ZWJ + Girl + ZWJ + Boy).
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Family emoji (man, woman, girl, boy) --&gt;
+					<br />
+					&lt;p&gt;Family: 👨‍👩‍👧‍👦&lt;/p&gt;
+					<br /><br />
+					&lt;!-- Woman technologist emoji (woman + ZWJ + laptop) --&gt;
+					<br />
+					&lt;p&gt;Woman Technologist: 👩‍💻&lt;/p&gt;
+				</code>
+			</div>
+			<p>
+				ZWJ sequences can be complex to represent using code points, so it's
+				often easier to directly insert these combined emojis.
+			</p>
+			<br />
+			<h3>Emoji Modifiers</h3>
+			<p>
+				Many emojis support modifiers for skin tone. These are created by adding
+				a skin tone modifier after the base emoji:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Thumbs up with different skin tones --&gt;
+					<br />
+					&lt;p&gt;
+					<br />
+					&nbsp;&nbsp;Default: 👍
+					<br />
+					&nbsp;&nbsp;Light skin tone: 👍🏻
+					<br />
+					&nbsp;&nbsp;Medium-light skin tone: 👍🏼
+					<br />
+					&nbsp;&nbsp;Medium skin tone: 👍🏽
+					<br />
+					&nbsp;&nbsp;Medium-dark skin tone: 👍🏾
+					<br />
+					&nbsp;&nbsp;Dark skin tone: 👍🏿
+					<br />
+					&lt;/p&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Practical Uses of Emojis in Web Design</h3>
+			<p>Emojis can enhance your web content in various ways:</p>
+			<h4>1. Improving User Experience</h4>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Using emojis in notifications --&gt;
+					<br />
+					&lt;div class="notification success"&gt;
+					<br />
+					&nbsp;&nbsp;✅ Your profile has been updated successfully!
+					<br />
+					&lt;/div&gt;
+					<br /><br />
+					&lt;div class="notification error"&gt;
+					<br />
+					&nbsp;&nbsp;❌ Something went wrong. Please try again.
+					<br />
+					&lt;/div&gt;
+					<br /><br />
+					&lt;div class="notification warning"&gt;
+					<br />
+					&nbsp;&nbsp;⚠️ Your session will expire in 5 minutes.
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h4>2. Making Content More Engaging</h4>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Using emojis in headings --&gt;
+					<br />
+					&lt;h2&gt;🔥 Hot Deals This Week&lt;/h2&gt;
+					<br />
+					&lt;h2&gt;🎓 Educational Resources&lt;/h2&gt;
+					<br />
+					&lt;h2&gt;🌟 Featured Products&lt;/h2&gt;
+				</code>
+			</div>
+			<br />
+			<h4>3. Enhancing Navigation</h4>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Using emojis in navigation --&gt;
+					<br />
+					&lt;nav&gt;
+					<br />
+					&nbsp;&nbsp;&lt;ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="index.html"&gt;🏠
+					Home&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="about.html"&gt;ℹ️
+					About&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="products.html"&gt;🛒
+					Products&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="contact.html"&gt;📞
+					Contact&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/ul&gt;
+					<br />
+					&lt;/nav&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Browser Compatibility and Considerations</h3>
+			<p>
+				When using emojis in your web pages, keep these considerations in mind:
+			</p>
+			<ul>
+				<li>
+					<strong>Browser Support</strong>: Most modern browsers support emojis,
+					but the appearance may vary across different browsers and operating
+					systems.
+				</li>
+				<li>
+					<strong>Fallback Options</strong>: For critical UI elements, consider
+					providing text alternatives or fallback options for users whose
+					browsers might not support certain emojis.
+				</li>
+				<li>
+					<strong>Accessibility</strong>: Remember that screen readers will
+					announce emojis based on their descriptions. Use emojis to enhance
+					content, not to replace important text.
+				</li>
+				<li>
+					<strong>Cultural Context</strong>: Be aware that emojis may have
+					different interpretations in different cultures.
+				</li>
+				<li>
+					<strong>Overuse</strong>: While emojis can enhance your content,
+					overusing them can make your site look unprofessional or difficult to
+					read.
+				</li>
+			</ul>
+			<br />
+			<h3>Finding and Selecting Emojis</h3>
+			<p>
+				There are several resources for finding and selecting emojis for your
+				web pages:
+			</p>
+			<ul>
+				<li>
+					<a href="https://emojipedia.org/" target="_blank">Emojipedia</a> - A
+					comprehensive reference for emojis
+				</li>
+				<li>
+					<a href="https://getemoji.com/" target="_blank">Get Emoji</a> - A
+					simple emoji picker
+				</li>
+				<li>
+					<a
+						href="https://unicode.org/emoji/charts/full-emoji-list.html"
+						target="_blank"
+						>Unicode Full Emoji List</a
+					>
+					- The official Unicode emoji list
+				</li>
+			</ul>
+			<br />
+			<h3>Emoji in CSS</h3>
+			<p>
+				You can also use emojis in CSS, particularly for custom list styles or
+				pseudo-elements:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;style&gt;
+					<br />
+					&nbsp;&nbsp;/* Using emoji as list marker */
+					<br />
+					&nbsp;&nbsp;.emoji-list {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;list-style-type: none;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;.emoji-list li::before {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;content: "✅ ";
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;/* Using emoji in pseudo-element */
+					<br />
+					&nbsp;&nbsp;.new-item::after {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;content: " 🆕";
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.8em;
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/style&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Conclusion</h3>
+			<p>
+				Emojis can add visual interest, improve user experience, and make your
+				web content more engaging. When used appropriately, they can enhance
+				communication and add personality to your website. Remember to use them
+				purposefully and consider browser compatibility and accessibility when
+				implementing emojis in your HTML.
+			</p>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch21-symbols/symbols.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch23-semantics/semantics.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

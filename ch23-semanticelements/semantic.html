@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-23 Semantic Elements</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 23 - Semantic Elements in HTML5</h1>
+			<br />
+			<h2>What are Semantic Elements?</h2>
+			<p>
+				Semantic elements are HTML elements that clearly describe their meaning
+				to both the browser and the developer. Unlike non-semantic elements like
+				&lt;div&gt; and &lt;span&gt;, which tell nothing about their content,
+				semantic elements clearly define their content's purpose.
+			</p>
+			<p>
+				HTML5 introduced many semantic elements to help structure web pages in a
+				more meaningful way. These elements make the HTML more comprehensible by
+				better defining the different sections and layout of web pages.
+			</p>
+			<br />
+			<h3>Why Use Semantic Elements?</h3>
+			<p>Using semantic elements offers several benefits:</p>
+			<ul>
+				<li>
+					<strong>Accessibility</strong>: Screen readers and other assistive
+					technologies can better understand the content structure
+				</li>
+				<li>
+					<strong>SEO</strong>: Search engines give more weight to important
+					content when it's properly marked up
+				</li>
+				<li>
+					<strong>Readability</strong>: Code becomes easier to read and maintain
+				</li>
+				<li>
+					<strong>Reusability</strong>: Consistent structure makes styling and
+					scripting more efficient
+				</li>
+				<li>
+					<strong>Mobile Optimization</strong>: Helps with responsive design and
+					mobile optimization
+				</li>
+			</ul>
+			<br />
+			<h3>Common Semantic Elements in HTML5</h3>
+			<p>Here are the most commonly used semantic elements in HTML5:</p>
+			<br />
+			<h4>Document Structure Elements</h4>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Element</th>
+					<th style="padding: 10px">Description</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;header&gt;</td>
+					<td style="padding: 10px">
+						Represents introductory content, typically a group of navigational
+						aids or introductory content for its nearest ancestor sectioning
+						content
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;nav&gt;</td>
+					<td style="padding: 10px">
+						Represents a section of a page whose purpose is to provide
+						navigation links
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;main&gt;</td>
+					<td style="padding: 10px">
+						Represents the dominant content of the body of a document (should be
+						unique to the document)
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;section&gt;</td>
+					<td style="padding: 10px">
+						Represents a standalone section of content that could be distributed
+						independently
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;article&gt;</td>
+					<td style="padding: 10px">
+						Represents a self-contained composition in a document, page,
+						application, or site
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;aside&gt;</td>
+					<td style="padding: 10px">
+						Represents content that is tangentially related to the content
+						around it, often presented as a sidebar
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;footer&gt;</td>
+					<td style="padding: 10px">
+						Represents a footer for its nearest sectioning content or sectioning
+						root element
+					</td>
+				</tr>
+			</table>
+			<br />
+			<h4>Text Content Elements</h4>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Element</th>
+					<th style="padding: 10px">Description</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;figure&gt;</td>
+					<td style="padding: 10px">
+						Represents self-contained content, potentially with a caption
+						(&lt;figcaption&gt;)
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;figcaption&gt;</td>
+					<td style="padding: 10px">
+						Represents a caption or legend for a figure
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;time&gt;</td>
+					<td style="padding: 10px">Represents a specific period in time</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;mark&gt;</td>
+					<td style="padding: 10px">
+						Represents text which is marked or highlighted for reference
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;details&gt;</td>
+					<td style="padding: 10px">
+						Creates a disclosure widget in which information is visible only
+						when the widget is toggled into an "open" state
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px">&lt;summary&gt;</td>
+					<td style="padding: 10px">
+						Specifies a summary, caption, or legend for a &lt;details&gt;
+						element's disclosure box
+					</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Example of a Semantic HTML5 Page Structure</h3>
+			<p>
+				Here's an example of how semantic elements can be used to structure a
+				webpage:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!DOCTYPE html&gt;
+					<br />
+					&lt;html lang="en"&gt;
+					<br />
+					&lt;head&gt;
+					<br />
+					&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width,
+					initial-scale=1.0"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;title&gt;Semantic HTML Example&lt;/title&gt;
+					<br />
+					&lt;/head&gt;
+					<br />
+					&lt;body&gt;
+					<br />
+					&nbsp;&nbsp;&lt;header&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Website Title&lt;/h1&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/header&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;main&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Welcome
+					Section&lt;/h2&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Introduction to the
+					website.&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;
+					<br /><br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Article Title&lt;/h2&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Article content goes
+					here.&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;figure&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img
+					src="image.jpg" alt="Description"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;figcaption&gt;Figure
+					caption&lt;/figcaption&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/figure&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Published on &lt;time
+					datetime="2023-03-15"&gt;March 15, 2023&lt;/time&gt;&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;
+					<br /><br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Related Links&lt;/h3&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;Related Article 1&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;Related Article 2&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/aside&gt;
+					<br /><br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;details&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;summary&gt;Click to show more
+					information&lt;/summary&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Additional information
+					that is initially hidden.&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/details&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/main&gt;
+					<br /><br />
+					&nbsp;&nbsp;&lt;footer&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&copy; 2023 My Website. All rights
+					reserved.&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/footer&gt;
+					<br />
+					&lt;/body&gt;
+					<br />
+					&lt;/html&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Visual Representation of Semantic Structure</h3>
+			<div
+				style="
+					border: 2px solid #333;
+					padding: 20px;
+					margin: 20px auto;
+					width: 80%;
+					max-width: 800px;
+				">
+				<div
+					style="border: 2px solid #4285f4; padding: 10px; margin-bottom: 15px">
+					<strong>&lt;header&gt;</strong>
+					<div style="margin: 5px 0">Website Title</div>
+					<div style="border: 2px solid #ea4335; padding: 5px; margin: 5px 0">
+						<strong>&lt;nav&gt;</strong>
+						<div style="display: flex; justify-content: space-around">
+							<span>Home</span>
+							<span>About</span>
+							<span>Services</span>
+							<span>Contact</span>
+						</div>
+					</div>
+				</div>
+
+				<div
+					style="border: 2px solid #34a853; padding: 10px; margin-bottom: 15px">
+					<strong>&lt;main&gt;</strong>
+					<div style="display: flex; flex-wrap: wrap; gap: 15px">
+						<div
+							style="
+								border: 2px solid #fbbc05;
+								padding: 10px;
+								flex: 2;
+								min-width: 200px;
+							">
+							<div style="margin-bottom: 15px">
+								<strong>&lt;section&gt;</strong>
+								<div>Welcome Section</div>
+								<div>Introduction text...</div>
+							</div>
+
+							<div style="border: 2px solid #4285f4; padding: 10px">
+								<strong>&lt;article&gt;</strong>
+								<div>Article Title</div>
+								<div>Article content...</div>
+								<div
+									style="
+										border: 1px dashed #333;
+										padding: 5px;
+										margin: 5px 0;
+										text-align: center;
+									">
+									<strong>&lt;figure&gt;</strong>
+									<div>[Image]</div>
+									<div><strong>&lt;figcaption&gt;</strong> Figure caption</div>
+								</div>
+								<div>
+									Published on
+									<span style="border-bottom: 1px dotted #333"
+										><strong>&lt;time&gt;</strong> March 15, 2023</span
+									>
+								</div>
+							</div>
+						</div>
+
+						<div
+							style="
+								border: 2px solid #ea4335;
+								padding: 10px;
+								flex: 1;
+								min-width: 150px;
+							">
+							<strong>&lt;aside&gt;</strong>
+							<div>Related Links</div>
+							<ul style="margin: 5px 0; padding-left: 20px">
+								<li>Related Article 1</li>
+								<li>Related Article 2</li>
+							</ul>
+						</div>
+					</div>
+
+					<div
+						style="border: 2px solid #fbbc05; padding: 10px; margin-top: 15px">
+						<strong>&lt;details&gt; and &lt;summary&gt;</strong>
+						<div>Click to show more information ▼</div>
+						<div style="margin-left: 15px">Additional information...</div>
+					</div>
+				</div>
+
+				<div style="border: 2px solid #4285f4; padding: 10px">
+					<strong>&lt;footer&gt;</strong>
+					<div>© 2023 My Website. All rights reserved.</div>
+				</div>
+			</div>
+			<br />
+			<h3>Comparing Non-Semantic vs. Semantic HTML</h3>
+			<h4>Non-Semantic Approach</h4>
+			<div class="code max-w40">
+				<code>
+					&lt;div class="header"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;h1&gt;Website Title&lt;/h1&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div class="navigation"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&lt;/div&gt;
+					<br /><br />
+					&lt;div class="main-content"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div class="article"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Article Title&lt;/h2&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Content...&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div class="sidebar"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Related Links&lt;/h3&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;...&lt;/ul&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&lt;/div&gt;
+					<br /><br />
+					&lt;div class="footer"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;p&gt;Copyright information&lt;/p&gt;
+					<br />
+					&lt;/div&gt;
+				</code>
+			</div>
+			<br />
+			<h4>Semantic Approach</h4>
+			<div class="code max-w40">
+				<code>
+					&lt;header&gt;
+					<br />
+					&nbsp;&nbsp;&lt;h1&gt;Website Title&lt;/h1&gt;
+					<br />
+					&nbsp;&nbsp;&lt;nav&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+					href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/nav&gt;
+					<br />
+					&lt;/header&gt;
+					<br /><br />
+					&lt;main&gt;
+					<br />
+					&nbsp;&nbsp;&lt;article&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Article Title&lt;/h2&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Content...&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/article&gt;
+					<br />
+					&nbsp;&nbsp;&lt;aside&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Related Links&lt;/h3&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;...&lt;/ul&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/aside&gt;
+					<br />
+					&lt;/main&gt;
+					<br /><br />
+					&lt;footer&gt;
+					<br />
+					&nbsp;&nbsp;&lt;p&gt;Copyright information&lt;/p&gt;
+					<br />
+					&lt;/footer&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Best Practices for Using Semantic Elements</h3>
+			<ol>
+				<li>
+					<strong>Use the right element for the right purpose</strong> - Choose
+					elements based on their meaning, not their default styling
+				</li>
+				<li>
+					<strong>Don't overuse sectioning elements</strong> - Not every
+					&lt;div&gt; needs to be replaced with a semantic element
+				</li>
+				<li>
+					<strong>Use headings properly</strong> - Maintain a logical heading
+					hierarchy (h1-h6) within semantic sections
+				</li>
+				<li>
+					<strong>Combine with ARIA when needed</strong> - For complex UI
+					components, supplement semantic HTML with ARIA roles and attributes
+				</li>
+				<li>
+					<strong>Test with screen readers</strong> - Verify that your semantic
+					structure makes sense when read aloud
+				</li>
+				<li>
+					<strong>Be consistent</strong> - Use semantic elements consistently
+					throughout your site
+				</li>
+			</ol>
+			<br />
+			<h3>Browser Support</h3>
+			<p>
+				All modern browsers support HTML5 semantic elements. However, older
+				browsers (particularly IE9 and below) may not recognize these elements
+				by default. For these browsers, you can use a polyfill like HTML5shiv or
+				Modernizr to enable styling of semantic elements.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!--[if lt IE 9]&gt;
+					<br />
+					&nbsp;&nbsp;&lt;script
+					src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"&gt;&lt;/script&gt;
+					<br />
+					&lt;![endif]--&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Conclusion</h3>
+			<p>
+				Semantic HTML is a cornerstone of modern web development. By using
+				semantic elements appropriately, you create web pages that are more
+				accessible, SEO-friendly, and easier to maintain. As web technologies
+				continue to evolve, the importance of semantic markup only increases,
+				making it an essential skill for any web developer.
+			</p>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch22-emojis/emojis.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch24-imagemaps/imagemaps.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

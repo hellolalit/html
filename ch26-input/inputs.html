@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-26 Input Elements</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 26 - Input Elements in HTML</h1>
+			<br />
+			<h2>What are Input Elements?</h2>
+			<p>
+				Input elements are the fundamental building blocks of HTML forms. They
+				allow users to enter data in various formats, from simple text to
+				complex file uploads. The &lt;input&gt; element is one of the most
+				versatile and commonly used form elements in HTML.
+			</p>
+			<br />
+			<h3>Basic Input Element Structure</h3>
+			<p>The basic syntax of an input element is:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;input type="text" name="username" id="username" value="default
+					value"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Common Input Attributes</h3>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Attribute</th>
+					<th style="padding: 10px">Description</th>
+					<th style="padding: 10px">Example</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>type</strong></td>
+					<td style="padding: 10px">Specifies the type of input element</td>
+					<td style="padding: 10px">type="text"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>name</strong></td>
+					<td style="padding: 10px">
+						Name of the input field (used when submitting forms)
+					</td>
+					<td style="padding: 10px">name="username"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>value</strong></td>
+					<td style="padding: 10px">
+						Default or current value of the input field
+					</td>
+					<td style="padding: 10px">value="John"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>placeholder</strong></td>
+					<td style="padding: 10px">Hint text displayed before user input</td>
+					<td style="padding: 10px">placeholder="Enter username"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>required</strong></td>
+					<td style="padding: 10px">Makes the field mandatory</td>
+					<td style="padding: 10px">required</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>disabled</strong></td>
+					<td style="padding: 10px">Makes the field non-editable</td>
+					<td style="padding: 10px">disabled</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>readonly</strong></td>
+					<td style="padding: 10px">Makes the field read-only</td>
+					<td style="padding: 10px">readonly</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Input Types and Their Usage</h3>
+			<h4>1. Text Input</h4>
+			<p>Used for single-line text input:</p>
+			<div class="code max-w40">
+				<code> &lt;input type="text" placeholder="Enter your name"&gt; </code>
+			</div>
+			<br />
+			<h4>2. Password Input</h4>
+			<p>Used for password entry (characters are masked):</p>
+			<div class="code max-w40">
+				<code>
+					&lt;input type="password" placeholder="Enter your password"&gt;
+				</code>
+			</div>
+			<br />
+			<h4>3. Number Input</h4>
+			<p>Used for numeric input with optional controls:</p>
+			<div class="code max-w40">
+				<code> &lt;input type="number" min="0" max="100" step="1"&gt; </code>
+			</div>
+			<br />
+			<h4>4. Email Input</h4>
+			<p>Used for email addresses with built-in validation:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;input type="email" placeholder="example@domain.com"&gt;
+				</code>
+			</div>
+			<br />
+			<h4>5. Date Input</h4>
+			<p>Used for date selection:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;input type="date" min="2024-01-01" max="2024-12-31"&gt;
+				</code>
+			</div>
+			<br />
+			<h4>6. Color Input</h4>
+			<p>Used for color selection:</p>
+			<div class="code max-w40">
+				<code> &lt;input type="color" value="#ff0000"&gt; </code>
+			</div>
+			<br />
+			<h4>7. Range Input</h4>
+			<p>Used for selecting a value within a range:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;input type="range" min="0" max="100" step="10" value="50"&gt;
+				</code>
+			</div>
+			<br />
+			<h4>8. File Input</h4>
+			<p>Used for file uploads:</p>
+			<div class="code max-w40">
+				<code> &lt;input type="file" accept="image/*" multiple&gt; </code>
+			</div>
+			<br />
+			<h4>9. Search Input</h4>
+			<p>Used for search boxes:</p>
+			<div class="code max-w40">
+				<code> &lt;input type="search" placeholder="Search..."&gt; </code>
+			</div>
+			<br />
+			<h4>10. URL Input</h4>
+			<p>Used for web addresses with validation:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;input type="url" placeholder="https://example.com"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Input Validation Attributes</h3>
+			<table
+				border="1"
+				style="border-collapse: collapse; width: 80%; margin: 20px auto">
+				<tr style="background-color: #f2f2f2">
+					<th style="padding: 10px">Attribute</th>
+					<th style="padding: 10px">Description</th>
+					<th style="padding: 10px">Example</th>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>required</strong></td>
+					<td style="padding: 10px">Makes the field mandatory</td>
+					<td style="padding: 10px">required</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>pattern</strong></td>
+					<td style="padding: 10px">Regular expression for validation</td>
+					<td style="padding: 10px">pattern="[A-Za-z]{3}"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>minlength</strong></td>
+					<td style="padding: 10px">Minimum number of characters</td>
+					<td style="padding: 10px">minlength="3"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>maxlength</strong></td>
+					<td style="padding: 10px">Maximum number of characters</td>
+					<td style="padding: 10px">maxlength="10"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>min</strong></td>
+					<td style="padding: 10px">Minimum value for numbers</td>
+					<td style="padding: 10px">min="0"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>max</strong></td>
+					<td style="padding: 10px">Maximum value for numbers</td>
+					<td style="padding: 10px">max="100"</td>
+				</tr>
+				<tr>
+					<td style="padding: 10px"><strong>step</strong></td>
+					<td style="padding: 10px">Increment value for numbers</td>
+					<td style="padding: 10px">step="2"</td>
+				</tr>
+			</table>
+			<br />
+			<h3>Input States and Styling</h3>
+			<p>Input elements can be styled differently based on their states:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;style&gt;
+					<br />
+					&nbsp;&nbsp;/* Default state */
+					<br />
+					&nbsp;&nbsp;input {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;padding: 8px;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #ccc;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 4px;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;/* Focus state */
+					<br />
+					&nbsp;&nbsp;input:focus {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;outline: none;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;border-color: #4CAF50;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;/* Invalid state */
+					<br />
+					&nbsp;&nbsp;input:invalid {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;border-color: #ff0000;
+					<br />
+					&nbsp;&nbsp;}
+					<br /><br />
+					&nbsp;&nbsp;/* Disabled state */
+					<br />
+					&nbsp;&nbsp;input:disabled {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;background-color: #f5f5f5;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;cursor: not-allowed;
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					&lt;/style&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Input with Datalist</h3>
+			<p>
+				You can provide suggestions for input fields using the datalist element:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;input list="countries" placeholder="Select a country"&gt;
+					<br />
+					&lt;datalist id="countries"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="United States"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="United Kingdom"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="Canada"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="Australia"&gt;
+					<br />
+					&lt;/datalist&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Input Groups</h3>
+			<p>You can group related inputs using fieldset and legend elements:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;fieldset&gt;
+					<br />
+					&nbsp;&nbsp;&lt;legend&gt;Personal Information&lt;/legend&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="firstname"&gt;First
+					Name:&lt;/label&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="firstname"
+					name="firstname"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&nbsp;&nbsp;&lt;div&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="lastname"&gt;Last
+					Name:&lt;/label&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="lastname"
+					name="lastname"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/div&gt;
+					<br />
+					&lt;/fieldset&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Best Practices</h3>
+			<ol>
+				<li>
+					<strong>Always use labels</strong> with input elements for better
+					accessibility
+				</li>
+				<li>
+					<strong>Choose appropriate input types</strong> for better user
+					experience and validation
+				</li>
+				<li><strong>Provide clear placeholder text</strong> when needed</li>
+				<li>
+					<strong>Use appropriate validation</strong> attributes to ensure data
+					quality
+				</li>
+				<li><strong>Group related inputs</strong> using fieldset and legend</li>
+				<li>
+					<strong>Consider mobile users</strong> when designing input fields
+				</li>
+				<li><strong>Provide clear feedback</strong> for validation errors</li>
+				<li>
+					<strong>Use appropriate input sizes</strong> for the expected content
+				</li>
+			</ol>
+			<br />
+			<h3>Accessibility Considerations</h3>
+			<ol>
+				<li><strong>Use proper labels</strong> for all input elements</li>
+				<li><strong>Provide clear error messages</strong> for invalid input</li>
+				<li>
+					<strong>Ensure proper tab order</strong> for keyboard navigation
+				</li>
+				<li><strong>Use ARIA attributes</strong> when needed</li>
+				<li>
+					<strong>Maintain sufficient color contrast</strong> for visibility
+				</li>
+			</ol>
+			<br />
+			<h3>Conclusion</h3>
+			<p>
+				Input elements are essential components of HTML forms and web
+				applications. Understanding their various types, attributes, and best
+				practices is crucial for creating user-friendly and accessible web
+				forms. Always consider your users' needs and provide appropriate
+				validation and feedback mechanisms.
+			</p>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch25-forms/forms.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch27-form/form.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>
