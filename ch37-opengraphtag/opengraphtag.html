@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-37 Open Graph Tags</title>
+		<link rel="stylesheet" href="../style.css" />
+		<!-- Example Open Graph tags -->
+		<meta property="og:title" content="Open Graph Tags Tutorial" />
+		<meta
+			property="og:description"
+			content="Learn about Open Graph meta tags in HTML5" />
+		<meta property="og:image" content="https://example.com/image.jpg" />
+		<meta property="og:url" content="https://example.com/opengraph" />
+		<meta property="og:type" content="website" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 37 - Open Graph Tags in HTML5</h1>
+			<br />
+			<h2>What are Open Graph Tags?</h2>
+			<p>
+				Open Graph (OG) is a protocol that enables any web page to become a rich
+				object in a social graph. It was originally created by Facebook in 2010
+				to enable web pages to have the same functionality as other Facebook
+				objects. When you share a link on social media platforms like Facebook,
+				Twitter, or LinkedIn, Open Graph meta tags determine how your content
+				appears in the shared post.
+			</p>
+			<br />
+			<h3>Basic Open Graph Tags</h3>
+			<p>
+				Open Graph meta tags are placed in the head section of your HTML
+				document. They use the property attribute instead of the name attribute
+				used by standard meta tags. Here are the basic Open Graph tags:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;head&gt;
+					<br />
+					&nbsp;&nbsp;&lt;title&gt;My Website&lt;/title&gt;
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta property="og:title" content="My Website Title"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta property="og:description" content="Description of my
+						website"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta property="og:image"
+						content="https://example.com/image.jpg"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta property="og:url"
+						content="https://example.com"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta property="og:type" content="website"&gt;</strong
+					>
+					<br />
+					&lt;/head&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Core Open Graph Properties</h3>
+			<ul>
+				<li><strong>og:title</strong> - The title of your page</li>
+				<li>
+					<strong>og:description</strong> - A brief description of your content
+				</li>
+				<li>
+					<strong>og:image</strong> - The URL of an image to represent your
+					content
+				</li>
+				<li><strong>og:url</strong> - The canonical URL of your page</li>
+				<li>
+					<strong>og:type</strong> - The type of content (e.g., website,
+					article, video)
+				</li>
+				<li><strong>og:site_name</strong> - The name of your website</li>
+			</ul>
+			<br />
+			<h3>Example of a Shared Link with Open Graph Tags</h3>
+			<div
+				style="
+					border: 1px solid #ddd;
+					border-radius: 5px;
+					padding: 15px;
+					max-width: 500px;
+					margin: 0 auto;
+				">
+				<div
+					style="
+						height: 250px;
+						background-color: #f0f0f0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin-bottom: 10px;
+					">
+					<p style="color: #666">[Image from og:image would appear here]</p>
+				</div>
+				<h3 style="margin: 0; color: #1877f2">Open Graph Tags Tutorial</h3>
+				<p style="color: #606770; margin: 5px 0">
+					Learn about Open Graph meta tags in HTML5
+				</p>
+				<p style="color: #606770; margin: 5px 0; font-size: 0.9em">
+					example.com
+				</p>
+			</div>
+			<p style="text-align: center; margin-top: 5px">
+				<small
+					>Example of how a link might appear when shared on social media</small
+				>
+			</p>
+			<br />
+			<h3>Open Graph Types</h3>
+			<p>
+				The og:type property specifies the type of content you're sharing. Here
+				are some common types:
+			</p>
+			<ul>
+				<li><strong>website</strong> - A generic website</li>
+				<li><strong>article</strong> - An article or blog post</li>
+				<li><strong>book</strong> - A book</li>
+				<li><strong>profile</strong> - A person's profile</li>
+				<li><strong>music.song</strong> - A song</li>
+				<li><strong>music.album</strong> - A music album</li>
+				<li><strong>video.movie</strong> - A movie</li>
+				<li><strong>video.tv_show</strong> - A TV show</li>
+			</ul>
+			<br />
+			<h3>Additional Open Graph Tags for Articles</h3>
+			<p>If your content is an article, you can use additional tags:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;meta property="og:type" content="article"&gt;
+					<br />
+					&lt;meta property="article:published_time"
+					content="2023-05-15T08:00:00+00:00"&gt;
+					<br />
+					&lt;meta property="article:author"
+					content="https://example.com/author"&gt;
+					<br />
+					&lt;meta property="article:section" content="Technology"&gt;
+					<br />
+					&lt;meta property="article:tag" content="HTML"&gt;
+					<br />
+					&lt;meta property="article:tag" content="Open Graph"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Image Recommendations</h3>
+			<p>
+				For optimal display across different platforms, follow these image
+				recommendations:
+			</p>
+			<ul>
+				<li>
+					Use images that are at least 1200 x 630 pixels for best display on
+					high-resolution devices
+				</li>
+				<li>Maintain an aspect ratio of 1.91:1</li>
+				<li>Keep the file size under 8MB</li>
+				<li>Use PNG, JPEG, or GIF format</li>
+			</ul>
+			<p>You can also specify multiple images with different sizes:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;meta property="og:image"
+					content="https://example.com/image.jpg"&gt;
+					<br />
+					&lt;meta property="og:image:width" content="1200"&gt;
+					<br />
+					&lt;meta property="og:image:height" content="630"&gt;
+					<br />
+					&lt;meta property="og:image:alt" content="Description of the
+					image"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Testing Open Graph Tags</h3>
+			<p>
+				You can test how your Open Graph tags will appear when shared using
+				these tools:
+			</p>
+			<ul>
+				<li>
+					<a href="https://developers.facebook.com/tools/debug/" target="_blank"
+						>Facebook Sharing Debugger</a
+					>
+				</li>
+				<li>
+					<a href="https://cards-dev.twitter.com/validator" target="_blank"
+						>Twitter Card Validator</a
+					>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/post-inspector/" target="_blank"
+						>LinkedIn Post Inspector</a
+					>
+				</li>
+			</ul>
+			<br />
+			<h3>Benefits of Using Open Graph Tags</h3>
+			<ul>
+				<li>
+					Improved visibility and engagement when your content is shared on
+					social media
+				</li>
+				<li>Control over how your content appears when shared</li>
+				<li>Higher click-through rates from social media platforms</li>
+				<li>Better brand recognition with consistent imagery</li>
+			</ul>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch36-scriptandnosripttag/scriptandnosripttag.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch38-twittercardtag/twittercardtag.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

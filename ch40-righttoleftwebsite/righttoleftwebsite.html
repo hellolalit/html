@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-40 Right-to-Left Websites</title>
+		<link rel="stylesheet" href="../style.css" />
+		<style>
+			.rtl-example {
+				direction: rtl;
+				text-align: right;
+				border: 1px solid #ddd;
+				padding: 15px;
+				margin: 15px 0;
+				background-color: #f8f9fa;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			.ltr-example {
+				direction: ltr;
+				text-align: left;
+				border: 1px solid #ddd;
+				padding: 15px;
+				margin: 15px 0;
+				background-color: #f8f9fa;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			.bidi-example {
+				border: 1px solid #ddd;
+				padding: 15px;
+				margin: 15px 0;
+				background-color: #f8f9fa;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 40 - Right-to-Left (RTL) Websites in HTML5</h1>
+			<br />
+			<h2>What are Right-to-Left (RTL) Websites?</h2>
+			<p>
+				Right-to-Left (RTL) websites are designed for languages that are read
+				from right to left, such as Arabic, Hebrew, Persian (Farsi), and Urdu.
+				Unlike the left-to-right (LTR) layout used for languages like English,
+				RTL websites have their text, navigation, and layout elements aligned
+				from right to left. Creating RTL websites requires specific HTML
+				attributes and CSS properties to ensure proper display and
+				functionality.
+			</p>
+			<br />
+			<h3>Setting the Document Direction</h3>
+			<p>
+				The primary way to create an RTL website is to set the direction of the
+				HTML document using the
+				<strong>dir</strong> attribute on the html element:
+			</p>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;html dir="rtl" lang="ar"&gt;</strong>
+					<br />
+					&nbsp;&nbsp;&lt;head&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;موقع باللغة العربية&lt;/title&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/head&gt;
+					<br />
+					&nbsp;&nbsp;&lt;body&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- RTL content here --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/body&gt;
+					<br />
+					&lt;/html&gt;
+				</code>
+			</div>
+			<p>The <strong>dir</strong> attribute can have one of three values:</p>
+			<ul>
+				<li><strong>rtl</strong> - Right-to-left text direction</li>
+				<li><strong>ltr</strong> - Left-to-right text direction (default)</li>
+				<li>
+					<strong>auto</strong> - Let the browser determine the text direction
+					based on the content
+				</li>
+			</ul>
+			<br />
+			<h3>RTL Example</h3>
+			<div class="rtl-example">
+				<h4>مثال على النص العربي</h4>
+				<p>
+					هذا مثال على النص العربي الذي يتم عرضه من اليمين إلى اليسار. لاحظ كيف
+					يبدأ النص من الجانب الأيمن من الصفحة.
+				</p>
+				<button
+					style="
+						background-color: #4caf50;
+						color: white;
+						padding: 10px 20px;
+						border: none;
+						border-radius: 4px;
+						cursor: pointer;
+					">
+					زر التقديم
+				</button>
+			</div>
+			<p><small>Example of Arabic text displayed right-to-left</small></p>
+			<br />
+			<h3>Setting Direction with CSS</h3>
+			<p>
+				You can also set the text direction using CSS with the
+				<strong>direction</strong> and <strong>text-align</strong> properties:
+			</p>
+			<div class="code max-w40">
+				<code>
+					body {
+					<br />
+					&nbsp;&nbsp;<strong>direction: rtl;</strong>
+					<br />
+					&nbsp;&nbsp;<strong>text-align: right;</strong>
+					<br />
+					}
+				</code>
+			</div>
+			<p>
+				The <strong>direction</strong> property affects the direction of text,
+				table columns, and the horizontal overflow, while
+				<strong>text-align</strong> affects the alignment of text within an
+				element.
+			</p>
+			<br />
+			<h3>Bidirectional Text (Bidi)</h3>
+			<p>
+				Sometimes you need to mix RTL and LTR text in the same document. HTML
+				provides the <strong>bdi</strong> (Bidirectional Isolation) and
+				<strong>bdo</strong> (Bidirectional Override) elements to handle this:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- BDI: Bidirectional Isolation --&gt;
+					<br />
+					&lt;p&gt;User &lt;bdi&gt;أحمد&lt;/bdi&gt; has 3 posts.&lt;/p&gt;
+					<br /><br />
+					&lt;!-- BDO: Bidirectional Override --&gt;
+					<br />
+					&lt;p&gt;This text will go right to left: &lt;bdo dir="rtl"&gt;This is
+					right-to-left text&lt;/bdo&gt;&lt;/p&gt;
+				</code>
+			</div>
+			<div class="bidi-example">
+				<p>User <bdi>أحمد</bdi> has 3 posts.</p>
+				<p>
+					This text will go right to left:
+					<bdo dir="rtl">This is right-to-left text</bdo>
+				</p>
+			</div>
+			<br />
+			<h3>RTL Layout Considerations</h3>
+			<p>
+				When creating RTL websites, you need to consider several layout aspects:
+			</p>
+			<ul>
+				<li>
+					<strong>Navigation</strong> - Menu items should be aligned from right
+					to left
+				</li>
+				<li>
+					<strong>Forms</strong> - Form labels should appear to the right of
+					form controls
+				</li>
+				<li>
+					<strong>Tables</strong> - Table columns should flow from right to left
+				</li>
+				<li>
+					<strong>Images and Icons</strong> - Some images and icons may need to
+					be mirrored
+				</li>
+				<li>
+					<strong>Scrollbars</strong> - Scrollbars may appear on the left side
+					in RTL layouts
+				</li>
+				<li>
+					<strong>Margins and Paddings</strong> - Left/right margins and
+					paddings need to be swapped
+				</li>
+			</ul>
+			<br />
+			<h3>CSS Logical Properties</h3>
+			<p>
+				Modern CSS provides logical properties that automatically adjust based
+				on the text direction:
+			</p>
+			<div class="code max-w40">
+				<code>
+					/* Traditional properties */
+					<br />
+					.element {
+					<br />
+					&nbsp;&nbsp;margin-left: 20px;
+					<br />
+					&nbsp;&nbsp;padding-right: 10px;
+					<br />
+					&nbsp;&nbsp;border-left: 1px solid black;
+					<br />
+					}
+					<br /><br />
+					/* Logical properties */
+					<br />
+					.element {
+					<br />
+					&nbsp;&nbsp;margin-inline-start: 20px; /* Left in LTR, Right in RTL */
+					<br />
+					&nbsp;&nbsp;padding-inline-end: 10px; /* Right in LTR, Left in RTL */
+					<br />
+					&nbsp;&nbsp;border-inline-start: 1px solid black; /* Left in LTR,
+					Right in RTL */
+					<br />
+					}
+				</code>
+			</div>
+			<p>
+				Using logical properties makes it easier to create layouts that work
+				well in both LTR and RTL contexts.
+			</p>
+			<br />
+			<h3>RTL-Specific CSS</h3>
+			<p>
+				For more complex websites, you might need separate CSS files for RTL
+				layouts:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Base CSS for LTR --&gt;
+					<br />
+					&lt;link rel="stylesheet" href="styles.css"&gt;
+					<br /><br />
+					&lt;!-- Additional CSS for RTL, loaded only when dir="rtl" --&gt;
+					<br />
+					&lt;link rel="stylesheet" href="styles-rtl.css"&gt;
+				</code>
+			</div>
+			<p>Alternatively, you can use CSS that targets the dir attribute:</p>
+			<div class="code max-w40">
+				<code>
+					/* Styles for all directions */
+					<br />
+					.navbar {
+					<br />
+					&nbsp;&nbsp;background-color: #333;
+					<br />
+					}
+					<br /><br />
+					/* Styles specific to RTL */
+					<br />
+					[dir="rtl"] .navbar {
+					<br />
+					&nbsp;&nbsp;padding-right: 20px;
+					<br />
+					}
+					<br /><br />
+					/* Styles specific to LTR */
+					<br />
+					[dir="ltr"] .navbar {
+					<br />
+					&nbsp;&nbsp;padding-left: 20px;
+					<br />
+					}
+				</code>
+			</div>
+			<br />
+			<h3>Language Attribute</h3>
+			<p>
+				When creating RTL websites, it's important to set the correct language
+				using the <strong>lang</strong> attribute:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;html dir="rtl" <strong>lang="ar"</strong>&gt; &lt;!-- Arabic
+					--&gt; <br /><br />
+					&lt;html dir="rtl" <strong>lang="he"</strong>&gt; &lt;!-- Hebrew
+					--&gt; <br /><br />
+					&lt;html dir="rtl" <strong>lang="fa"</strong>&gt; &lt;!-- Persian
+					(Farsi) --&gt; <br /><br />
+					&lt;html dir="rtl" <strong>lang="ur"</strong>&gt; &lt;!-- Urdu --&gt;
+				</code>
+			</div>
+			<p>
+				Setting the correct language helps browsers and screen readers properly
+				handle the content.
+			</p>
+			<br />
+			<h3>Testing RTL Websites</h3>
+			<p>
+				When developing RTL websites, it's important to test them thoroughly:
+			</p>
+			<ul>
+				<li>Test with native speakers of the RTL language</li>
+				<li>
+					Test in browsers that are commonly used in regions where RTL languages
+					are spoken
+				</li>
+				<li>Test on mobile devices, as they may handle RTL differently</li>
+				<li>
+					Check for layout issues, especially with complex components like
+					calendars, sliders, and carousels
+				</li>
+				<li>Verify that form validation messages appear correctly</li>
+			</ul>
+			<br />
+			<h3>RTL Support in Frameworks</h3>
+			<p>
+				Many modern CSS frameworks and JavaScript libraries provide built-in
+				support for RTL layouts:
+			</p>
+			<ul>
+				<li><strong>Bootstrap</strong> - Offers an RTL version of its CSS</li>
+				<li>
+					<strong>Material-UI</strong> - Provides RTL support through theme
+					direction
+				</li>
+				<li>
+					<strong>React</strong> - Has libraries like react-i18next for
+					internationalization
+				</li>
+				<li>
+					<strong>RTLCSS</strong> - A framework that automatically converts LTR
+					CSS to RTL
+				</li>
+			</ul>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch39-viewportmetatag/viewportmetatag.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch41-w3cvalidation/w3cvalidation.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

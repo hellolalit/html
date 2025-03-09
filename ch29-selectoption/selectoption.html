@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-29 Select and Option</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 29 - Select and Option in HTML5</h1>
+			<br />
+			<h2>What is a Select Dropdown?</h2>
+			<p>
+				The select element creates a dropdown list of options that users can
+				choose from. It's commonly used in forms when you want users to select
+				one or multiple options from a predefined list. The select element
+				contains option elements that define the available choices.
+			</p>
+			<br />
+			<h3>Basic Select and Option Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;select name="fruits" id="fruits"&gt;</strong>
+					<br />
+					&nbsp;&nbsp;&lt;option value="apple"&gt;Apple&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="banana"&gt;Banana&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="orange"&gt;Orange&lt;/option&gt;
+					<br />
+					<strong>&lt;/select&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<h3>Select Attributes</h3>
+			<p>
+				The <strong>select</strong> element has several important attributes:
+			</p>
+			<ul>
+				<li>
+					<strong>name</strong> - Specifies the name of the select element (for
+					form submission)
+				</li>
+				<li>
+					<strong>id</strong> - Specifies a unique id for the select element
+				</li>
+				<li>
+					<strong>multiple</strong> - Allows the user to select multiple options
+				</li>
+				<li><strong>size</strong> - Specifies the number of visible options</li>
+				<li>
+					<strong>required</strong> - Specifies that the user must select an
+					option
+				</li>
+				<li>
+					<strong>disabled</strong> - Specifies that the select element should
+					be disabled
+				</li>
+				<li>
+					<strong>autofocus</strong> - Specifies that the select element should
+					automatically get focus when the page loads
+				</li>
+			</ul>
+			<br />
+			<h3>Option Attributes</h3>
+			<p>
+				The <strong>option</strong> element has several important attributes:
+			</p>
+			<ul>
+				<li>
+					<strong>value</strong> - Specifies the value to be sent to the server
+					when the form is submitted
+				</li>
+				<li>
+					<strong>selected</strong> - Specifies that an option should be
+					pre-selected when the page loads
+				</li>
+				<li>
+					<strong>disabled</strong> - Specifies that an option should be
+					disabled
+				</li>
+			</ul>
+			<br />
+			<h3>Select and Option Example</h3>
+			<form action="#" method="get">
+				<label for="country">Select your country:</label><br />
+				<select id="country" name="country">
+					<option value="">--Please choose a country--</option>
+					<option value="usa">United States</option>
+					<option value="canada">Canada</option>
+					<option value="uk">United Kingdom</option>
+					<option value="australia">Australia</option>
+					<option value="india">India</option></select
+				><br /><br />
+
+				<input type="submit" value="Submit" />
+			</form>
+			<br />
+			<h3>Select and Option Code Example</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;form action="#" method="get"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;label for="country"&gt;Select your
+					country:&lt;/label&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;select id="country" name="country"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=""&gt;--Please choose a
+					country--&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="usa"&gt;United
+					States&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+					value="canada"&gt;Canada&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="uk"&gt;United
+					Kingdom&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+					value="australia"&gt;Australia&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+					value="india"&gt;India&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/select&gt;&lt;br&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;
+					<br />
+					&lt;/form&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Option Groups</h3>
+			<p>
+				You can group related options using the
+				<strong>optgroup</strong> element:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;select name="cars" id="cars"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;optgroup label="European Cars"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+					value="volvo"&gt;Volvo&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+					value="mercedes"&gt;Mercedes&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/optgroup&gt;
+					<br />
+					&nbsp;&nbsp;&lt;optgroup label="American Cars"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="ford"&gt;Ford&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+					value="chevrolet"&gt;Chevrolet&lt;/option&gt;
+					<br />
+					&nbsp;&nbsp;&lt;/optgroup&gt;
+					<br />
+					&lt;/select&gt;
+				</code>
+			</div>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch28-textarea/textarea.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch30-radioandcheckbox/radioandcheckbox.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

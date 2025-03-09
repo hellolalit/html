@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-36 Script and Noscript Tags</title>
+		<link rel="stylesheet" href="../style.css" />
+		<!-- Example script -->
+		<script>
+			function showMessage() {
+				alert("Hello from JavaScript!");
+			}
+		</script>
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 36 - Script and Noscript Tags in HTML5</h1>
+			<br />
+			<h2>The Script Tag</h2>
+			<p>
+				The script tag is used to embed or reference executable code, typically
+				JavaScript, within an HTML document. It allows you to add interactivity,
+				dynamic content, and behavior to your web pages. The script tag can be
+				placed in the head or body section of an HTML document.
+			</p>
+			<br />
+			<h3>Basic Script Tag Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;script&gt;</strong>
+					<br />
+					&nbsp;&nbsp;// JavaScript code goes here
+					<br />
+					&nbsp;&nbsp;function greet() {
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello, World!");
+					<br />
+					&nbsp;&nbsp;}
+					<br />
+					<strong>&lt;/script&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<h3>Script Tag Attributes</h3>
+			<p>The script tag has several important attributes:</p>
+			<ul>
+				<li>
+					<strong>src</strong> - Specifies the URL of an external script file
+				</li>
+				<li>
+					<strong>type</strong> - Specifies the MIME type of the script (default
+					is "text/javascript")
+				</li>
+				<li>
+					<strong>async</strong> - Specifies that the script should be executed
+					asynchronously
+				</li>
+				<li>
+					<strong>defer</strong> - Specifies that the script should be executed
+					after the page has finished parsing
+				</li>
+				<li>
+					<strong>crossorigin</strong> - Configures CORS settings for the script
+				</li>
+				<li>
+					<strong>integrity</strong> - Allows browsers to verify that a fetched
+					script has not been manipulated
+				</li>
+			</ul>
+			<br />
+			<h3>External JavaScript Files</h3>
+			<p>You can include external JavaScript files using the src attribute:</p>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;script src="script.js"&gt;&lt;/script&gt;</strong>
+				</code>
+			</div>
+			<p>
+				When using the src attribute, any content between the opening and
+				closing script tags is ignored.
+			</p>
+			<br />
+			<h3>Async and Defer Attributes</h3>
+			<p>
+				The async and defer attributes control how the browser loads and
+				executes scripts:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Regular script: blocks HTML parsing while downloading and
+					executing --&gt;
+					<br />
+					&lt;script src="regular.js"&gt;&lt;/script&gt;
+					<br /><br />
+					&lt;!-- Async script: downloads in parallel, executes as soon as
+					available --&gt;
+					<br />
+					&lt;script src="async.js" <strong>async</strong>&gt;&lt;/script&gt;
+					<br /><br />
+					&lt;!-- Defer script: downloads in parallel, executes after HTML
+					parsing --&gt;
+					<br />
+					&lt;script src="defer.js" <strong>defer</strong>&gt;&lt;/script&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Script Placement</h3>
+			<p>
+				Scripts can be placed in the head or body section of an HTML document:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- In the head section --&gt;
+					<br />
+					&lt;head&gt;
+					<br />
+					&nbsp;&nbsp;&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// JavaScript code
+					<br />
+					&nbsp;&nbsp;&lt;/script&gt;
+					<br />
+					&lt;/head&gt;
+					<br /><br />
+					&lt;!-- At the end of the body section (recommended) --&gt;
+					<br />
+					&lt;body&gt;
+					<br />
+					&nbsp;&nbsp;&lt;!-- HTML content --&gt;
+					<br />
+					&nbsp;&nbsp;&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// JavaScript code
+					<br />
+					&nbsp;&nbsp;&lt;/script&gt;
+					<br />
+					&lt;/body&gt;
+				</code>
+			</div>
+			<p>
+				Placing scripts at the end of the body is often recommended to ensure
+				that the HTML content is loaded before the scripts run, which can
+				improve perceived page load times.
+			</p>
+			<br />
+			<h3>Example of JavaScript in Action</h3>
+			<button onclick="showMessage()">Click Me</button>
+			<p>
+				<small
+					>(This button uses the JavaScript function defined in the head
+					section)</small
+				>
+			</p>
+			<br />
+			<h2>The Noscript Tag</h2>
+			<p>
+				The noscript tag defines alternate content to be displayed when scripts
+				are not supported or disabled in the browser. It provides a fallback for
+				users who have JavaScript disabled or browsers that don't support
+				JavaScript.
+			</p>
+			<br />
+			<h3>Basic Noscript Tag Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;noscript&gt;</strong>
+					<br />
+					&nbsp;&nbsp;Your browser does not support JavaScript or it is
+					disabled.
+					<br />
+					&nbsp;&nbsp;Please enable JavaScript to view this website properly.
+					<br />
+					<strong>&lt;/noscript&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<noscript>
+				<div style="border: 2px solid red; padding: 10px; margin: 10px 0">
+					<strong>JavaScript is disabled!</strong>
+					<p>
+						This website works best with JavaScript enabled. Please enable
+						JavaScript in your browser settings.
+					</p>
+				</div>
+			</noscript>
+			<p>
+				The noscript content above will only be visible if JavaScript is
+				disabled in your browser.
+			</p>
+			<br />
+			<h3>Using Noscript in the Head Section</h3>
+			<p>
+				The noscript tag can also be used in the head section to provide
+				alternate stylesheets or meta redirects for browsers with JavaScript
+				disabled:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;head&gt;
+					<br />
+					&nbsp;&nbsp;&lt;script&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;// JavaScript code
+					<br />
+					&nbsp;&nbsp;&lt;/script&gt;
+					<br />
+					&nbsp;&nbsp;<strong>&lt;noscript&gt;</strong>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet"
+					href="noscript.css"&gt;
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta http-equiv="refresh"
+					content="0;url=noscript.html"&gt;
+					<br />
+					&nbsp;&nbsp;<strong>&lt;/noscript&gt;</strong>
+					<br />
+					&lt;/head&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Best Practices for Script and Noscript Tags</h3>
+			<ul>
+				<li>
+					Use external JavaScript files for better caching and maintainability
+				</li>
+				<li>
+					Consider using async or defer attributes for non-critical scripts
+				</li>
+				<li>Place scripts at the end of the body when possible</li>
+				<li>Always provide meaningful fallback content in noscript tags</li>
+				<li>Ensure your website is still usable even without JavaScript</li>
+				<li>
+					Use modern JavaScript features but provide polyfills for older
+					browsers
+				</li>
+			</ul>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch35-styletag/styletag.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch37-opengraphtag/opengraphtag.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

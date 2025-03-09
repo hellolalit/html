@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-28 Textarea</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 28 - Textarea in HTML5</h1>
+			<br />
+			<h2>What is a Textarea?</h2>
+			<p>
+				A textarea is an HTML form element that allows users to input multiple
+				lines of text. It's commonly used for comments, reviews, messages, and
+				any other input that requires more than a single line of text. The
+				textarea is created using the "textarea" tag.
+			</p>
+			<br />
+			<h3>Basic Textarea Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;textarea name="comment" rows="4" cols="50"&gt;</strong>
+					Enter your comment here...
+					<strong>&lt;/textarea&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<h3>Textarea Attributes</h3>
+			<p>
+				The <strong>textarea</strong> element has several important attributes:
+			</p>
+			<ul>
+				<li>
+					<strong>name</strong> - Specifies the name of the textarea (for form
+					submission)
+				</li>
+				<li><strong>rows</strong> - Specifies the visible number of lines</li>
+				<li>
+					<strong>cols</strong> - Specifies the visible width of the textarea
+				</li>
+				<li>
+					<strong>maxlength</strong> - Specifies the maximum number of
+					characters allowed
+				</li>
+				<li>
+					<strong>placeholder</strong> - Specifies a short hint that describes
+					the expected value
+				</li>
+				<li>
+					<strong>readonly</strong> - Specifies that the textarea should be
+					read-only
+				</li>
+				<li>
+					<strong>disabled</strong> - Specifies that the textarea should be
+					disabled
+				</li>
+				<li>
+					<strong>required</strong> - Specifies that the textarea must be filled
+					out
+				</li>
+				<li>
+					<strong>autofocus</strong> - Specifies that the textarea should
+					automatically get focus when the page loads
+				</li>
+			</ul>
+			<br />
+			<h3>Textarea Example</h3>
+			<form action="#" method="get">
+				<label for="message">Message:</label><br />
+				<textarea
+					id="message"
+					name="message"
+					rows="5"
+					cols="40"
+					placeholder="Type your message here..."></textarea
+				><br /><br />
+
+				<input type="submit" value="Submit" />
+			</form>
+			<br />
+			<h3>Textarea Code Example</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;form action="#" method="get"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;label
+					for="message"&gt;Message:&lt;/label&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;textarea id="message" name="message" rows="5"
+					cols="40" placeholder="Type your message
+					here..."&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;
+					<br />
+					&lt;/form&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Styling Textarea</h3>
+			<p>You can style a textarea using CSS to match your website's design:</p>
+			<div class="code max-w40">
+				<code>
+					textarea {
+					<br />
+					&nbsp;&nbsp;width: 100%;
+					<br />
+					&nbsp;&nbsp;padding: 12px;
+					<br />
+					&nbsp;&nbsp;border: 1px solid #ccc;
+					<br />
+					&nbsp;&nbsp;border-radius: 4px;
+					<br />
+					&nbsp;&nbsp;resize: vertical; /* Allow vertical resizing */
+					<br />
+					}
+				</code>
+			</div>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch27-form/forms.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch29-selectoption/selectoption.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

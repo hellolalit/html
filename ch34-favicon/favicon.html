@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-34 Favicon</title>
+		<link rel="stylesheet" href="../style.css" />
+		<!-- Example favicon -->
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 34 - Favicons in HTML5</h1>
+			<br />
+			<h2>What is a Favicon?</h2>
+			<p>
+				A favicon (short for "favorite icon") is a small icon associated with a
+				website or web page. It appears in browser tabs, bookmarks, history, and
+				other places where the website is referenced. Favicons help users
+				identify your website visually and enhance brand recognition.
+			</p>
+			<br />
+			<h3>Basic Favicon Implementation</h3>
+			<p>
+				To add a favicon to your website, you need to create an icon file and
+				link to it in the HTML head section. The most common format is .ico, but
+				modern browsers also support PNG, GIF, and SVG formats.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;head&gt;
+					<br />
+					&nbsp;&nbsp;&lt;title&gt;My Website&lt;/title&gt;
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;link rel="icon" type="image/x-icon"
+						href="favicon.ico"&gt;</strong
+					>
+					<br />
+					&lt;/head&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Different Favicon Formats</h3>
+			<p>You can use different formats for your favicon:</p>
+			<ul>
+				<li>
+					<strong>ICO</strong> - Traditional format, supported by all browsers
+				</li>
+				<li>
+					<strong>PNG</strong> - Supports transparency, good for modern browsers
+				</li>
+				<li>
+					<strong>GIF</strong> - Supports animation, though animated favicons
+					are rarely used
+				</li>
+				<li>
+					<strong>SVG</strong> - Vector format, scales well for different
+					resolutions
+				</li>
+			</ul>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- ICO format --&gt;
+					<br />
+					&lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
+					<br /><br />
+					&lt;!-- PNG format --&gt;
+					<br />
+					&lt;link rel="icon" type="image/png" href="favicon.png"&gt;
+					<br /><br />
+					&lt;!-- SVG format --&gt;
+					<br />
+					&lt;link rel="icon" type="image/svg+xml" href="favicon.svg"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Multiple Favicon Sizes</h3>
+			<p>
+				For better compatibility across different devices and platforms, you can
+				provide multiple favicon sizes. This is especially important for mobile
+				devices and high-resolution displays.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Standard favicon --&gt;
+					<br />
+					&lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
+					<br /><br />
+					&lt;!-- iOS and Android icons --&gt;
+					<br />
+					&lt;link rel="apple-touch-icon" sizes="180x180"
+					href="apple-touch-icon.png"&gt;
+					<br />
+					&lt;link rel="icon" type="image/png" sizes="32x32"
+					href="favicon-32x32.png"&gt;
+					<br />
+					&lt;link rel="icon" type="image/png" sizes="16x16"
+					href="favicon-16x16.png"&gt;
+					<br /><br />
+					&lt;!-- Android Chrome --&gt;
+					<br />
+					&lt;link rel="manifest" href="site.webmanifest"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Creating a Favicon</h3>
+			<p>You can create a favicon using various tools:</p>
+			<ol>
+				<li>
+					<strong>Graphic Design Software</strong> - Adobe Photoshop,
+					Illustrator, or GIMP
+				</li>
+				<li>
+					<strong>Online Favicon Generators</strong> - Websites like favicon.io,
+					realfavicongenerator.net
+				</li>
+				<li>
+					<strong>Icon Editors</strong> - Specialized software for creating icon
+					files
+				</li>
+			</ol>
+			<p>
+				When designing a favicon, keep it simple and recognizable even at small
+				sizes (16x16 pixels). Use your logo or a simplified version of it that
+				works well at small scales.
+			</p>
+			<br />
+			<h3>Favicon Best Practices</h3>
+			<ul>
+				<li>Keep the design simple and recognizable at small sizes</li>
+				<li>Provide multiple sizes for different devices and platforms</li>
+				<li>Use transparent backgrounds when appropriate</li>
+				<li>Test your favicon across different browsers and devices</li>
+				<li>Consider using SVG for scalable favicons</li>
+				<li>
+					Place the favicon files in the root directory of your website for
+					better discoverability
+				</li>
+			</ul>
+			<br />
+			<h3>Browser Cache and Favicons</h3>
+			<p>
+				Browsers often cache favicons aggressively. If you update your favicon
+				and don't see the changes, you might need to:
+			</p>
+			<ul>
+				<li>Clear your browser cache</li>
+				<li>Use a different filename for the new favicon</li>
+				<li>
+					Add a version parameter to the favicon URL (e.g., favicon.ico?v=2)
+				</li>
+			</ul>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch33-seo/seo.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch35-styletag/styletag.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

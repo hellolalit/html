@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-31 Datalist</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 31 - Datalist in HTML5</h1>
+			<br />
+			<h2>What is a Datalist?</h2>
+			<p>
+				The datalist element provides a list of predefined options for an input
+				element. It creates an autocomplete feature that allows users to select
+				from a dropdown list of options while still being able to enter their
+				own value. The datalist element is one of the new form elements
+				introduced in HTML5.
+			</p>
+			<br />
+			<h3>Basic Datalist Syntax</h3>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;input list="browsers" name="browser"&gt;</strong>
+					<br />
+					<strong>&lt;datalist id="browsers"&gt;</strong>
+					<br />
+					&nbsp;&nbsp;&lt;option value="Chrome"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="Firefox"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="Safari"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="Edge"&gt;
+					<br />
+					<strong>&lt;/datalist&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<h3>How Datalist Works</h3>
+			<p>To use a datalist:</p>
+			<ol>
+				<li>Create an input element with a list attribute</li>
+				<li>
+					Create a datalist element with an id that matches the input's list
+					attribute
+				</li>
+				<li>Add option elements inside the datalist</li>
+			</ol>
+			<p>
+				The input element will display a dropdown of suggestions from the
+				datalist when the user starts typing. The user can either select one of
+				the suggestions or enter a completely different value.
+			</p>
+			<br />
+			<h3>Datalist Example</h3>
+			<form action="#" method="get">
+				<label for="browser"
+					>Choose your browser from the list or type your own:</label
+				><br />
+				<input list="browsers" name="browser" id="browser" />
+				<datalist id="browsers">
+					<option value="Chrome"></option>
+					<option value="Firefox"></option>
+					<option value="Safari"></option>
+					<option value="Edge"></option>
+					<option value="Opera"></option>
+					<option value="Brave"></option></datalist
+				><br /><br />
+
+				<input type="submit" value="Submit" />
+			</form>
+			<br />
+			<h3>Datalist with Different Input Types</h3>
+			<p>Datalists can be used with different input types, not just text:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- With color input --&gt;
+					<br />
+					&lt;input type="color" list="colors" name="color"&gt;
+					<br />
+					&lt;datalist id="colors"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="#ff0000"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="#00ff00"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="#0000ff"&gt;
+					<br />
+					&lt;/datalist&gt;
+					<br /><br />
+					&lt;!-- With range input --&gt;
+					<br />
+					&lt;input type="range" list="tickmarks" min="0" max="100"&gt;
+					<br />
+					&lt;datalist id="tickmarks"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="0"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="25"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="50"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="75"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;option value="100"&gt;
+					<br />
+					&lt;/datalist&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Advantages of Datalist</h3>
+			<ul>
+				<li>Provides suggestions while still allowing free input</li>
+				<li>Improves user experience by reducing typing and errors</li>
+				<li>Works with various input types</li>
+				<li>Lightweight alternative to JavaScript autocomplete libraries</li>
+			</ul>
+			<br />
+			<h3>Browser Support</h3>
+			<p>
+				The datalist element is supported in all modern browsers, but it may not
+				work in older browsers. It's always a good idea to provide a fallback
+				for browsers that don't support datalist.
+			</p>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch30-radioandcheckbox/radioandcheckbox.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch32-labelsfieldsetandlegends/labelsfieldsetandlegends.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-32 Labels, Fieldsets, and Legends</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 32 - Labels, Fieldsets, and Legends in HTML5</h1>
+			<br />
+			<h2>What are Labels, Fieldsets, and Legends?</h2>
+			<p>
+				Labels, fieldsets, and legends are HTML elements that improve the
+				structure, accessibility, and usability of forms. They help organize
+				form controls and provide context for users, especially those using
+				screen readers or other assistive technologies.
+			</p>
+			<br />
+			<h3>Labels</h3>
+			<p>
+				The label element defines a label for a form control. It improves
+				usability by allowing users to click on the label to focus or activate
+				the associated form control. It also helps screen readers identify what
+				each form control is for.
+			</p>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;label for="username"&gt;Username:&lt;/label&gt;</strong>
+					<br />
+					&lt;input type="text" id="username" name="username"&gt;
+				</code>
+			</div>
+			<p>There are two ways to associate a label with a form control:</p>
+			<ol>
+				<li>
+					<strong>Using the "for" attribute</strong> (as shown above) - The
+					"for" attribute of the label must match the "id" attribute of the form
+					control.
+				</li>
+				<li>
+					<strong>Wrapping the form control inside the label</strong> - This
+					implicitly associates the label with the enclosed form control.
+				</li>
+			</ol>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;label&gt;</strong>
+					Username: &lt;input type="text" name="username"&gt;
+					<strong>&lt;/label&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<h3>Fieldsets</h3>
+			<p>
+				The fieldset element is used to group related form controls together. It
+				draws a box around the related elements, visually grouping them. This is
+				especially useful for longer forms where logical grouping helps users
+				understand the form structure.
+			</p>
+			<div class="code max-w40">
+				<code>
+					<strong>&lt;fieldset&gt;</strong>
+					<br />
+					&nbsp;&nbsp;&lt;legend&gt;Personal Information&lt;/legend&gt;
+					<br />
+					&nbsp;&nbsp;&lt;label for="fname"&gt;First name:&lt;/label&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="text" id="fname"
+					name="fname"&gt;&lt;br&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;label for="lname"&gt;Last name:&lt;/label&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="text" id="lname"
+					name="lname"&gt;&lt;br&gt;&lt;br&gt;
+					<br />
+					<strong>&lt;/fieldset&gt;</strong>
+				</code>
+			</div>
+			<br />
+			<h3>Legends</h3>
+			<p>
+				The legend element defines a caption for the fieldset element. It
+				provides a title or explanatory caption for the group of form controls
+				inside the fieldset. The legend element should be the first child of the
+				fieldset element.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;fieldset&gt;
+					<br />
+					<strong
+						>&nbsp;&nbsp;&lt;legend&gt;Contact
+						Information&lt;/legend&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<!-- Form controls go here -->
+					<br />
+					&lt;/fieldset&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Complete Example</h3>
+			<form action="#" method="get">
+				<fieldset>
+					<legend>Personal Information</legend>
+					<label for="fname">First name:</label><br />
+					<input type="text" id="fname" name="fname" /><br /><br />
+					<label for="lname">Last name:</label><br />
+					<input type="text" id="lname" name="lname" /><br /><br />
+				</fieldset>
+				<br />
+
+				<fieldset>
+					<legend>Contact Information</legend>
+					<label for="email">Email:</label><br />
+					<input type="email" id="email" name="email" /><br /><br />
+					<label for="phone">Phone:</label><br />
+					<input type="tel" id="phone" name="phone" /><br /><br />
+				</fieldset>
+				<br />
+
+				<input type="submit" value="Submit" />
+			</form>
+			<br />
+			<h3>Accessibility Benefits</h3>
+			<p>
+				Using labels, fieldsets, and legends properly provides several
+				accessibility benefits:
+			</p>
+			<ul>
+				<li>
+					Screen readers can announce the label when the form control gets focus
+				</li>
+				<li>
+					Fieldsets group related controls, making the form more understandable
+				</li>
+				<li>Legends provide context for the grouped controls</li>
+				<li>
+					Clicking on labels activates the associated form control, making it
+					easier to select checkboxes and radio buttons
+				</li>
+			</ul>
+			<br />
+			<h3>Styling Fieldsets and Legends</h3>
+			<p>You can style fieldsets and legends using CSS:</p>
+			<div class="code max-w40">
+				<code>
+					fieldset {
+					<br />
+					&nbsp;&nbsp;margin-bottom: 20px;
+					<br />
+					&nbsp;&nbsp;padding: 15px;
+					<br />
+					&nbsp;&nbsp;border: 1px solid #ccc;
+					<br />
+					&nbsp;&nbsp;border-radius: 5px;
+					<br />
+					}
+					<br /><br />
+					legend {
+					<br />
+					&nbsp;&nbsp;font-weight: bold;
+					<br />
+					&nbsp;&nbsp;padding: 0 10px;
+					<br />
+					}
+				</code>
+			</div>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch31-datalist/datalist.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch33-seo/seo.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

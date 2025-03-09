@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-30 Radio Buttons and Checkboxes</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 30 - Radio Buttons and Checkboxes in HTML5</h1>
+			<br />
+			<h2>What are Radio Buttons and Checkboxes?</h2>
+			<p>
+				Radio buttons and checkboxes are form elements that allow users to
+				select options. The key difference is that radio buttons allow selecting
+				only one option from a group, while checkboxes allow selecting multiple
+				options. Both are created using the input element with different type
+				attributes.
+			</p>
+			<br />
+			<h3>Radio Buttons</h3>
+			<p>
+				Radio buttons are created using <code>&lt;input type="radio"&gt;</code>.
+				Radio buttons with the same name attribute form a group, and only one
+				option in the group can be selected at a time.
+			</p>
+			<div class="code max-w40">
+				<code>
+					<strong
+						>&lt;input type="radio" id="male" name="gender"
+						value="male"&gt;</strong
+					>
+					<br />
+					&lt;label for="male"&gt;Male&lt;/label&gt;
+					<br />
+					<strong
+						>&lt;input type="radio" id="female" name="gender"
+						value="female"&gt;</strong
+					>
+					<br />
+					&lt;label for="female"&gt;Female&lt;/label&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Checkboxes</h3>
+			<p>
+				Checkboxes are created using <code>&lt;input type="checkbox"&gt;</code>.
+				Multiple checkboxes can be selected at the same time, even if they share
+				the same name attribute.
+			</p>
+			<div class="code max-w40">
+				<code>
+					<strong
+						>&lt;input type="checkbox" id="vehicle1" name="vehicle"
+						value="bike"&gt;</strong
+					>
+					<br />
+					&lt;label for="vehicle1"&gt;I have a bike&lt;/label&gt;
+					<br />
+					<strong
+						>&lt;input type="checkbox" id="vehicle2" name="vehicle"
+						value="car"&gt;</strong
+					>
+					<br />
+					&lt;label for="vehicle2"&gt;I have a car&lt;/label&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Radio Button and Checkbox Attributes</h3>
+			<p>Both radio buttons and checkboxes share these common attributes:</p>
+			<ul>
+				<li>
+					<strong>name</strong> - Specifies the name of the input element (for
+					form submission)
+				</li>
+				<li>
+					<strong>value</strong> - Specifies the value to be sent to the server
+					when the form is submitted
+				</li>
+				<li>
+					<strong>checked</strong> - Specifies that the input element should be
+					pre-selected when the page loads
+				</li>
+				<li>
+					<strong>disabled</strong> - Specifies that the input element should be
+					disabled
+				</li>
+				<li>
+					<strong>required</strong> - Specifies that the input element must be
+					checked
+				</li>
+			</ul>
+			<br />
+			<h3>Radio Button Example</h3>
+			<form action="#" method="get">
+				<p>Please select your favorite programming language:</p>
+				<input type="radio" id="html" name="fav_language" value="HTML" />
+				<label for="html">HTML</label><br />
+				<input type="radio" id="css" name="fav_language" value="CSS" />
+				<label for="css">CSS</label><br />
+				<input
+					type="radio"
+					id="javascript"
+					name="fav_language"
+					value="JavaScript" />
+				<label for="javascript">JavaScript</label><br /><br />
+
+				<input type="submit" value="Submit" />
+			</form>
+			<br />
+			<h3>Checkbox Example</h3>
+			<form action="#" method="get">
+				<p>Select the technologies you know:</p>
+				<input type="checkbox" id="tech1" name="tech" value="HTML" />
+				<label for="tech1">HTML</label><br />
+				<input type="checkbox" id="tech2" name="tech" value="CSS" />
+				<label for="tech2">CSS</label><br />
+				<input type="checkbox" id="tech3" name="tech" value="JavaScript" />
+				<label for="tech3">JavaScript</label><br />
+				<input type="checkbox" id="tech4" name="tech" value="PHP" />
+				<label for="tech4">PHP</label><br /><br />
+
+				<input type="submit" value="Submit" />
+			</form>
+			<br />
+			<h3>Radio Button and Checkbox Code Example</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;form action="#" method="get"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;p&gt;Please select your favorite programming
+					language:&lt;/p&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="radio" id="html" name="fav_language"
+					value="HTML"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;label for="html"&gt;HTML&lt;/label&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="radio" id="css" name="fav_language"
+					value="CSS"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;label for="css"&gt;CSS&lt;/label&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="radio" id="javascript" name="fav_language"
+					value="JavaScript"&gt;
+					<br />
+					&nbsp;&nbsp;&lt;label
+					for="javascript"&gt;JavaScript&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+					<br />
+					&nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;
+					<br />
+					&lt;/form&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Styling Radio Buttons and Checkboxes</h3>
+			<p>
+				You can style radio buttons and checkboxes using CSS, but it can be
+				challenging due to browser inconsistencies. Many developers use custom
+				styling with CSS or JavaScript libraries.
+			</p>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch29-selectoption/selectoption.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch31-datalist/datalist.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>

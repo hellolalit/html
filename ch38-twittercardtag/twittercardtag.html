@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-38 Twitter Card Tags</title>
+		<link rel="stylesheet" href="../style.css" />
+		<!-- Example Twitter Card tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@example" />
+		<meta name="twitter:title" content="Twitter Card Tags Tutorial" />
+		<meta
+			name="twitter:description"
+			content="Learn about Twitter Card meta tags in HTML5" />
+		<meta name="twitter:image" content="https://example.com/image.jpg" />
+	</head>
+	<body>
+		<main class="main-scope" id="#top">
+			<h1>Chapter 38 - Twitter Card Tags in HTML5</h1>
+			<br />
+			<h2>What are Twitter Card Tags?</h2>
+			<p>
+				Twitter Cards are a way to attach rich media experiences to tweets that
+				link to your content. When users share links to your website on Twitter,
+				Twitter Cards make it possible to attach images, videos, and media to
+				tweets, helping your content stand out in a crowded timeline. They are
+				implemented using meta tags in the head section of your HTML document.
+			</p>
+			<br />
+			<h3>Basic Twitter Card Tags</h3>
+			<p>
+				Twitter Card meta tags are placed in the head section of your HTML
+				document. They use the name attribute with "twitter:" prefix. Here are
+				the basic Twitter Card tags:
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;head&gt;
+					<br />
+					&nbsp;&nbsp;&lt;title&gt;My Website&lt;/title&gt;
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta name="twitter:card" content="summary"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta name="twitter:site" content="@username"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta name="twitter:title" content="Page Title"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta name="twitter:description" content="Page
+						description"&gt;</strong
+					>
+					<br />
+					&nbsp;&nbsp;<strong
+						>&lt;meta name="twitter:image"
+						content="https://example.com/image.jpg"&gt;</strong
+					>
+					<br />
+					&lt;/head&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Core Twitter Card Properties</h3>
+			<ul>
+				<li>
+					<strong>twitter:card</strong> - The type of card to display (summary,
+					summary_large_image, app, or player)
+				</li>
+				<li>
+					<strong>twitter:site</strong> - The Twitter @username the card should
+					be attributed to
+				</li>
+				<li><strong>twitter:title</strong> - The title of your content</li>
+				<li>
+					<strong>twitter:description</strong> - A brief description of your
+					content
+				</li>
+				<li><strong>twitter:image</strong> - The URL of an image to display</li>
+				<li>
+					<strong>twitter:creator</strong> - The Twitter @username of the
+					content creator
+				</li>
+			</ul>
+			<br />
+			<h3>Types of Twitter Cards</h3>
+			<p>
+				There are four types of Twitter Cards, each with its own display format:
+			</p>
+			<ol>
+				<li>
+					<strong>Summary Card</strong> - A basic card with a small square
+					image, title, and description
+				</li>
+				<li>
+					<strong>Summary Card with Large Image</strong> - Similar to the
+					Summary Card but with a larger image
+				</li>
+				<li>
+					<strong>App Card</strong> - A card to promote mobile applications
+				</li>
+				<li>
+					<strong>Player Card</strong> - A card that can display video, audio,
+					or other media
+				</li>
+			</ol>
+			<br />
+			<h3>Summary Card Example</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;meta name="twitter:card" content="summary"&gt;
+					<br />
+					&lt;meta name="twitter:site" content="@username"&gt;
+					<br />
+					&lt;meta name="twitter:title" content="Article Title"&gt;
+					<br />
+					&lt;meta name="twitter:description" content="Article description"&gt;
+					<br />
+					&lt;meta name="twitter:image"
+					content="https://example.com/image.jpg"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Summary Card with Large Image Example</h3>
+			<div class="code max-w40">
+				<code>
+					&lt;meta name="twitter:card" content="summary_large_image"&gt;
+					<br />
+					&lt;meta name="twitter:site" content="@username"&gt;
+					<br />
+					&lt;meta name="twitter:title" content="Article Title"&gt;
+					<br />
+					&lt;meta name="twitter:description" content="Article description"&gt;
+					<br />
+					&lt;meta name="twitter:image"
+					content="https://example.com/large-image.jpg"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Example of a Tweet with Twitter Card</h3>
+			<div
+				style="
+					border: 1px solid #e1e8ed;
+					border-radius: 5px;
+					padding: 15px;
+					max-width: 500px;
+					margin: 0 auto;
+					font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+						Helvetica, Arial, sans-serif;
+				">
+				<div style="display: flex; align-items: center; margin-bottom: 10px">
+					<div
+						style="
+							width: 48px;
+							height: 48px;
+							border-radius: 50%;
+							background-color: #ccc;
+							margin-right: 10px;
+						"></div>
+					<div>
+						<p style="margin: 0; font-weight: bold">Example User</p>
+						<p style="margin: 0; color: #657786">@example</p>
+					</div>
+				</div>
+				<p style="margin: 0 0 10px 0">
+					Check out this great article about Twitter Cards!
+				</p>
+				<div
+					style="
+						border: 1px solid #e1e8ed;
+						border-radius: 5px;
+						overflow: hidden;
+					">
+					<div
+						style="
+							height: 250px;
+							background-color: #f0f0f0;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						">
+						<p style="color: #666">
+							[Image from twitter:image would appear here]
+						</p>
+					</div>
+					<div style="padding: 10px">
+						<h4 style="margin: 0; font-size: 16px">
+							Twitter Card Tags Tutorial
+						</h4>
+						<p style="margin: 5px 0; color: #657786; font-size: 14px">
+							Learn about Twitter Card meta tags in HTML5
+						</p>
+						<p style="margin: 5px 0; color: #657786; font-size: 14px">
+							example.com
+						</p>
+					</div>
+				</div>
+			</div>
+			<p style="text-align: center; margin-top: 5px">
+				<small>Example of how a tweet with a Twitter Card might appear</small>
+			</p>
+			<br />
+			<h3>App Card Example</h3>
+			<p>The App Card is designed to promote mobile applications:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;meta name="twitter:card" content="app"&gt;
+					<br />
+					&lt;meta name="twitter:site" content="@username"&gt;
+					<br />
+					&lt;meta name="twitter:app:id:iphone" content="123456789"&gt;
+					<br />
+					&lt;meta name="twitter:app:id:ipad" content="123456789"&gt;
+					<br />
+					&lt;meta name="twitter:app:id:googleplay"
+					content="com.example.app"&gt;
+					<br />
+					&lt;meta name="twitter:app:name:iphone" content="App Name"&gt;
+					<br />
+					&lt;meta name="twitter:app:name:ipad" content="App Name"&gt;
+					<br />
+					&lt;meta name="twitter:app:name:googleplay" content="App Name"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Player Card Example</h3>
+			<p>The Player Card is used for embedding video, audio, or other media:</p>
+			<div class="code max-w40">
+				<code>
+					&lt;meta name="twitter:card" content="player"&gt;
+					<br />
+					&lt;meta name="twitter:site" content="@username"&gt;
+					<br />
+					&lt;meta name="twitter:title" content="Video Title"&gt;
+					<br />
+					&lt;meta name="twitter:description" content="Video description"&gt;
+					<br />
+					&lt;meta name="twitter:player"
+					content="https://example.com/player.html"&gt;
+					<br />
+					&lt;meta name="twitter:player:width" content="480"&gt;
+					<br />
+					&lt;meta name="twitter:player:height" content="270"&gt;
+					<br />
+					&lt;meta name="twitter:image"
+					content="https://example.com/thumbnail.jpg"&gt;
+				</code>
+			</div>
+			<br />
+			<h3>Image Recommendations</h3>
+			<p>
+				For optimal display of Twitter Cards, follow these image
+				recommendations:
+			</p>
+			<ul>
+				<li>
+					<strong>Summary Card</strong> - Images should be at least 144x144
+					pixels with a 1:1 aspect ratio
+				</li>
+				<li>
+					<strong>Summary Card with Large Image</strong> - Images should be at
+					least 300x157 pixels with a 2:1 aspect ratio
+				</li>
+				<li>
+					Use images with clear, high-contrast visuals that look good when
+					scaled down
+				</li>
+				<li>PNG, JPEG, or GIF formats are supported</li>
+				<li>Animated GIFs will only show the first frame</li>
+			</ul>
+			<br />
+			<h3>Testing Twitter Cards</h3>
+			<p>
+				You can test how your Twitter Cards will appear using the Twitter Card
+				Validator:
+			</p>
+			<p>
+				<a href="https://cards-dev.twitter.com/validator" target="_blank"
+					>Twitter Card Validator</a
+				>
+			</p>
+			<br />
+			<h3>Twitter Cards vs. Open Graph</h3>
+			<p>
+				Twitter Cards and Open Graph tags serve similar purposes but for
+				different platforms. It's recommended to include both sets of tags in
+				your HTML. If Twitter Card tags are missing, Twitter will fall back to
+				Open Graph tags for some properties.
+			</p>
+			<div class="code max-w40">
+				<code>
+					&lt;!-- Open Graph tags --&gt;
+					<br />
+					&lt;meta property="og:title" content="Page Title"&gt;
+					<br />
+					&lt;meta property="og:description" content="Page description"&gt;
+					<br />
+					&lt;meta property="og:image"
+					content="https://example.com/image.jpg"&gt;
+					<br />
+					<br />
+					&lt;!-- Twitter Card tags --&gt;
+					<br />
+					&lt;meta name="twitter:card" content="summary_large_image"&gt;
+					<br />
+					&lt;meta name="twitter:site" content="@username"&gt;
+					<br />
+					&lt;meta name="twitter:title" content="Page Title"&gt;
+					<br />
+					&lt;meta name="twitter:description" content="Page description"&gt;
+					<br />
+					&lt;meta name="twitter:image"
+					content="https://example.com/image.jpg"&gt;
+				</code>
+			</div>
+			<br />
+			<br />
+			<a href="#top">
+				<button class="topbtn">Go to top</button>
+			</a>
+
+			<br />
+			<a href="../index.html">
+				<button class="go-btn">Back to HOME PAGE</button>
+			</a>
+			<a href="../ch37-opengraphtag/opengraphtag.html">
+				<button class="prev-ch">Previous chapter</button>
+			</a>
+			<a href="../ch39-viewportmetatag/viewportmetatag.html">
+				<button class="next-ch">Next chapter</button>
+			</a>
+		</main>
+	</body>
+</html>
