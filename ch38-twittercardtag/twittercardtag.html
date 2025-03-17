@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ch-38 Twitter Card Tags</title>
+		<link rel="stylesheet" href="../style.css" />
+		<!-- Twitter Card Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@YourTwitterHandle" />
+		<meta name="twitter:title" content="Understanding Twitter Card Tags" />
+		<meta
+			name="twitter:description"
+			content="Learn how to implement Twitter Card Tags for better social media sharing" />
+		<meta
+			name="twitter:image"
+			content="https://example.com/path/to/image.jpg" />
+	</head>
+	<body>
+		<main class="main-scope" id="top">
+			<h1>Chapter 38 - Twitter Card Tags in HTML</h1>
+			<h2>Understanding Twitter Card Tags</h2>
+			<p>
+				Twitter Card Tags are meta tags that control how URLs are displayed when
+				shared on Twitter. They enable you to attach rich media experiences to
+				tweets that link to your content.
+			</p>
+
+			<h3>Types of Twitter Cards</h3>
+			<ul>
+				<li>
+					<strong>Summary Card</strong> - Default card with a title,
+					description, thumbnail, and Twitter account attribution
+				</li>
+				<li>
+					<strong>Summary Card with Large Image</strong> - Similar to the
+					summary card, but with a larger image
+				</li>
+				<li>
+					<strong>App Card</strong> - A card to detail a mobile application with
+					direct download
+				</li>
+				<li>
+					<strong>Player Card</strong> - A card that can display
+					video/audio/media
+				</li>
+			</ul>
+
+			<h3>Basic Twitter Card Implementation</h3>
+			<div class="code max-w40">
+                <code>
+                    &lt;meta name="twitter:card" content="summary_large_image"&gt;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="twitter:site" content="@YourTwitterHandle"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:title" content="Your Title Here"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:description" content="Your description here"&gt;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="twitter:image" content="URL to your image"&gt;
+                </code>
+            </div>
+
+			<h3>Summary Card Example</h3>
+			<div class="code max-w40">
+                <code>
+                    &lt;meta name="twitter:card" content="summary"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:site" content="@site_username"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:creator" content="@creator_username"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:title" content="Page Title"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:description" content="Page description"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:image" content="https://example.com/image.jpg"&gt;
+                </code>
+            </div>
+
+			<h3>Player Card Example</h3>
+			<div class="code max-w40">
+                <code>
+                    &lt;meta name="twitter:card" content="player"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:site" content="@site_username"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:title" content="Video Title"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:description" content="Video description"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:player" content="https://example.com/player"&gt;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="twitter:player:width" content="480"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:player:height" content="270"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:image" content="https://example.com/thumbnail.jpg"&gt;
+                </code>
+            </div>
+
+			<h3>App Card Example</h3>
+			<div class="code max-w40">
+                <code>
+                    &lt;meta name="twitter:card" content="app"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:site" content="@site_username"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:description" content="App description"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:app:country" content="US"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:app:name:iphone" content="App Name"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:app:id:iphone" content="App Store ID"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:app:name:googleplay" content="App Name"&gt; &lt;meta<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="twitter:app:id:googleplay" content="Play Store ID"&gt;
+                </code>
+            </div>
+
+			<h3>Best Practices</h3>
+			<ul>
+				<li>
+					<strong>Image Dimensions</strong> - Use appropriate image sizes for
+					each card type
+				</li>
+				<li>
+					<strong>Testing</strong> - Use Twitter's Card Validator to test
+					implementation
+				</li>
+				<li>
+					<strong>Fallbacks</strong> - Provide fallback content for when cards
+					don't load
+				</li>
+				<li>
+					<strong>Optimization</strong> - Optimize images for faster loading
+				</li>
+				<li><strong>Maintenance</strong> - Keep card content up to date</li>
+				<li>
+					<strong>Consistency</strong> - Maintain consistency with Open Graph
+					tags
+				</li>
+			</ul>
+
+			<h3>Twitter Card Validation</h3>
+			<p>
+				Always validate your Twitter Cards using the Twitter Card Validator:
+				<a href="https://cards-dev.twitter.com/validator" target="_blank"
+					>Twitter Card Validator</a
+				>
+			</p>
+
+			<div class="nav-container">
+				<a href="#top">
+					<button class="topbtn">Go to top</button>
+				</a>
+				<a href="../index.html">
+					<button class="go-btn">Back to HOME PAGE</button>
+				</a>
+				<a href="../ch37-opengraphtag/opengraphtag.html">
+					<button class="prev-ch">Previous chapter</button>
+				</a>
+				<a href="../ch39-viewportmetatag/viewportmetatag.html">
+					<button class="next-ch">Next chapter</button>
+				</a>
+			</div>
+		</main>
+		<script src="../script.js"></script>
+	</body>
+</html>
