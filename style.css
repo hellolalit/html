@@ -54,6 +54,14 @@ button:hover {
 
 }
 
+.alert {
+    border: 4px solid #090147;
+    border-radius: 0.5rem;
+    margin: 1rem 0rem;
+    padding: 0.5rem;
+    background-color: rgb(253, 156, 156);
+}
+
 .main-scope {
     min-height: 98vh;
     padding: 1rem 3rem 1rem 1rem;
