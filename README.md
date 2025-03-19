@@ -1,3 +1,6 @@
+# ⚠️ NOTICE !
+THIS PROJECT HAS BEEN DROPPED! PLEASE STOP FOLLOWING THIS RESOURCE FOR YOUR HTML LEARNING/ VERIFICATION OF MY KNOWLEDGE ETC ASAP! ANY FURTHER CHANGES WILL BE NOTIFIED IN FUTURE....
+
 # HTML LEARNING
 Learning and revising HTML 5 from TechGun Youtube channel. After the Learning is completed, I will be doing projects primilarly from freecodecamp.com then from youtube channel and other resourses which will be mentioned later on. Click this link to see what lalit has learned - https://lalitkumarthakur.github.io/html/
 
