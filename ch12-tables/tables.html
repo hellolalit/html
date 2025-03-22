@@ -5,6 +5,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ch12 - Tables</title>
 		<link rel="stylesheet" type="text/css" href="/style.css" />
+
+		<style>
+			th {
+				background-color: aquamarine;
+			}
+
+			td,
+			th {
+				padding: 0.5rem;
+			}
+
+			tr {
+				padding: 2rem;
+			}
+		</style>
 	</head>
 	<body>
 		<main class="main-scope">
@@ -21,6 +36,62 @@
 			<br />
 
 			<h1>Ch12 - Tables in Html5</h1>
+
+			<h2>Practise Area -</h2>
+
+			<p>Rows are horizontal cells while Columns are Vertical Cells.</p>
+			<p>See the demo below-</p>
+
+			<table border="2">
+				<tr>
+					<!-- tr is used for Row -->
+					<th>Name</th>
+					<!-- tr is used for Table Heading (for Columns) -->
+					<th>Number</th>
+					<th>Location</th>
+				</tr>
+				<tr>
+					<td>Lalu</td>
+					<!-- td is for colomn -->
+					<td>9873467821</td>
+					<td>Delhi</td>
+				</tr>
+				<tr>
+					<td>Kalu</td>
+					<td>6328671987</td>
+					<td>Planet Mars</td>
+				</tr>
+				<tr>
+					<td>Bhalu</td>
+					<td>0000001264</td>
+					<td>Africa</td>
+				</tr>
+			</table>
+
+			<br />
+			<br />
+
+			<p>Now let's see a Table with heading in Rows rather than column:</p>
+			<table border="1">
+				<tr>
+					<th>Component</th>
+					<td>Mouse</td>
+					<td>CPU</td>
+					<td>Power Supply</td>
+				</tr>
+				<tr>
+					<th>Store Location</th>
+					<td>Kolkata</td>
+					<td>Delhi</td>
+					<td>Noida</td>
+				</tr>
+				<tr>
+					<th>Cost</th>
+					<td>$10</td>
+					<td>$300</td>
+					<td>$500</td>
+				</tr>
+			</table>
 
 			<br />
 			<a href="../index.html">
