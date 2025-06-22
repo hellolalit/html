@@ -10,7 +10,9 @@
 
 * {
     /* background: rgba(241, 241, 241, 0.485); */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:
+        "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+        Arial, sans-serif;
     margin: 0;
     scroll-behavior: smooth;
 }
@@ -18,11 +20,13 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background: linear-gradient(120deg,
-            rgba(37, 138, 252, 0.1) 27.64%,
-            rgba(136, 91, 255, 0.1) 43.42%,
-            rgba(213, 23, 247, 0.1) 58.83%,
-            rgba(246, 173, 109, 0.1) 81.81%);
+    background: linear-gradient(
+        120deg,
+        rgba(37, 138, 252, 0.1) 27.64%,
+        rgba(136, 91, 255, 0.1) 43.42%,
+        rgba(213, 23, 247, 0.1) 58.83%,
+        rgba(246, 173, 109, 0.1) 81.81%
+    );
     padding: 0.5rem;
     letter-spacing: 0.2px;
 }
@@ -51,7 +55,6 @@ button {
 button:hover {
     transform: scale(1.04);
     transition: 0.3s;
-
 }
 
 .alert {
@@ -102,7 +105,7 @@ button:hover {
 }
 
 .topbtn {
-    margin-left: 0.5rem;
+    margin: 0.5rem;
     padding: 0.4rem 1rem;
     border: none;
     border-radius: 7px;
@@ -111,7 +114,6 @@ button:hover {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.2px;
-
 }
 
 .prev-ch {
